@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MALA60970: Web Authoring</title>
+    <link rel="stylesheet" href="src/css/styles.css">
+    <link rel="stylesheet" href="src/css/course.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
+    <script src="src/js/banner-animation.js" defer></script>
+    <script src="src/js/video-manager.js" defer></script>
+    <script src="src/js/main.js" defer></script>
+    <script src="src/js/course-navigation.js" defer></script>
+</head>
+<body>
+    <header>
+        <div id="banner-animation"></div>
+        <div class="header-content">
+            <div class="header-top">
+                <h1>MALA60970: Web Authoring</h1>
+                <p class="course-subtitle">4-Week Asynchronous Course • July 7th - August 1st, 2025</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="src/pages/week1.html">Week 1</a></li>
+                    <li><a href="src/pages/week2.html">Week 2</a></li>
+                    <li><a href="src/pages/week3.html">Week 3</a></li>
+                    <li><a href="src/pages/week4.html">Week 4</a></li>
+                    <li><a href="src/pages/assignments.html">Assignments</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <!-- Course Overview -->
+        <section>
+            <h2>Course Overview</h2>
+            <p>This intensive 4-week course introduces students to the essential skills of web authoring. You'll dive into the core technologies that power the modern web while engaging in practical, vibe-based coding exercises that make learning both effective and enjoyable.</p>
+            
+            <div class="learning-objectives">
+                <h3>What You'll Learn</h3>
+                <ul class="objectives-list">
+                    <li>HTML fundamentals and semantic markup</li>
+                    <li>CSS styling, layouts, and responsive design</li>
+                    <li>JavaScript programming and DOM manipulation</li>
+                    <li>Modern web development workflows</li>
+                    <li>Best practices for accessible web design</li>
+                </ul>
+            </div>
+            
+            <div class="highlight">
+                <p><strong>Course Format:</strong> Asynchronous online learning with hands-on projects, video tutorials, and peer collaboration opportunities.</p>
+            </div>
+        </section>
+
+        <!-- Course Schedule -->
+        <section>
+            <h2>Course Schedule</h2>
+            <div class="course-schedule">
+                <div class="week-card">
+                    <div class="week-number">Week 1</div>
+                    <div class="week-title">HTML Foundations & Setup</div>
+                    <div class="week-description">
+                        Learn the building blocks of web pages. Master semantic HTML, document structure, forms, and accessibility basics. Get oriented with your development tools.
+                    </div>
+                    <div class="video-section">
+                        <h4>Instructional Videos</h4>
+                        <div class="video-grid">
+                            <div class="video-placeholder" data-video-id="week1-video1">
+                                <div class="video-icon">▶</div>
+                                <p>Course Orientation & VS Code Setup</p>
+                            </div>
+                            <div class="video-placeholder" data-video-id="week1-video2">
+                                <div class="video-icon">▶</div>
+                                <p>HTML Basics & Document Structure</p>
+                            </div>
+                            <!-- Example of embedded video (uncomment when video is available) -->
+                            <!-- 
+                            <div class="video-embed">
+                                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0&modestbranding=1&cc_load_policy=1" 
+                                        title="GitHub Setup & Version Control" 
+                                        frameborder="0" 
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                        allowfullscreen>
+                                </iframe>
+                                <div class="video-info">
+                                    <div class="video-title">GitHub Setup & Version Control</div>
+                                    <div class="video-duration">Duration: 20:45</div>
+                                </div>
+                            </div>
+                            -->
+                            <div class="video-placeholder" data-video-id="week1-video3">
+                                <div class="video-icon">▶</div>
+                                <p>GitHub Setup & Version Control</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="week-card">
+                    <div class="week-number">Week 2</div>
+                    <div class="week-title">CSS Styling & Layout</div>
+                    <div class="week-description">
+                        Dive into CSS fundamentals, flexbox, grid layouts, and responsive design principles. Create beautiful, mobile-friendly websites.
+                    </div>
+                    <div class="video-section">
+                        <h4>Instructional Videos</h4>
+                        <div class="video-grid">
+                            <div class="video-placeholder" data-video-id="week2-video1">
+                                <div class="video-icon">▶</div>
+                                <p>CSS Fundamentals & Selectors</p>
+                            </div>
+                            <div class="video-placeholder" data-video-id="week2-video2">
+                                <div class="video-icon">▶</div>
+                                <p>Flexbox Layout Mastery</p>
+                            </div>
+                            <div class="video-placeholder" data-video-id="week2-video3">
+                                <div class="video-icon">▶</div>
+                                <p>Responsive Design & Media Queries</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="week-card">
+                    <div class="week-number">Week 3</div>
+                    <div class="week-title">JavaScript Basics</div>
+                    <div class="week-description">
+                        Introduction to programming with JavaScript. Variables, functions, events, and DOM manipulation for interactive web experiences.
+                    </div>
+                    <div class="video-section">
+                        <h4>Instructional Videos</h4>
+                        <div class="video-grid">
+                            <div class="video-placeholder" data-video-id="week3-video1">
+                                <div class="video-icon">▶</div>
+                                <p>JavaScript Fundamentals</p>
+                            </div>
+                            <div class="video-placeholder" data-video-id="week3-video2">
+                                <div class="video-icon">▶</div>
+                                <p>DOM Manipulation & Events</p>
+                            </div>
+                            <div class="video-placeholder" data-video-id="week3-video3">
+                                <div class="video-icon">▶</div>
+                                <p>Debugging with Developer Tools</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="week-card">
+                    <div class="week-number">Week 4</div>
+                    <div class="week-title">Integration & Projects</div>
+                    <div class="week-description">
+                        Bring it all together! Build complete web projects combining HTML, CSS, and JavaScript. Deploy your creations to the web.
+                    </div>
+                    <div class="video-section">
+                        <h4>Instructional Videos</h4>
+                        <div class="video-grid">
+                            <div class="video-placeholder" data-video-id="week4-video1">
+                                <div class="video-icon">▶</div>
+                                <p>Project Planning & Structure</p>
+                            </div>
+                            <div class="video-placeholder" data-video-id="week4-video2">
+                                <div class="video-icon">▶</div>
+                                <p>Deploying to GitHub Pages</p>
+                            </div>
+                            <div class="video-placeholder" data-video-id="week4-video3">
+                                <div class="video-icon">▶</div>
+                                <p>Web Performance & Best Practices</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Important Dates -->
+        <section>
+            <h2>Important Dates</h2>
+            <div class="course-info">
+                <p><strong>Course Start:</strong> July 7th, 2025</p>
+                <p><strong>Mid-course Check-in:</strong> July 21st, 2025</p>
+                <p><strong>Final Projects Due:</strong> July 31st, 2025</p>
+                <p><strong>Course End:</strong> August 1st, 2025</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 MALA60970 Web Authoring Course. All rights reserved.</p>
+    </footer>
+</body>
+</html>

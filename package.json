@@ -1,0 +1,24 @@
+{
+  "name": "mala60970-web-authoring",
+  "version": "1.0.0",
+  "description": "An online course site for MALA60970: Web Authoring, covering HTML, CSS, and JavaScript.",
+  "main": "src/index.html",
+  "scripts": {
+    "start": "live-server src",
+    "build": "echo 'Build step not defined'",
+    "test": "echo 'Test step not defined'"
+  },
+  "keywords": [
+    "web",
+    "course",
+    "HTML",
+    "CSS",
+    "JavaScript"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  }
+}

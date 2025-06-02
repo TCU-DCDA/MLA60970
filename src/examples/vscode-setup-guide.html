@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VS Code Setup Guide - MALA60970</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/course.css">
+    <style>
+        .setup-step {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 1.5rem 0;
+            border-left: 4px solid var(--primary-color);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+        }
+        .step-number {
+            background: var(--primary-color);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 1rem;
+        }
+        .extension-card {
+            background: var(--light-gray);
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .extension-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--secondary-color);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header class="page-header">
+        <div class="header-content">
+            <h1>VS Code Setup Guide</h1>
+            <p class="course-subtitle">Complete development environment setup for web authoring</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <nav class="breadcrumb">
+            <a href="../../index.html">Home</a>
+            <span>→</span>
+            <a href="../pages/week1.html">Week 1</a>
+            <span>→</span>
+            <span class="current">VS Code Setup Guide</span>
+        </nav>
+
+        <section>
+            <div class="setup-step">
+                <h2><span class="step-number">1</span>Download Visual Studio Code</h2>
+                <p>Visit the official VS Code website and download the installer for your operating system:</p>
+                <ul>
+                    <li><strong>Windows:</strong> Download the .exe installer</li>
+                    <li><strong>macOS:</strong> Download the .zip file or use Homebrew</li>
+                    <li><strong>Linux:</strong> Download the .deb, .rpm, or .tar.gz package</li>
+                </ul>
+                <p><a href="https://code.visualstudio.com/" target="_blank" class="cta-button">Download VS Code →</a></p>
+            </div>
+
+            <div class="setup-step">
+                <h2><span class="step-number">2</span>Install Essential Extensions</h2>
+                <p>These extensions will make your web development workflow much more efficient:</p>
+                
+                <div class="extension-card">
+                    <div class="extension-icon">🌐</div>
+                    <div>
+                        <h4>Live Server</h4>
+                        <p>Launch a development local server with live reload feature for static & dynamic pages</p>
+                        <small><strong>ID:</strong> ritwickdey.LiveServer</small>
+                    </div>
+                </div>
+
+                <div class="extension-card">
+                    <div class="extension-icon">✨</div>
+                    <div>
+                        <h4>Prettier - Code Formatter</h4>
+                        <p>Automatically format your HTML, CSS, and JavaScript code</p>
+                        <small><strong>ID:</strong> esbenp.prettier-vscode</small>
+                    </div>
+                </div>
+
+                <div class="extension-card">
+                    <div class="extension-icon">🏷️</div>
+                    <div>
+                        <h4>Auto Rename Tag</h4>
+                        <p>Automatically rename paired HTML/XML tags</p>
+                        <small><strong>ID:</strong> formulahendry.auto-rename-tag</small>
+                    </div>
+                </div>
+
+                <div class="extension-card">
+                    <div class="extension-icon">🎨</div>
+                    <div>
+                        <h4>HTML CSS Support</h4>
+                        <p>CSS Intellisense for HTML class and id attributes</p>
+                        <small><strong>ID:</strong> ecmel.vscode-html-css</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="setup-step">
+                <h2><span class="step-number">3</span>Configure Your Workspace</h2>
+                <p>Create a dedicated folder structure for your web projects:</p>
+                <pre><code>Web-Projects/
+├── MALA60970-Course/
+│   ├── week1/
+│   ├── week2/
+│   ├── week3/
+│   ├── week4/
+│   └── final-project/
+└── practice-exercises/</code></pre>
+            </div>
+
+            <div class="setup-step">
+                <h2><span class="step-number">4</span>Customize Your Settings</h2>
+                <p>Recommended settings for web development:</p>
+                <ul>
+                    <li><strong>Auto Save:</strong> Enable "onFocusChange" for automatic saving</li>
+                    <li><strong>Format on Save:</strong> Enable automatic code formatting</li>
+                    <li><strong>Tab Size:</strong> Set to 2 spaces for HTML/CSS</li>
+                    <li><strong>Word Wrap:</strong> Enable for better readability</li>
+                </ul>
+            </div>
+
+            <div class="setup-step">
+                <h2><span class="step-number">5</span>Test Your Setup</h2>
+                <p>Create a simple HTML file to test your environment:</p>
+                <ol>
+                    <li>Create a new file called <code>test.html</code></li>
+                    <li>Type <code>!</code> and press Tab to generate HTML boilerplate</li>
+                    <li>Right-click the file and select "Open with Live Server"</li>
+                    <li>Your browser should open showing your page</li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="resource-links">
+            <h2>Additional Resources</h2>
+            <div class="activity-grid">
+                <div class="resource-card">
+                    <h3>VS Code Tips & Tricks</h3>
+                    <ul>
+                        <li><a href="https://code.visualstudio.com/docs/getstarted/tips-and-tricks">Official Tips & Tricks</a></li>
+                        <li><a href="https://code.visualstudio.com/docs/editor/emmet">Emmet in VS Code</a></li>
+                        <li><a href="https://code.visualstudio.com/docs/languages/html">HTML in VS Code</a></li>
+                    </ul>
+                </div>
+                <div class="resource-card">
+                    <h3>Keyboard Shortcuts</h3>
+                    <ul>
+                        <li><kbd>Ctrl/Cmd + /</kbd> - Toggle comment</li>
+                        <li><kbd>Alt + Shift + F</kbd> - Format document</li>
+                        <li><kbd>Ctrl/Cmd + `</kbd> - Open terminal</li>
+                        <li><kbd>Ctrl/Cmd + P</kbd> - Quick open file</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 MALA60970 Web Authoring Course. All rights reserved.</p>
+    </footer>
+    
+    <script src="../js/main.js"></script>
+    <script src="../js/course-navigation.js"></script>
+</body>
+</html>
