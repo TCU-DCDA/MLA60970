@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Schedule - MLA 60970</title>
+    <style>
+        :root {
+            --primary-color: #333;
+            --secondary-color: #666;
+            --accent-color: #0066cc;
+            --bg-light: #f8f9fa;
+            --bg-header: #f2f2f2;
+            --border-color: #ddd;
+            --font-main: 'Arial', sans-serif;
+            --font-size-base: 16px;
+            --font-size-small: 14px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            font-size: var(--font-size-base);
+            color: var(--primary-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--bg-light);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            margin-bottom: 30px;
+        }
+
+        .header p {
+            font-size: 18px;
+            color: var(--secondary-color);
+            margin: 0 0 20px 0;
+        }
+
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+            font-size: var(--font-size-base);
+        }
+
+        .schedule-table th,
+        .schedule-table td {
+            padding: 15px 10px;
+            border: 1px solid var(--border-color);
+            vertical-align: top;
+            text-align: left;
+        }
+
+        .schedule-table th {
+            background-color: var(--bg-header);
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .project-header {
+            background-color: var(--bg-header);
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .date-cell {
+            width: 12%;
+            font-weight: 600;
+            background-color: #fafafa;
+        }
+
+        .mode-cell {
+            width: 15%;
+        }
+
+        .topic-cell {
+            width: 45%;
+        }
+
+        .due-cell {
+            width: 28%;
+        }
+
+        .topic-title {
+            font-style: italic;
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-bottom: 8px;
+        }
+
+        .activity-list {
+            margin: 8px 0;
+        }
+
+        .activity-list li {
+            margin: 4px 0;
+        }
+
+        .due-item {
+            margin: 8px 0;
+            padding: 8px;
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            border-radius: 4px;
+        }
+
+        .due-major {
+            background-color: #d4edda;
+            border-left-color: #28a745;
+            font-weight: 600;
+        }
+
+        .no-class {
+            background-color: #f8d7da;
+            color: #721c24;
+            font-style: italic;
+        }
+
+        .external-link {
+            color: var(--accent-color);
+            text-decoration: none;
+            word-break: break-all;
+        }
+
+        .external-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .schedule-table {
+                font-size: var(--font-size-small);
+            }
+            
+            .schedule-table th,
+            .schedule-table td {
+                padding: 8px 6px;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+                padding: 0;
+            }
+            
+            .schedule-table {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Course Schedule - MLA 60970</h1>
+            <p>The following schedule is subject to further revision, to suit the needs and interests of the class. Updates to this schedule will be shared exclusively through the table below.</p>
+        </header>
+
+        <main>
+            <table class="schedule-table" role="table" aria-label="Course Schedule">
+                <thead>
+                    <tr>
+                        <th scope="col" class="project-header" colspan="2">Project 1</th>
+                        <th scope="col" class="project-header">Mode</th>
+                        <th scope="col" class="project-header">Topic</th>
+                        <th scope="col" class="project-header">Due Dates</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="date-cell">M 5/13</td>
+                        <td></td>
+                        <td class="mode-cell">Lecture / Discussion</td>
+                        <td class="topic-cell">
+                            <div class="topic-title">Writing in the 21st Century, the Rhetorical Appeals, and the Materiality of Language</div>
+                            <div class="topic-title">Appealing to Your Audience with CRAP: Aristotle and Visual Design</div>
+                            <ul class="activity-list">
+                                <li>Discuss sample NGO posters</li>
+                            </ul>
+                        </td>
+                        <td class="due-cell">
+                            <div class="due-item">
+                                <strong>Self-Reflection 1</strong> due by 11:30 pm in D2L
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">T 5/14</td>
+                        <td></td>
+                        <td class="mode-cell">Tutorial</td>
+                        <td class="topic-cell">
+                            <ul class="activity-list">
+                                <li>Photopea Tutorial</li>
+                                <li>Project Workshop</li>
+                            </ul>
+                        </td>
+                        <td class="due-cell">
+                            <div class="due-item due-major">
+                                <strong>Project 1 Proposal</strong> due by 5:00 pm in D2L
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">W 5/15</td>
+                        <td></td>
+                        <td class="mode-cell">Workshop</td>
+                        <td class="topic-cell">
+                            <ul class="activity-list">
+                                <li>Photopea Tutorial</li>
+                                <li>Project Workshop</li>
+                            </ul>
+                        </td>
+                        <td class="due-cell">
+                            <div class="due-item">
+                                Flex 1.1 due by 5:00 pm in D2L
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">R 5/16</td>
+                        <td></td>
+                        <td class="mode-cell">Workshop</td>
+                        <td class="topic-cell">
+                            <ul class="activity-list">
+                                <li>Photopea Workshop</li>
+                                <li>Project Workshop</li>
+                            </ul>
+                        </td>
+                        <td class="due-cell">
+                            <div class="due-item">
+                                Flex 1.2 due by 5:00 pm in D2L
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">F 5/17</td>
+                        <td></td>
+                        <td class="mode-cell">Peer Review</td>
+                        <td class="topic-cell">
+                            <ul class="activity-list">
+                                <li>Peer Review Workshop</li>
+                            </ul>
+                        </td>
+                        <td class="due-cell">
+                            <div class="due-item due-major">
+                                <strong>Project 1 Rough Draft Due</strong> (w/ Draft Reflection) due by class time in D2L
+                            </div>
+                            <div class="due-item due-major">
+                                <strong>Project 1: Letters of Reply</strong> due by 11:30 pm in D2L
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">Sun 5/19</td>
+                        <td></td>
+                        <td class="mode-cell">Project 1 Due</td>
+                        <td class="topic-cell">Project 1 Due</td>
+                        <td class="due-cell">
+                            <div class="due-item due-major">
+                                <strong>Project 1 Due</strong> (PDF w/ Cover Memo) due by 11:30 pm in D2L
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="schedule-table" role="table" aria-label="Project 2 Schedule">
+                <thead>
+                    <tr>
+                        <th scope="col" class="project-header" colspan="2">Project 2</th>
+                        <th scope="col" class="project-header">Mode</th>
+                        <th scope="col" class="project-header">Topic</th>
+                        <th scope="col" class="project-header">Due Dates</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="date-cell">M 5/20</td>
+                        <td></td>
+                        <td class="mode-cell">Lecture / Discussion</td>
+                        <td class="topic-cell">
+                            <div class="topic-title">Writing in Digital Environments</div>
+                            <ul class="activity-list">
+                                <li>Website Critique Exercise</li>
+                                <li>Define and narrow topic, determine audience, and identify purpose for Project 2</li>
+                                <li>Assign Project 2</li>
+                            </ul>
+                        </td>
+                        <td class="due-cell"></td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">T 5/21</td>
+                        <td></td>
+                        <td class="mode-cell">Tutorial / Exercise</td>
+                        <td class="topic-cell">
+                            <div class="topic-title">Intro to HTML, CSS, and JavaScript</div>
+                            <ul class="activity-list">
+                                <li>File Management</li>
+                                <li>Coding v Frankencoding</li>
+                                <li>Begin research topic for Project #2</li>
+                                <li>Continue researching and refining topic</li>
+                                <li>HTML, CSS, and JS workshop</li>
+                            </ul>
+                        </td>
+                        <td class="due-cell">
+                            <div class="due-item due-major">
+                                <strong>Project 2 Proposal</strong> due by 11:30 pm in D2L
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">W 5/22</td>
+                        <td></td>
+                        <td class="mode-cell">Lecture / Exercise</td>
+                        <td class="topic-cell">
+                            <div class="topic-title">Writing for the Web</div>
+                            <div class="topic-title">Meeting Your Audience Where & How They Read</div>
+                            <ul class="activity-list">
+                                <li>Discuss Conventions of Writing for the Web</li>
+                                <li><a href="http://www.webstyleguide.com/wsg3/9-editorial-style/index.html" class="external-link">Web Style Guide</a></li>
+                                <li><a href="https://cdex.tcu.edu/resources/tech/web/writing-for-the-web/" class="external-link">TCU Writing for the Web</a></li>
+                            </ul>
+                        </td>
+                        <td class="due-cell">
+                            <div class="due-item">
+                                Daily Flex 2.1 due by 11:30 pm in D2L
+                            </div>
+                            <div class="due-item">
+                                <strong>Self-Reflection 2</strong> due by 11:30 pm in D2L
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">R 5/23</td>
+                        <td></td>
+                        <td class="mode-cell">Drafting Workshop</td>
+                        <td class="topic-cell">
+                            <ul class="activity-list">
+                                <li>Continue drafting content for Project #2</li>
+                                <li>Workshop</li>
+                            </ul>
+                        </td>
+                        <td class="due-cell">
+                            <div class="due-item">
+                                Daily Flex 2.2 due by 11:30 pm in D2L
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">F 5/24</td>
+                        <td></td>
+                        <td class="mode-cell">Peer Review</td>
+                        <td class="topic-cell">
+                            <ul class="activity-list">
+                                <li>Peer Review Workshop of Whole Site</li>
+                            </ul>
+                        </td>
+                        <td class="due-cell">
+                            <div class="due-item due-major">
+                                <strong>Project 2 Rough Draft of Whole Site</strong> (w/ Draft Reflection) due by class time
+                            </div>
+                            <div class="due-item due-major">
+                                <strong>Project 2: Letters of Reply</strong> due by 11:30 pm in D2L
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">M 5/27</td>
+                        <td></td>
+                        <td class="mode-cell no-class">No Class</td>
+                        <td class="topic-cell no-class">Memorial Day (No Class)</td>
+                        <td class="due-cell">
+                            <div class="due-item due-major">
+                                <strong>Project 2</strong> (w/ Cover Memo) due by 11:30 pm in D2L
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="schedule-table" role="table" aria-label="Project 3 Schedule">
+                <thead>
+                    <tr>
+                        <th scope="col" class="project-header" colspan="2">Project 3</th>
+                        <th scope="col" class="project-header">Mode</th>
+                        <th scope="col" class="project-header">Topic</th>
+                        <th scope="col" class="project-header">Due Dates</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="date-cell">T 5/28</td>
+                        <td></td>
+                        <td class="mode-cell">Lecture / Exercise</td>
+                        <td class="topic-cell">
+                            <div class="topic-title">Basic Juxtaposition Technique as Conditions for Rebuttal</div>
+                            <ul class="activity-list">
+                                <li>Photopea Review and Basic Web Image Galleries</li>
+                            </ul>
+                        </td>
+                        <td class="due-cell">
+                            <div class="due-item due-major">
+                                <strong>Project 3 Proposal</strong> due by 11:30 pm in D2L
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">W 5/29</td>
+                        <td></td>
+                        <td class="mode-cell">Workshop</td>
+                        <td class="topic-cell">
+                            <ul class="activity-list">
+                                <li>Project Workshop</li>
+                            </ul>
+                        </td>
+                        <td class="due-cell">
+                            <div class="due-item">
+                                Daily Flex 3.1 due by 11:30 pm in D2L
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">R 5/30</td>
+                        <td></td>
+                        <td class="mode-cell">Workshop</td>
+                        <td class="topic-cell">
+                            <ul class="activity-list">
+                                <li>Project Workshop</li>
+                            </ul>
+                        </td>
+                        <td class="due-cell">
+                            <div class="due-item">
+                                Daily Flex 3.2 due by 11:30 pm in D2L
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">F 5/31</td>
+                        <td></td>
+                        <td class="mode-cell">Workshop</td>
+                        <td class="topic-cell">
+                            <ul class="activity-list">
+                                <li>Peer Review Workshop</li>
+                            </ul>
+                        </td>
+                        <td class="due-cell">
+                            <div class="due-item due-major">
+                                <strong>Project 3 Rough Draft Due</strong> (w/ Draft Reflection) due by classtime in D2L
+                            </div>
+                            <div class="due-item due-major">
+                                <strong>Project 3: Letters of Reply</strong> due by 11:30 pm in D2L
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">Sun 6/2</td>
+                        <td></td>
+                        <td class="mode-cell">Final Deadlines</td>
+                        <td class="topic-cell">Final Deadlines</td>
+                        <td class="due-cell">
+                            <div class="due-item due-major">
+                                <strong>Project 3</strong> (w/ Cover Memo) due by 11:30 pm in D2L
+                            </div>
+                            <div class="due-item due-major">
+                                <strong>Self-Reflection 3</strong> due by 11:30 pm in D2L
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+    </div>
+</body>
+</html>

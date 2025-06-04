@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Basics</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/course.css">
+</head>
+<body>
+    <header>
+        <h1>HTML Basics</h1>
+        <nav>
+            <ul>
+                <li><a href="../pages/week1.html">Week 1</a></li>
+                <li><a href="../pages/week2.html">Week 2</a></li>
+                <li><a href="../pages/week3.html">Week 3</a></li>
+                <li><a href="../pages/week4.html">Week 4</a></li>
+                <li><a href="../pages/assignments.html">Assignments</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction to HTML</h2>
+            <p>HTML (HyperText Markup Language) is the standard markup language for creating web pages.</p>
+            <h3>Basic Structure of an HTML Document</h3>
+            <pre>
+                &lt;!DOCTYPE html&gt;
+                &lt;html&gt;
+                &lt;head&gt;
+                    &lt;title&gt;Page Title&lt;/title&gt;
+                &lt;/head&gt;
+                &lt;body&gt;
+                    &lt;h1&gt;My First Heading&lt;/h1&gt;
+                    &lt;p&gt;My first paragraph.&lt;/p&gt;
+                &lt;/body&gt;
+                &lt;/html&gt;
+            </pre>
+            <h3>Common HTML Tags</h3>
+            <ul>
+                <li>&lt;h1&gt; to &lt;h6&gt; - Headings</li>
+                <li>&lt;p&gt; - Paragraph</li>
+                <li>&lt;a&gt; - Anchor (link)</li>
+                <li>&lt;img&gt; - Image</li>
+                <li>&lt;div&gt; - Division</li>
+                <li>&lt;span&gt; - Span</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 MALA60970: Web Authoring Course</p>
+    </footer>
+    <script src="../js/main.js"></script>
+    <script src="../js/course-navigation.js"></script>
+</body>
+</html>

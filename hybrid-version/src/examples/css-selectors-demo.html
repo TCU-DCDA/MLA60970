@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selectors Interactive Demo - MALA60970</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/course.css">
+    <style>
+        .demo-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .css-panel {
+            background: #2d3748;
+            color: #e2e8f0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            font-family: 'Courier New', monospace;
+            line-height: 1.6;
+        }
+        .html-panel {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+        }
+        .selector-example {
+            margin: 1rem 0;
+            padding: 1rem;
+            border-radius: 8px;
+            background: var(--light-gray);
+        }
+        .active-demo {
+            border: 2px solid var(--primary-color);
+            background: rgba(139, 92, 246, 0.1);
+        }
+        .selector-button {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 0.25rem;
+            font-size: 0.9rem;
+        }
+        .selector-button:hover {
+            background: var(--secondary-color);
+        }
+        .selector-button.active {
+            background: var(--success-color);
+        }
+        .demo-element {
+            padding: 0.5rem;
+            margin: 0.25rem;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            transition: all 0.3s ease;
+        }
+        .highlighted {
+            background: yellow !important;
+            border-color: orange !important;
+            transform: scale(1.05);
+        }
+        @media (max-width: 768px) {
+            .demo-container {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="page-header">
+        <div class="header-content">
+            <h1>CSS Selectors Interactive Demo</h1>
+            <p class="course-subtitle">Practice selecting HTML elements with different CSS selector types</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <nav class="breadcrumb">
+            <a href="../../index.html">Home</a>
+            <span>→</span>
+            <a href="../pages/week2.html">Week 2</a>
+            <span>→</span>
+            <span class="current">CSS Selectors Demo</span>
+        </nav>
+
+        <section>
+            <h2>Try Different Selector Types</h2>
+            <p>Click the buttons below to see how different CSS selectors target elements:</p>
+            
+            <div class="selector-controls">
+                <button class="selector-button" data-selector="element">Element Selector</button>
+                <button class="selector-button" data-selector="class">Class Selector</button>
+                <button class="selector-button" data-selector="id">ID Selector</button>
+                <button class="selector-button" data-selector="descendant">Descendant Selector</button>
+                <button class="selector-button" data-selector="child">Child Selector</button>
+                <button class="selector-button" data-selector="pseudo">Pseudo-class</button>
+                <button class="selector-button" onclick="clearHighlights()">Clear All</button>
+            </div>
+        </section>
+
+        <div class="demo-container">
+            <div class="css-panel">
+                <h3>Current CSS Rule:</h3>
+                <div id="css-display">
+/* Click a selector button to see the CSS rule */
+selector {
+    background: yellow;
+    border-color: orange;
+}
+                </div>
+            </div>
+
+            <div class="html-panel">
+                <h3>HTML Structure:</h3>
+                <div id="demo-html">
+                    <header class="demo-element main-header" id="site-header">
+                        <h1 class="demo-element title">Website Title</h1>
+                        <nav class="demo-element">
+                            <a class="demo-element nav-link" href="#">Home</a>
+                            <a class="demo-element nav-link" href="#">About</a>
+                            <a class="demo-element nav-link active" href="#">Services</a>
+                        </nav>
+                    </header>
+                    
+                    <main class="demo-element">
+                        <section class="demo-element intro">
+                            <h2 class="demo-element">Welcome Section</h2>
+                            <p class="demo-element">This is the introduction paragraph.</p>
+                            <p class="demo-element highlight">This paragraph has a special class.</p>
+                        </section>
+                        
+                        <section class="demo-element content">
+                            <article class="demo-element">
+                                <h3 class="demo-element">Article Title</h3>
+                                <p class="demo-element">Article content goes here.</p>
+                                <div class="demo-element box" id="special-box">
+                                    <span class="demo-element">Nested span element</span>
+                                </div>
+                            </article>
+                        </section>
+                    </main>
+                    
+                    <footer class="demo-element">
+                        <p class="demo-element">&copy; 2025 Demo Site</p>
+                    </footer>
+                </div>
+            </div>
+        </div>
+
+        <section class="selector-example">
+            <h2>Selector Reference</h2>
+            <div class="activity-grid">
+                <div class="resource-card">
+                    <h3>Basic Selectors</h3>
+                    <ul>
+                        <li><code>p</code> - All paragraph elements</li>
+                        <li><code>.highlight</code> - Elements with class "highlight"</li>
+                        <li><code>#special-box</code> - Element with id "special-box"</li>
+                        <li><code>*</code> - All elements (universal)</li>
+                    </ul>
+                </div>
+                
+                <div class="resource-card">
+                    <h3>Combination Selectors</h3>
+                    <ul>
+                        <li><code>nav a</code> - Links inside nav (descendant)</li>
+                        <li><code>nav > a</code> - Direct child links of nav</li>
+                        <li><code>h1 + p</code> - Paragraph immediately after h1</li>
+                        <li><code>h1 ~ p</code> - All paragraphs after h1</li>
+                    </ul>
+                </div>
+                
+                <div class="resource-card">
+                    <h3>Pseudo-classes</h3>
+                    <ul>
+                        <li><code>a:hover</code> - Link when hovered</li>
+                        <li><code>a:visited</code> - Previously visited links</li>
+                        <li><code>p:first-child</code> - First p child</li>
+                        <li><code>p:nth-child(2n)</code> - Even p elements</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="activity-card">
+            <h2>Practice Exercise</h2>
+            <p>Try to predict which elements will be selected before clicking each button. This will help you understand how CSS selectors work!</p>
+            
+            <div class="activity-checklist">
+                <label><input type="checkbox"> Tested element selectors</label>
+                <label><input type="checkbox"> Tested class selectors</label>
+                <label><input type="checkbox"> Tested ID selectors</label>
+                <label><input type="checkbox"> Tested descendant selectors</label>
+                <label><input type="checkbox"> Tested child selectors</label>
+                <label><input type="checkbox"> Tested pseudo-class selectors</label>
+                <label><input type="checkbox"> Can predict selector behavior</label>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 MALA60970 Web Authoring Course. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        const selectorExamples = {
+            element: {
+                css: 'p {\n    background: yellow;\n    border-color: orange;\n}',
+                selector: 'p'
+            },
+            class: {
+                css: '.highlight {\n    background: yellow;\n    border-color: orange;\n}',
+                selector: '.highlight'
+            },
+            id: {
+                css: '#special-box {\n    background: yellow;\n    border-color: orange;\n}',
+                selector: '#special-box'
+            },
+            descendant: {
+                css: 'nav a {\n    background: yellow;\n    border-color: orange;\n}',
+                selector: 'nav a'
+            },
+            child: {
+                css: 'section > h2 {\n    background: yellow;\n    border-color: orange;\n}',
+                selector: 'section > h2'
+            },
+            pseudo: {
+                css: 'a:first-child {\n    background: yellow;\n    border-color: orange;\n}',
+                selector: 'a:first-child'
+            }
+        };
+
+        function clearHighlights() {
+            document.querySelectorAll('.highlighted').forEach(el => {
+                el.classList.remove('highlighted');
+            });
+            document.querySelectorAll('.selector-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.getElementById('css-display').textContent = 
+                '/* Click a selector button to see the CSS rule */\nselector {\n    background: yellow;\n    border-color: orange;\n}';
+        }
+
+        function highlightElements(selector, type) {
+            clearHighlights();
+            
+            // Update CSS display
+            document.getElementById('css-display').textContent = selectorExamples[type].css;
+            
+            // Highlight matching elements
+            try {
+                const elements = document.querySelectorAll(`#demo-html ${selector}`);
+                elements.forEach(el => {
+                    el.classList.add('highlighted');
+                });
+            } catch (e) {
+                console.log('Selector not valid for demo');
+            }
+            
+            // Mark button as active
+            document.querySelector(`[data-selector="${type}"]`).classList.add('active');
+        }
+
+        // Add event listeners
+        document.querySelectorAll('.selector-button[data-selector]').forEach(button => {
+            button.addEventListener('click', () => {
+                const selectorType = button.dataset.selector;
+                const selector = selectorExamples[selectorType].selector;
+                highlightElements(selector, selectorType);
+            });
+        });
+    </script>
+    <script src="../js/main.js"></script>
+    <script src="../js/course-navigation.js"></script>
+</body>
+</html>
