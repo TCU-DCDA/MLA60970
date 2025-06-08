@@ -1,4 +1,4 @@
-# MALA60970: Web Authoring Course
+# MALA60970: Web Authoring 
 
 Welcome to the MALA60970: Web Authoring course! This is a 4-week asynchronous class designed to introduce you to the fundamentals of web development, including HTML, CSS, and JavaScript. Throughout the course, you will engage in coding exercises and projects to enhance your understanding and skills.
 
