@@ -1567,21 +1567,22 @@ footer::before {
         margin-bottom: 1.5rem;
     }
     
-    /* Show hamburger menu on mobile */
-    .hamburger {
-        display: flex;
+    /* Show hamburger menu on mobile - increased specificity */
+    nav .hamburger {
+        display: flex !important;
         margin-left: auto;
     }
     
-    /* Hide regular navigation on mobile */
+    /* Hide regular navigation on mobile - increased specificity */
     nav ul {
-        display: none;
+        display: none !important;
     }
     
     nav {
         display: flex;
         align-items: center;
         width: 100%;
+        justify-content: space-between;
     }
     
     main {
