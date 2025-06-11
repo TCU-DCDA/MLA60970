@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Setup Guide - MALA60970</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/course.css">
+    <style>
+        .github-example {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 1.5rem 0;
+            border-left: 4px solid #333;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+        }
+        .step-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .step-example {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+        }
+        .terminal-demo {
+            border-left: 4px solid #333;
+        }
+        .github-demo {
+            border-left: 4px solid #f14e32;
+        }
+        .terminal-syntax {
+            background: #1e1e1e;
+            color: #00ff00;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            font-family: 'Courier New', monospace;
+            line-height: 1.6;
+        }
+        .git-command {
+            color: #00ff00;
+            font-weight: bold;
+        }
+        .git-output {
+            color: #ffff00;
+        }
+        .git-comment {
+            color: #888;
+            font-style: italic;
+        }
+        .workflow-visual {
+            background: #f0f8ff;
+            border: 2px solid #4682b4;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            text-align: center;
+        }
+        .github-flow {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        .flow-step {
+            background: #333;
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            min-width: 120px;
+            position: relative;
+        }
+        .flow-step::after {
+            content: "→";
+            position: absolute;
+            right: -15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #333;
+            font-weight: bold;
+        }
+        .flow-step:last-child::after {
+            display: none;
+        }
+        .github-ui {
+            background: #f6f8fa;
+            border: 1px solid #d0d7de;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+        .repo-card {
+            background: white;
+            border: 1px solid #d0d7de;
+            border-radius: 6px;
+            padding: 1rem;
+            margin: 0.5rem 0;
+        }
+        .commit-msg {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 6px;
+            padding: 1rem;
+            margin: 1rem 0;
+            font-family: monospace;
+        }
+        .safety-tip {
+            background: #d1ecf1;
+            border: 1px solid #bee5eb;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-left: 4px solid #17a2b8;
+        }
+        @media (max-width: 768px) {
+            .step-comparison {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            .github-flow {
+                flex-direction: column;
+            }
+            .flow-step::after {
+                content: "↓";
+                right: 50%;
+                top: 100%;
+                transform: translateX(50%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="hero-section subpage">
+        <nav class="hero-nav">
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../pages/week1.html" class="active">Week 1</a></li>
+                <li><a href="../pages/week2.html">Week 2</a></li>
+                <li><a href="../pages/week3.html">Week 3</a></li>
+                <li><a href="../pages/week4.html">Week 4</a></li>
+                <li><a href="../pages/demos.html">Demos</a></li>
+                <li><a href="../pages/assignments.html">Assignments</a></li>
+                <li><a href="../pages/schedule.html">Schedule</a></li>
+            </ul>
+            
+            <!-- Hamburger Menu Button -->
+            <div class="hamburger" id="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+        
+        <div class="hero-content">
+            <h1>GitHub Setup Guide</h1>
+        </div>
+    </header>
+    
+    <!-- Mobile Navigation Overlay -->
+    <div class="nav-overlay" id="nav-overlay"></div>
+    
+    <!-- Mobile Navigation Menu -->
+    <div class="mobile-nav" id="mobile-nav">
+        <div class="mobile-nav-header">
+            <h3>Course Navigation</h3>
+        </div>
+        <ul>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../pages/week1.html" class="active">Week 1</a></li>
+            <li><a href="../pages/week2.html">Week 2</a></li>
+            <li><a href="../pages/week3.html">Week 3</a></li>
+            <li><a href="../pages/week4.html">Week 4</a></li>
+            <li class="dropdown">
+                <a href="#">Demos</a>
+                <div class="dropdown-content">
+                    <a href="semantic-html-guide.html">🏗️ HTML Fundamentals</a>
+                    <a href="css-fundamentals-guide.html">🎨 CSS Fundamentals</a>
+                    <a href="js-fundamentals-guide.html">⚡ JavaScript Fundamentals</a>
+                    <a href="github-setup-guide.html">🐙 GitHub Setup</a>
+                    <a href="../pages/demos.html">📚 All Demos</a>
+                </div>
+            </li>
+            <li><a href="../pages/assignments.html">Assignments</a></li>
+            <li><a href="../pages/schedule.html">Schedule</a></li>
+        </ul>
+    </div>
+
+    <main class="container">
+        <nav class="breadcrumb">
+            <a href="../../index.html">Home</a>
+            <span>→</span>
+            <a href="../pages/week1.html">Week 1</a>
+            <span>→</span>
+            <span class="current">GitHub Setup Guide</span>
+        </nav>
+
+        <section>
+            <h2>What is GitHub?</h2>
+            <p>GitHub is a web-based platform that uses Git for version control. It allows you to store your code online, collaborate with others, track changes, and showcase your projects. Think of it as Google Drive for developers!</p>
+            
+            <div class="workflow-visual">
+                <h3>GitHub Workflow Overview</h3>
+                <div class="github-flow">
+                    <div class="flow-step">
+                        <strong>Local Code</strong><br>
+                        <small>Write on your computer</small>
+                    </div>
+                    <div class="flow-step">
+                        <strong>Stage Changes</strong><br>
+                        <small>git add</small>
+                    </div>
+                    <div class="flow-step">
+                        <strong>Commit</strong><br>
+                        <small>git commit</small>
+                    </div>
+                    <div class="flow-step">
+                        <strong>Push to GitHub</strong><br>
+                        <small>git push</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="github-example">
+            <h2>Step 1: Create a GitHub Account</h2>
+            <div class="step-comparison">
+                <div class="step-example github-demo">
+                    <h4>Account Setup</h4>
+                    <ol>
+                        <li>Go to <a href="https://github.com" target="_blank">github.com</a></li>
+                        <li>Click "Sign up" in the top right</li>
+                        <li>Choose a professional username (e.g., "john-doe" or "jdoe-dev")</li>
+                        <li>Use your school email address</li>
+                        <li>Create a strong password</li>
+                        <li>Verify your account via email</li>
+                    </ol>
+                    
+                    <div class="safety-tip">
+                        <strong>💡 Username Tips:</strong>
+                        <ul>
+                            <li>Use lowercase letters and hyphens</li>
+                            <li>Avoid numbers unless meaningful</li>
+                            <li>Keep it professional (employers will see this!)</li>
+                            <li>Make it memorable and easy to type</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="step-example github-demo">
+                    <h4>Student Benefits</h4>
+                    <p>As a student, you get GitHub Pro for free!</p>
+                    <ol>
+                        <li>Go to <a href="https://education.github.com/pack" target="_blank">GitHub Student Developer Pack</a></li>
+                        <li>Click "Get your pack"</li>
+                        <li>Verify your student status with your .edu email</li>
+                        <li>Upload a photo of your student ID if needed</li>
+                    </ol>
+                    
+                    <div class="github-ui">
+                        <h5>🎓 Student Benefits Include:</h5>
+                        <ul>
+                            <li>✓ Unlimited private repositories</li>
+                            <li>✓ GitHub Copilot (AI coding assistant)</li>
+                            <li>✓ GitHub Pages for hosting websites</li>
+                            <li>✓ Access to premium tools and services</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Step 2: Install Git</h2>
+            <div class="step-comparison">
+                <div class="step-example terminal-demo">
+                    <h4>macOS Installation</h4>
+                    <div class="terminal-syntax">
+<span class="git-comment"># Option 1: Install via Homebrew (recommended)</span>
+<span class="git-command">brew install git</span>
+
+<span class="git-comment"># Option 2: Install via Xcode Command Line Tools</span>
+<span class="git-command">xcode-select --install</span>
+
+<span class="git-comment"># Verify installation</span>
+<span class="git-command">git --version</span>
+<span class="git-output">git version 2.39.0</span>
+                    </div>
+                </div>
+                
+                <div class="step-example terminal-demo">
+                    <h4>Windows Installation</h4>
+                    <ol>
+                        <li>Download Git from <a href="https://git-scm.com/download/win" target="_blank">git-scm.com</a></li>
+                        <li>Run the installer with default settings</li>
+                        <li>Choose "Git Bash" as your terminal</li>
+                        <li>Open Command Prompt or Git Bash and verify:</li>
+                    </ol>
+                    <div class="terminal-syntax">
+<span class="git-command">git --version</span>
+<span class="git-output">git version 2.39.0.windows.1</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="github-example">
+            <h2>Step 3: Configure Git</h2>
+            <p>Before using Git, you need to tell it who you are. This information will be attached to your commits.</p>
+            
+            <div class="terminal-syntax">
+<span class="git-comment"># Set your name (use your real name)</span>
+<span class="git-command">git config --global user.name "Your Full Name"</span>
+
+<span class="git-comment"># Set your email (use the same email as your GitHub account)</span>
+<span class="git-command">git config --global user.email "your.email@example.com"</span>
+
+<span class="git-comment"># Set default branch name to 'main'</span>
+<span class="git-command">git config --global init.defaultBranch main</span>
+
+<span class="git-comment"># Verify your configuration</span>
+<span class="git-command">git config --list</span>
+<span class="git-output">user.name=Your Full Name
+user.email=your.email@example.com
+init.defaultbranch=main</span>
+            </div>
+        </section>
+
+        <section>
+            <h2>Step 4: SSH Key Setup (Recommended)</h2>
+            <p>SSH keys provide a secure way to connect to GitHub without entering your password every time.</p>
+            
+            <div class="step-comparison">
+                <div class="step-example terminal-demo">
+                    <h4>Generate SSH Key</h4>
+                    <div class="terminal-syntax">
+<span class="git-comment"># Generate a new SSH key</span>
+<span class="git-command">ssh-keygen -t ed25519 -C "your.email@example.com"</span>
+
+<span class="git-comment"># When prompted for file location, press Enter for default</span>
+<span class="git-comment"># When prompted for passphrase, press Enter (or add one for extra security)</span>
+
+<span class="git-comment"># Start ssh-agent</span>
+<span class="git-command">eval "$(ssh-agent -s)"</span>
+
+<span class="git-comment"># Add your SSH key to ssh-agent</span>
+<span class="git-command">ssh-add ~/.ssh/id_ed25519</span>
+                    </div>
+                </div>
+                
+                <div class="step-example github-demo">
+                    <h4>Add Key to GitHub</h4>
+                    <ol>
+                        <li>Copy your public key:</li>
+                    </ol>
+                    <div class="terminal-syntax">
+<span class="git-comment"># macOS</span>
+<span class="git-command">pbcopy < ~/.ssh/id_ed25519.pub</span>
+
+<span class="git-comment"># Windows (Git Bash)</span>
+<span class="git-command">clip < ~/.ssh/id_ed25519.pub</span>
+
+<span class="git-comment"># Linux</span>
+<span class="git-command">cat ~/.ssh/id_ed25519.pub</span>
+                    </div>
+                    <ol start="2">
+                        <li>Go to GitHub → Settings → SSH and GPG keys</li>
+                        <li>Click "New SSH key"</li>
+                        <li>Give it a title (e.g., "My Laptop")</li>
+                        <li>Paste your key and click "Add SSH key"</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <section class="github-example">
+            <h2>Step 5: Create Your First Repository</h2>
+            <div class="step-comparison">
+                <div class="step-example github-demo">
+                    <h4>On GitHub.com</h4>
+                    <ol>
+                        <li>Click the "+" icon in the top right</li>
+                        <li>Select "New repository"</li>
+                        <li>Name it "my-first-website"</li>
+                        <li>Add a description: "Learning HTML, CSS, and JavaScript"</li>
+                        <li>Make it Public (so you can showcase it!)</li>
+                        <li>Check "Add a README file"</li>
+                        <li>Choose "MIT License" (open source friendly)</li>
+                        <li>Click "Create repository"</li>
+                    </ol>
+                    
+                    <div class="repo-card">
+                        <h5>📁 my-first-website</h5>
+                        <p>Learning HTML, CSS, and JavaScript</p>
+                        <small>🌟 Public • MIT License • 1 commit</small>
+                    </div>
+                </div>
+                
+                <div class="step-example terminal-demo">
+                    <h4>Clone to Your Computer</h4>
+                    <div class="terminal-syntax">
+<span class="git-comment"># Navigate to where you want to store projects</span>
+<span class="git-command">cd ~/Documents</span>
+<span class="git-command">mkdir github-projects</span>
+<span class="git-command">cd github-projects</span>
+
+<span class="git-comment"># Clone your repository (replace 'username' with your GitHub username)</span>
+<span class="git-command">git clone git@github.com:username/my-first-website.git</span>
+
+<span class="git-comment"># Enter the project folder</span>
+<span class="git-command">cd my-first-website</span>
+
+<span class="git-comment"># List files to see what's there</span>
+<span class="git-command">ls -la</span>
+<span class="git-output">.git/    README.md    LICENSE</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Step 6: Basic Git Workflow</h2>
+            <p>Learn the essential commands you'll use daily when working with Git and GitHub.</p>
+            
+            <div class="terminal-syntax">
+<span class="git-comment"># 1. Check the status of your repository</span>
+<span class="git-command">git status</span>
+<span class="git-output">On branch main
+Your branch is up to date with 'origin/main'.</span>
+
+<span class="git-comment"># 2. Create a new file</span>
+<span class="git-command">echo "&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;title&gt;My Website&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&lt;h1&gt;Hello World!&lt;/h1&gt;&lt;/body&gt;&lt;/html&gt;" > index.html</span>
+
+<span class="git-comment"># 3. Check status again</span>
+<span class="git-command">git status</span>
+<span class="git-output">Untracked files:
+  index.html</span>
+
+<span class="git-comment"># 4. Add files to staging area</span>
+<span class="git-command">git add index.html</span>
+<span class="git-comment"># Or add all files:</span>
+<span class="git-command">git add .</span>
+
+<span class="git-comment"># 5. Commit your changes</span>
+<span class="git-command">git commit -m "Add basic HTML homepage"</span>
+
+<span class="git-comment"># 6. Push to GitHub</span>
+<span class="git-command">git push origin main</span>
+            </div>
+        </section>
+
+        <section class="github-example">
+            <h2>Writing Good Commit Messages</h2>
+            <p>Clear commit messages help you and others understand what changed and why.</p>
+            
+            <div class="step-comparison">
+                <div class="step-example" style="border-left: 4px solid #e74c3c;">
+                    <h4>❌ Bad Commit Messages</h4>
+                    <div class="commit-msg">
+git commit -m "fix"
+git commit -m "update"
+git commit -m "stuff"
+git commit -m "asdf"
+git commit -m "final version"
+git commit -m "final version 2"
+                    </div>
+                </div>
+                
+                <div class="step-example" style="border-left: 4px solid var(--success-color);">
+                    <h4>✅ Good Commit Messages</h4>
+                    <div class="commit-msg">
+git commit -m "Add navigation menu to header"
+git commit -m "Fix responsive layout on mobile devices"
+git commit -m "Update contact form validation"
+git commit -m "Add CSS animations to hero section"
+git commit -m "Remove unused JavaScript functions"
+                    </div>
+                    
+                    <strong>💡 Tips for good commits:</strong>
+                    <ul>
+                        <li>Start with a verb (Add, Fix, Update, Remove)</li>
+                        <li>Keep it under 50 characters</li>
+                        <li>Be specific about what changed</li>
+                        <li>Use present tense</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Essential Git Commands Cheat Sheet</h2>
+            <div class="github-example">
+                <div class="terminal-syntax">
+<span class="git-comment"># Repository basics</span>
+<span class="git-command">git clone [url]</span>          <span class="git-comment"># Download a repository</span>
+<span class="git-command">git status</span>              <span class="git-comment"># Check what's changed</span>
+<span class="git-command">git log --oneline</span>       <span class="git-comment"># See commit history</span>
+
+<span class="git-comment"># Making changes</span>
+<span class="git-command">git add [file]</span>          <span class="git-comment"># Stage specific file</span>
+<span class="git-command">git add .</span>               <span class="git-comment"># Stage all changes</span>
+<span class="git-command">git commit -m "message"</span> <span class="git-comment"># Commit staged changes</span>
+<span class="git-command">git push</span>                <span class="git-comment"># Upload to GitHub</span>
+
+<span class="git-comment"># Getting updates</span>
+<span class="git-command">git pull</span>                <span class="git-comment"># Download latest changes</span>
+<span class="git-command">git fetch</span>               <span class="git-comment"># Check for updates (doesn't merge)</span>
+
+<span class="git-comment"># Branching (advanced)</span>
+<span class="git-command">git branch</span>              <span class="git-comment"># List branches</span>
+<span class="git-command">git checkout -b [name]</span>  <span class="git-comment"># Create new branch</span>
+<span class="git-command">git merge [branch]</span>      <span class="git-comment"># Merge branch</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="github-example">
+            <h2>GitHub Pages: Host Your Website for Free</h2>
+            <p>GitHub Pages lets you turn any repository into a live website!</p>
+            
+            <div class="step-comparison">
+                <div class="step-example github-demo">
+                    <h4>Enable GitHub Pages</h4>
+                    <ol>
+                        <li>Go to your repository on GitHub.com</li>
+                        <li>Click the "Settings" tab</li>
+                        <li>Scroll down to "Pages" in the left sidebar</li>
+                        <li>Under "Source", select "Deploy from a branch"</li>
+                        <li>Choose "main" branch and "/ (root)" folder</li>
+                        <li>Click "Save"</li>
+                        <li>Your site will be available at:<br>
+                            <code>https://username.github.io/repository-name</code></li>
+                    </ol>
+                </div>
+                
+                <div class="step-example github-demo">
+                    <h4>File Structure for GitHub Pages</h4>
+                    <div class="terminal-syntax">
+my-first-website/
+├── index.html          <span class="git-comment"># Homepage (required)</span>
+├── about.html          <span class="git-comment"># Other pages</span>
+├── style.css           <span class="git-comment"># Stylesheets</span>
+├── script.js           <span class="git-comment"># JavaScript</span>
+├── images/             <span class="git-comment"># Image folder</span>
+│   ├── logo.png
+│   └── photo.jpg
+└── README.md           <span class="git-comment"># Project description</span>
+                    </div>
+                    
+                    <div class="safety-tip">
+                        <strong>📝 Note:</strong> Changes can take a few minutes to appear on your live site. GitHub Pages automatically rebuilds when you push to the main branch.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Troubleshooting Common Issues</h2>
+            <div class="step-comparison">
+                <div class="step-example terminal-demo">
+                    <h4>🚨 Common Problems</h4>
+                    <div class="terminal-syntax">
+<span class="git-comment"># Problem: "Permission denied (publickey)"</span>
+<span class="git-command">ssh -T git@github.com</span>
+<span class="git-comment"># Solution: Check SSH key setup</span>
+
+<span class="git-comment"># Problem: "Author identity unknown"</span>
+<span class="git-command">git config --global user.name "Your Name"</span>
+<span class="git-command">git config --global user.email "email@example.com"</span>
+
+<span class="git-comment"># Problem: "Repository not found"</span>
+<span class="git-command">git remote -v</span>
+<span class="git-comment"># Check if URL is correct</span>
+
+<span class="git-comment"># Problem: Merge conflicts</span>
+<span class="git-command">git status</span>
+<span class="git-comment"># Edit conflicted files, then:</span>
+<span class="git-command">git add .</span>
+<span class="git-command">git commit -m "Resolve merge conflict"</span>
+                    </div>
+                </div>
+                
+                <div class="step-example github-demo">
+                    <h4>🆘 Getting Help</h4>
+                    <ul>
+                        <li><strong>GitHub Docs:</strong> <a href="https://docs.github.com" target="_blank">docs.github.com</a></li>
+                        <li><strong>Git Handbook:</strong> <a href="https://guides.github.com/introduction/git-handbook/" target="_blank">GitHub Guides</a></li>
+                        <li><strong>Interactive Tutorial:</strong> <a href="https://learngitbranching.js.org" target="_blank">Learn Git Branching</a></li>
+                        <li><strong>Cheat Sheet:</strong> <a href="https://education.github.com/git-cheat-sheet-education.pdf" target="_blank">Git Cheat Sheet</a></li>
+                    </ul>
+                    
+                    <div class="safety-tip">
+                        <strong>💡 Pro Tip:</strong> When stuck, try <code>git status</code> first. It often tells you exactly what to do next!
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="github-example">
+            <h2>Next Steps & Best Practices</h2>
+            <div class="activity-checklist">
+                <label><input type="checkbox"> Create your first repository</label>
+                <label><input type="checkbox"> Set up SSH keys for easy access</label>
+                <label><input type="checkbox"> Practice the basic Git workflow daily</label>
+                <label><input type="checkbox"> Write descriptive commit messages</label>
+                <label><input type="checkbox"> Enable GitHub Pages for your projects</label>
+                <label><input type="checkbox"> Explore other students' public repositories</label>
+                <label><input type="checkbox"> Start building a portfolio of projects</label>
+                <label><input type="checkbox"> Use GitHub's issue tracker for project planning</label>
+            </div>
+            
+            <div class="safety-tip">
+                <strong>🎯 Course Goal:</strong> By the end of this course, you should have at least 3-4 repositories showcasing your HTML, CSS, and JavaScript skills. Employers love seeing active GitHub profiles!
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>🐙 GitHub Setup Guide</h3>
+                <p>Version control and project hosting for web developers</p>
+                <p>From setup to deployment with GitHub Pages</p>
+                <div class="footer-tools">
+                    <span class="tool-tag">Git</span>
+                    <span class="tool-tag">GitHub</span>
+                    <span class="tool-tag">SSH</span>
+                    <span class="tool-tag">Pages</span>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>🗓️ Quick Navigation</h3>
+                <ul>
+                    <li><a href="../../index.html">Course Home</a></li>
+                    <li><a href="../pages/week1.html">Week 1: Setup & Tools</a></li>
+                    <li><a href="../pages/assignments.html">Assignments</a></li>
+                    <li><a href="../pages/schedule.html">Schedule</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>📖 Related Resources</h3>
+                <ul>
+                    <li><a href="vscode-setup-guide.html">VS Code Setup Guide</a></li>
+                    <li><a href="semantic-html-guide.html">HTML Fundamentals Guide</a></li>
+                    <li><a href="css-fundamentals-guide.html">CSS Fundamentals Guide</a></li>
+                    <li><a href="js-fundamentals-guide.html">JavaScript Fundamentals Guide</a></li>
+                    <li><a href="https://docs.github.com" target="_blank">GitHub Documentation</a></li>
+                    <li><a href="https://git-scm.com/doc" target="_blank">Git Documentation</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-social">
+                <a href="#" class="social-link" title="Course GitHub">⚡</a>
+                <a href="#" class="social-link" title="Course Discord">💬</a>
+                <a href="#" class="social-link" title="Course Support">📧</a>
+            </div>
+            <p>&copy; 2025 MALA60970 Web Authoring Course. Building the future of web development education.</p>
+        </div>
+    </footer>
+    
+    <script src="../js/main.js"></script>
+    <script src="../js/course-navigation.js"></script>
+</body>
+</html>
