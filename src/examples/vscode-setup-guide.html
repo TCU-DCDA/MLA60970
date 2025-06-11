@@ -12,11 +12,11 @@
             border-radius: 12px;
             padding: 2rem;
             margin: 1.5rem 0;
-            border-left: 4px solid var(--primary-color);
+            border-left: 4px solid #5b4465;
             box-shadow: 0 4px 6px rgba(0,0,0,0.07);
         }
         .step-number {
-            background: var(--primary-color);
+            background: #5b4465;
             color: white;
             width: 30px;
             height: 30px;
@@ -39,7 +39,7 @@
         .extension-icon {
             width: 40px;
             height: 40px;
-            background: var(--secondary-color);
+            background: #5b4465;
             border-radius: 8px;
             display: flex;
             align-items: center;
@@ -50,12 +50,50 @@
     </style>
 </head>
 <body>
-    <header class="page-header">
-        <div class="header-content">
+    <header class="hero-section subpage">
+        <nav class="hero-nav">
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../pages/week1.html" class="active">Week 1</a></li>
+                <li><a href="../pages/week2.html">Week 2</a></li>
+                <li><a href="../pages/week3.html">Week 3</a></li>
+                <li><a href="../pages/week4.html">Week 4</a></li>
+                <li><a href="../pages/assignments.html">Assignments</a></li>
+                <li><a href="../pages/schedule.html">Schedule</a></li>
+            </ul>
+            
+            <!-- Hamburger Menu Button -->
+            <div class="hamburger" id="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+        
+        <div class="hero-content">
             <h1>VS Code Setup Guide</h1>
             <p class="course-subtitle">Complete development environment setup for web authoring</p>
         </div>
     </header>
+    
+    <!-- Mobile Navigation Overlay -->
+    <div class="nav-overlay" id="nav-overlay"></div>
+    
+    <!-- Mobile Navigation Menu -->
+    <div class="mobile-nav" id="mobile-nav">
+        <div class="mobile-nav-header">
+            <h3>Course Navigation</h3>
+        </div>
+        <ul>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../pages/week1.html" class="active">Week 1</a></li>
+            <li><a href="../pages/week2.html">Week 2</a></li>
+            <li><a href="../pages/week3.html">Week 3</a></li>
+            <li><a href="../pages/week4.html">Week 4</a></li>
+            <li><a href="../pages/assignments.html">Assignments</a></li>
+            <li><a href="../pages/schedule.html">Schedule</a></li>
+        </ul>
+    </div>
 
     <main class="container">
         <nav class="breadcrumb">
@@ -176,11 +214,50 @@
                     </ul>
                 </div>
             </div>
-        </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 MALA60970 Web Authoring Course. All rights reserved.</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>🛠️ VS Code Setup Guide</h3>
+                <p>Essential development environment setup</p>
+                <p>Complete configuration for web authoring</p>
+                <div class="footer-tools">
+                    <span class="tool-tag">VS Code</span>
+                    <span class="tool-tag">Live Server</span>
+                    <span class="tool-tag">Prettier</span>
+                    <span class="tool-tag">HTML/CSS</span>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>🗓️ Quick Navigation</h3>
+                <ul>
+                    <li><a href="../../index.html">Course Home</a></li>
+                    <li><a href="../pages/week1.html">Week 1: HTML & Design</a></li>
+                    <li><a href="../pages/assignments.html">Assignments</a></li>
+                    <li><a href="../pages/schedule.html">Schedule</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>📖 Related Resources</h3>
+                <ul>
+                    <li><a href="semantic-html-guide.html">Semantic HTML Guide</a></li>
+                    <li><a href="html-basics">HTML Basics</a></li>
+                    <li><a href="https://code.visualstudio.com/docs" target="_blank">VS Code Documentation</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-social">
+                <a href="#" class="social-link" title="Course GitHub">⚡</a>
+                <a href="#" class="social-link" title="Course Discord">💬</a>
+                <a href="#" class="social-link" title="Course Support">📧</a>
+            </div>
+            <p>&copy; 2025 MALA60970 Web Authoring Course. Building the future of web development education.</p>
+        </div>
     </footer>
     
     <script src="../js/main.js"></script>

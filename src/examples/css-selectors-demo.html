@@ -21,11 +21,35 @@
             font-family: 'Courier New', monospace;
             line-height: 1.6;
         }
+        .css-panel h3 {
+            color: #ffffff;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-family: system-ui, -apple-system, sans-serif;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+        .code-comment {
+            color: #a0aec0;
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+        .code-example {
+            color: #e2e8f0;
+            border-left: 3px solid #5b4465;
+            padding-left: 1rem;
+            margin: 0.5rem 0;
+        }
         .html-panel {
             background: white;
             border-radius: 8px;
             padding: 1.5rem;
             border: 1px solid var(--border-color);
+        }
+        .html-panel h3 {
+            color: #2d3748;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-family: system-ui, -apple-system, sans-serif;
         }
         .selector-example {
             margin: 1rem 0;
@@ -34,11 +58,11 @@
             background: var(--light-gray);
         }
         .active-demo {
-            border: 2px solid var(--primary-color);
-            background: rgba(139, 92, 246, 0.1);
+            border: 2px solid #5b4465;
+            background: rgba(91, 68, 101, 0.1);
         }
         .selector-button {
-            background: var(--primary-color);
+            background: #5b4465;
             color: white;
             border: none;
             padding: 0.5rem 1rem;
@@ -46,9 +70,11 @@
             cursor: pointer;
             margin: 0.25rem;
             font-size: 0.9rem;
+            transition: all 0.3s ease;
         }
         .selector-button:hover {
-            background: var(--secondary-color);
+            background: rgba(91, 68, 101, 0.8);
+            transform: translateY(-1px);
         }
         .selector-button.active {
             background: var(--success-color);
@@ -64,6 +90,70 @@
             background: yellow !important;
             border-color: orange !important;
             transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
+            position: relative;
+        }
+        .highlighted::after {
+            content: "✓ Selected";
+            position: absolute;
+            top: -25px;
+            right: -10px;
+            background: #5b4465;
+            color: white;
+            font-size: 0.7rem;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: sans-serif;
+        }
+        .progress-indicator {
+            background: var(--light-gray);
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            text-align: center;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 0.5rem 0;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #5b4465, var(--success-color));
+            transition: width 0.3s ease;
+            width: 0%;
+        }
+        .feedback-panel {
+            background: #e8f5e8;
+            border: 1px solid #4caf50;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+            display: none;
+            animation: slideIn 0.3s ease-out;
+        }
+        .feedback-panel.show {
+            display: block;
+        }
+        .feedback-panel h4 {
+            color: #2e7d32;
+            margin: 0 0 0.5rem 0;
+            font-size: 1rem;
+        }
+        .feedback-panel p {
+            margin: 0.25rem 0;
+            color: #1b5e20;
+        }
+        .feedback-panel .element-count {
+            font-weight: bold;
+            color: #2e7d32;
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         @media (max-width: 768px) {
             .demo-container {
@@ -74,12 +164,70 @@
     </style>
 </head>
 <body>
-    <header class="page-header">
-        <div class="header-content">
+    <header class="hero-section subpage">
+        <nav class="hero-nav">
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../pages/week1.html">Week 1</a></li>
+                <li><a href="../pages/week2.html" class="active">Week 2</a></li>
+                <li><a href="../pages/week3.html">Week 3</a></li>
+                <li><a href="../pages/week4.html">Week 4</a></li>
+                <li class="dropdown">
+                    <a href="#">Demos</a>
+                    <div class="dropdown-content">
+                        <a href="html-fundamentals-demo.html">🏗️ HTML Fundamentals</a>
+                        <a href="css-selectors-demo.html">🎯 CSS Selectors</a>
+                        <a href="js-interactive-demo.html">⚡ JavaScript Basics</a>
+                        <a href="semantic-html-guide.html">📖 Semantic HTML Guide</a>
+                        <a href="vscode-setup-guide.html">🛠️ VS Code Setup</a>
+                    </div>
+                </li>
+                <li><a href="../pages/assignments.html">Assignments</a></li>
+                <li><a href="../pages/schedule.html">Schedule</a></li>
+            </ul>
+            
+            <!-- Hamburger Menu Button -->
+            <div class="hamburger" id="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+        
+        <div class="hero-content">
             <h1>CSS Selectors Interactive Demo</h1>
             <p class="course-subtitle">Practice selecting HTML elements with different CSS selector types</p>
         </div>
     </header>
+    
+    <!-- Mobile Navigation Overlay -->
+    <div class="nav-overlay" id="nav-overlay"></div>
+    
+    <!-- Mobile Navigation Menu -->
+    <div class="mobile-nav" id="mobile-nav">
+        <div class="mobile-nav-header">
+            <h3>Course Navigation</h3>
+        </div>
+        <ul>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../pages/week1.html">Week 1</a></li>
+            <li><a href="../pages/week2.html" class="active">Week 2</a></li>
+            <li><a href="../pages/week3.html">Week 3</a></li>
+            <li><a href="../pages/week4.html">Week 4</a></li>
+            <li class="dropdown">
+                <a href="#">Demos</a>
+                <div class="dropdown-content">
+                    <a href="html-fundamentals-demo.html">🏗️ HTML Fundamentals</a>
+                    <a href="css-selectors-demo.html">🎯 CSS Selectors</a>
+                    <a href="js-interactive-demo.html">⚡ JavaScript Basics</a>
+                    <a href="semantic-html-guide.html">📖 Semantic HTML Guide</a>
+                    <a href="vscode-setup-guide.html">🛠️ VS Code Setup</a>
+                </div>
+            </li>
+            <li><a href="../pages/assignments.html">Assignments</a></li>
+            <li><a href="../pages/schedule.html">Schedule</a></li>
+        </ul>
+    </div>
 
     <main class="container">
         <nav class="breadcrumb">
@@ -103,17 +251,25 @@
                 <button class="selector-button" data-selector="pseudo">Pseudo-class</button>
                 <button class="selector-button" onclick="clearHighlights()">Clear All</button>
             </div>
+            
+            <div class="progress-indicator">
+                <h4>Learning Progress</h4>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+                <p><span id="tested-count">0</span> of 6 selector types tested</p>
+            </div>
         </section>
 
         <div class="demo-container">
             <div class="css-panel">
                 <h3>Current CSS Rule:</h3>
                 <div id="css-display">
-/* Click a selector button to see the CSS rule */
-selector {
+<div class="code-comment">/* Click a selector button to see the CSS rule */</div>
+<div class="code-example">selector {
     background: yellow;
     border-color: orange;
-}
+}</div>
                 </div>
             </div>
 
@@ -152,6 +308,13 @@ selector {
                     </footer>
                 </div>
             </div>
+        </div>
+
+        <div class="feedback-panel" id="feedback-panel">
+            <h4 id="feedback-title">Selector Feedback</h4>
+            <p id="feedback-description"></p>
+            <p id="feedback-count" class="element-count"></p>
+            <p id="feedback-purpose"></p>
         </div>
 
         <section class="selector-example">
@@ -206,36 +369,91 @@ selector {
     </main>
 
     <footer>
-        <p>&copy; 2025 MALA60970 Web Authoring Course. All rights reserved.</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>🎯 CSS Selectors Demo</h3>
+                <p>Interactive practice with CSS selector types</p>
+                <p>Learn how to target HTML elements effectively</p>
+                <div class="footer-tools">
+                    <span class="tool-tag">CSS Selectors</span>
+                    <span class="tool-tag">Interactive Demo</span>
+                    <span class="tool-tag">Element Targeting</span>
+                    <span class="tool-tag">CSS Practice</span>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>🗓️ Quick Navigation</h3>
+                <ul>
+                    <li><a href="../../index.html">Course Home</a></li>
+                    <li><a href="../pages/week2.html">Week 2: CSS & Layout</a></li>
+                    <li><a href="../pages/assignments.html">Assignments</a></li>
+                    <li><a href="../pages/schedule.html">Schedule</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>📖 Related Resources</h3>
+                <ul>
+                    <li><a href="semantic-html-guide.html">Semantic HTML Guide</a></li>
+                    <li><a href="css-demos">CSS Demos</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors" target="_blank">MDN CSS Selectors</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-social">
+                <a href="#" class="social-link" title="Course GitHub">⚡</a>
+                <a href="#" class="social-link" title="Course Discord">💬</a>
+                <a href="#" class="social-link" title="Course Support">📧</a>
+            </div>
+            <p>&copy; 2025 MALA60970 Web Authoring Course. Building the future of web development education.</p>
+        </div>
     </footer>
     
     <script>
         const selectorExamples = {
             element: {
                 css: 'p {\n    background: yellow;\n    border-color: orange;\n}',
-                selector: 'p'
+                selector: 'p',
+                description: 'Selects ALL paragraph elements on the page'
             },
             class: {
                 css: '.highlight {\n    background: yellow;\n    border-color: orange;\n}',
-                selector: '.highlight'
+                selector: '.highlight',
+                description: 'Selects elements with class="highlight"'
             },
             id: {
                 css: '#special-box {\n    background: yellow;\n    border-color: orange;\n}',
-                selector: '#special-box'
+                selector: '#special-box',
+                description: 'Selects the element with id="special-box"'
             },
             descendant: {
                 css: 'nav a {\n    background: yellow;\n    border-color: orange;\n}',
-                selector: 'nav a'
+                selector: 'nav a',
+                description: 'Selects ALL links inside navigation elements'
             },
             child: {
                 css: 'section > h2 {\n    background: yellow;\n    border-color: orange;\n}',
-                selector: 'section > h2'
+                selector: 'section > h2',
+                description: 'Selects h2 elements that are DIRECT children of sections'
             },
             pseudo: {
                 css: 'a:first-child {\n    background: yellow;\n    border-color: orange;\n}',
-                selector: 'a:first-child'
+                selector: 'a:first-child',
+                description: 'Selects links that are the first child of their parent'
             }
         };
+
+        let testedSelectors = new Set();
+
+        function updateProgress() {
+            const count = testedSelectors.size;
+            const percentage = (count / 6) * 100;
+            document.getElementById('progress-fill').style.width = percentage + '%';
+            document.getElementById('tested-count').textContent = count;
+        }
 
         function clearHighlights() {
             document.querySelectorAll('.highlighted').forEach(el => {
@@ -244,15 +462,39 @@ selector {
             document.querySelectorAll('.selector-button').forEach(btn => {
                 btn.classList.remove('active');
             });
-            document.getElementById('css-display').textContent = 
-                '/* Click a selector button to see the CSS rule */\nselector {\n    background: yellow;\n    border-color: orange;\n}';
+            document.getElementById('css-display').innerHTML = 
+                `<div class="code-comment">/* Click a selector button to see the CSS rule */</div>
+<div class="code-example">selector {
+    background: yellow;
+    border-color: orange;
+}</div>`;
+            
+            // Hide feedback panel
+            document.getElementById('feedback-panel').classList.remove('show');
+        }
+
+        function showFeedback(selector, description, purpose, count) {
+            const feedbackPanel = document.getElementById('feedback-panel');
+            document.getElementById('feedback-title').textContent = `Selector: ${selector}`;
+            document.getElementById('feedback-description').textContent = description;
+            document.getElementById('feedback-count').textContent = `Found ${count} element${count !== 1 ? 's' : ''} matching "${selector}"`;
+            document.getElementById('feedback-purpose').textContent = purpose;
+            
+            feedbackPanel.classList.add('show');
         }
 
         function highlightElements(selector, type) {
             clearHighlights();
             
-            // Update CSS display
-            document.getElementById('css-display').textContent = selectorExamples[type].css;
+            // Track that this selector type has been tested
+            testedSelectors.add(type);
+            updateProgress();
+            
+            // Update CSS display with description
+            const example = selectorExamples[type];
+            document.getElementById('css-display').innerHTML = 
+                `<div class="code-comment">/* ${example.description} */</div>
+<div class="code-example">${example.css}</div>`;
             
             // Highlight matching elements
             try {
@@ -260,21 +502,32 @@ selector {
                 elements.forEach(el => {
                     el.classList.add('highlighted');
                 });
+                
+                // Show count of selected elements
+                const count = elements.length;
+                showFeedback(selector, example.description, `Purpose: ${example.description}`, count);
+                
             } catch (e) {
                 console.log('Selector not valid for demo');
+                showFeedback(selector, 'Invalid selector syntax', 'Please check the selector format', 0);
             }
             
             // Mark button as active
             document.querySelector(`[data-selector="${type}"]`).classList.add('active');
         }
 
-        // Add event listeners
-        document.querySelectorAll('.selector-button[data-selector]').forEach(button => {
-            button.addEventListener('click', () => {
-                const selectorType = button.dataset.selector;
-                const selector = selectorExamples[selectorType].selector;
-                highlightElements(selector, selectorType);
+        // Add event listeners when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.selector-button[data-selector]').forEach(button => {
+                button.addEventListener('click', () => {
+                    const selectorType = button.dataset.selector;
+                    const selector = selectorExamples[selectorType].selector;
+                    highlightElements(selector, selectorType);
+                });
             });
+            
+            // Initialize progress
+            updateProgress();
         });
     </script>
     <script src="../js/main.js"></script>

@@ -7,7 +7,42 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Handle responsive navigation if needed
     initResponsiveNavigation();
+    
+    // Initialize dropdown functionality
+    initDropdownMenus();
 });
+
+function initDropdownMenus() {
+    // Handle mobile dropdown toggles
+    const mobileDropdowns = document.querySelectorAll('.mobile-nav .dropdown > a');
+    mobileDropdowns.forEach(dropdown => {
+        dropdown.addEventListener('click', function(e) {
+            e.preventDefault();
+            const parentLi = this.parentElement;
+            parentLi.classList.toggle('active');
+            
+            // Close other dropdowns
+            mobileDropdowns.forEach(otherDropdown => {
+                if (otherDropdown !== this) {
+                    otherDropdown.parentElement.classList.remove('active');
+                }
+            });
+        });
+    });
+    
+    // Handle desktop dropdown hover behavior (CSS handles this, but we can add click for mobile)
+    const desktopDropdowns = document.querySelectorAll('.hero-nav .dropdown > a');
+    desktopDropdowns.forEach(dropdown => {
+        dropdown.addEventListener('click', function(e) {
+            // Only prevent default on mobile
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                const parentLi = this.parentElement;
+                parentLi.classList.toggle('active');
+            }
+        });
+    });
+}
 
 function setActiveNavigation() {
     const currentPath = window.location.pathname;

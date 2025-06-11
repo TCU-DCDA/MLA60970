@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Fundamentals Interactive Demo - MALA60970</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/course.css">
+    <style>
+        .demo-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .code-panel {
+            background: #2d3748;
+            color: #e2e8f0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            font-family: 'Courier New', monospace;
+            line-height: 1.6;
+            position: relative;
+        }
+        .code-panel h3 {
+            color: #ffffff;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-family: system-ui, -apple-system, sans-serif;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+        .code-comment {
+            color: #a0aec0;
+            font-style: italic;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+        .code-example {
+            color: #e2e8f0;
+            border-left: 3px solid #5b4465;
+            padding-left: 1rem;
+            margin: 0.5rem 0;
+            white-space: pre-wrap;
+        }
+        .preview-panel {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            position: relative;
+        }
+        .preview-panel h3 {
+            color: #2d3748;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+        .html-tag-button {
+            background: #5b4465;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 0.25rem;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            font-family: 'Courier New', monospace;
+        }
+        .html-tag-button:hover {
+            background: rgba(91, 68, 101, 0.8);
+            transform: translateY(-1px);
+        }
+        .html-tag-button.active {
+            background: var(--success-color);
+        }
+        .html-element {
+            margin: 0.5rem 0;
+            padding: 0.5rem;
+            border-radius: 4px;
+            border: 1px solid #e0e0e0;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .highlighted-element {
+            background: rgba(255, 193, 7, 0.2) !important;
+            border-color: #ffc107 !important;
+            box-shadow: 0 0 10px rgba(255, 193, 7, 0.4);
+            transform: scale(1.02);
+        }
+        .highlighted-element::after {
+            content: "👆 This element";
+            position: absolute;
+            top: -30px;
+            right: -10px;
+            background: #5b4465;
+            color: white;
+            font-size: 0.7rem;
+            padding: 4px 8px;
+            border-radius: 3px;
+            font-family: sans-serif;
+            z-index: 10;
+        }
+        .code-highlight {
+            background: rgba(255, 193, 7, 0.3);
+            padding: 2px 4px;
+            border-radius: 3px;
+            animation: pulse 1s ease-in-out;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        .progress-indicator {
+            background: var(--light-gray);
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            text-align: center;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 0.5rem 0;
+        }
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #5b4465, var(--success-color));
+            transition: width 0.3s ease;
+            width: 0%;
+        }
+        .feedback-panel {
+            background: #e8f5e8;
+            border: 1px solid #4caf50;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+            display: none;
+            animation: slideIn 0.3s ease-out;
+        }
+        .feedback-panel.show {
+            display: block;
+        }
+        .feedback-panel h4 {
+            color: #2e7d32;
+            margin: 0 0 0.5rem 0;
+            font-size: 1rem;
+        }
+        .feedback-panel p {
+            margin: 0.25rem 0;
+            color: #1b5e20;
+        }
+        .feedback-panel .element-count {
+            font-weight: bold;
+            color: #2e7d32;
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .tag-category {
+            margin: 1.5rem 0;
+        }
+        .tag-category h4 {
+            color: #5b4465;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        .demo-website {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+        .demo-website header {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-bottom: 1px solid #ddd;
+        }
+        .demo-website main {
+            padding: 1rem;
+        }
+        .demo-website footer {
+            background: #f8f9fa;
+            padding: 0.5rem 1rem;
+            border-top: 1px solid #ddd;
+            font-size: 0.9rem;
+        }
+        .structure-explanation {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 4px 4px 0;
+        }
+        .syntax-box {
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 1rem;
+            font-family: 'Courier New', monospace;
+            margin: 0.5rem 0;
+            white-space: pre-wrap;
+        }
+        @media (max-width: 768px) {
+            .demo-container {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="hero-section subpage">
+        <nav class="hero-nav">
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../pages/week1.html" class="active">Week 1</a></li>
+                <li><a href="../pages/week2.html">Week 2</a></li>
+                <li><a href="../pages/week3.html">Week 3</a></li>
+                <li><a href="../pages/week4.html">Week 4</a></li>
+                <li class="dropdown">
+                    <a href="#">Demos</a>
+                    <div class="dropdown-content">
+                        <a href="html-fundamentals-demo.html">🏗️ HTML Fundamentals</a>
+                        <a href="css-selectors-demo.html">🎯 CSS Selectors</a>
+                        <a href="js-interactive-demo.html">⚡ JavaScript Basics</a>
+                        <a href="semantic-html-guide.html">📖 Semantic HTML Guide</a>
+                        <a href="vscode-setup-guide.html">🛠️ VS Code Setup</a>
+                    </div>
+                </li>
+                <li><a href="../pages/assignments.html">Assignments</a></li>
+                <li><a href="../pages/schedule.html">Schedule</a></li>
+            </ul>
+            
+            <!-- Hamburger Menu Button -->
+            <div class="hamburger" id="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+        
+        <div class="hero-content">
+            <h1>HTML Fundamentals Interactive Demo</h1>
+            <p class="course-subtitle">Learn HTML tagging structure and semantic markup</p>
+        </div>
+    </header>
+    
+    <!-- Mobile Navigation Overlay -->
+    <div class="nav-overlay" id="nav-overlay"></div>
+    
+    <!-- Mobile Navigation Menu -->
+    <div class="mobile-nav" id="mobile-nav">
+        <div class="mobile-nav-header">
+            <h3>Course Navigation</h3>
+        </div>
+        <ul>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../pages/week1.html" class="active">Week 1</a></li>
+            <li><a href="../pages/week2.html">Week 2</a></li>
+            <li><a href="../pages/week3.html">Week 3</a></li>
+            <li><a href="../pages/week4.html">Week 4</a></li>
+            <li class="dropdown">
+                <a href="#">Demos</a>
+                <div class="dropdown-content">
+                    <a href="html-fundamentals-demo.html">🏗️ HTML Fundamentals</a>
+                    <a href="css-selectors-demo.html">🎯 CSS Selectors</a>
+                    <a href="js-interactive-demo.html">⚡ JavaScript Basics</a>
+                    <a href="semantic-html-guide.html">📖 Semantic HTML Guide</a>
+                    <a href="vscode-setup-guide.html">🛠️ VS Code Setup</a>
+                </div>
+            </li>
+            <li><a href="../pages/assignments.html">Assignments</a></li>
+            <li><a href="../pages/schedule.html">Schedule</a></li>
+        </ul>
+    </div>
+
+    <main class="container">
+        <nav class="breadcrumb">
+            <a href="../../index.html">Home</a>
+            <span>→</span>
+            <a href="../pages/week1.html">Week 1</a>
+            <span>→</span>
+            <span class="current">HTML Fundamentals Demo</span>
+        </nav>
+
+        <section>
+            <h2>Explore HTML Elements</h2>
+            <p>Click the buttons below to see how different HTML elements work in a real webpage:</p>
+            
+            <div class="tag-category">
+                <h4>📄 Document Structure</h4>
+                <button class="html-tag-button" data-element="html">html</button>
+                <button class="html-tag-button" data-element="head">head</button>
+                <button class="html-tag-button" data-element="body">body</button>
+                <button class="html-tag-button" data-element="title">title</button>
+            </div>
+            
+            <div class="tag-category">
+                <h4>🏗️ Semantic Layout</h4>
+                <button class="html-tag-button" data-element="header">header</button>
+                <button class="html-tag-button" data-element="nav">nav</button>
+                <button class="html-tag-button" data-element="main">main</button>
+                <button class="html-tag-button" data-element="section">section</button>
+                <button class="html-tag-button" data-element="article">article</button>
+                <button class="html-tag-button" data-element="aside">aside</button>
+                <button class="html-tag-button" data-element="footer">footer</button>
+            </div>
+            
+            <div class="tag-category">
+                <h4>📝 Content Elements</h4>
+                <button class="html-tag-button" data-element="h1">h1-h6</button>
+                <button class="html-tag-button" data-element="p">p</button>
+                <button class="html-tag-button" data-element="a">a</button>
+                <button class="html-tag-button" data-element="img">img</button>
+                <button class="html-tag-button" data-element="ul">ul/ol</button>
+                <button class="html-tag-button" data-element="div">div</button>
+                <button class="html-tag-button" data-element="span">span</button>
+            </div>
+            
+            <div class="tag-category">
+                <h4>🎛️ Interactive Elements</h4>
+                <button class="html-tag-button" data-element="form">form</button>
+                <button class="html-tag-button" data-element="input">input</button>
+                <button class="html-tag-button" data-element="button">button</button>
+                <button class="html-tag-button" data-element="textarea">textarea</button>
+            </div>
+            
+            <button class="html-tag-button" onclick="clearHighlights()" style="background: #dc3545;">Clear All</button>
+            
+            <div class="progress-indicator">
+                <h4>Learning Progress</h4>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+                <p><span id="tested-count">0</span> of 18 element types explored</p>
+            </div>
+        </section>
+
+        <div class="demo-container">
+            <div class="code-panel">
+                <h3>HTML Code Structure:</h3>
+                <div id="html-display">
+<div class="code-comment">&lt;!-- Click an element button to see its HTML structure --&gt;</div>
+<div class="code-example">&lt;element attribute="value"&gt;
+    Content goes here
+&lt;/element&gt;</div>
+                </div>
+            </div>
+
+            <div class="preview-panel">
+                <h3>Live Website Preview:</h3>
+                <div class="demo-website" id="demo-preview">
+                    <header class="html-element" data-element-type="header">
+                        <h1 class="html-element" data-element-type="h1">🌟 My Awesome Website</h1>
+                        <nav class="html-element" data-element-type="nav">
+                            <a href="#" class="html-element" data-element-type="a">Home</a>
+                            <a href="#" class="html-element" data-element-type="a">About</a>
+                            <a href="#" class="html-element" data-element-type="a">Contact</a>
+                        </nav>
+                    </header>
+                    
+                    <main class="html-element" data-element-type="main">
+                        <section class="html-element" data-element-type="section">
+                            <h2 class="html-element" data-element-type="h1">Welcome Section</h2>
+                            <p class="html-element" data-element-type="p">
+                                This is a <span class="html-element" data-element-type="span">span element</span> 
+                                inside a paragraph. Here's an 
+                                <a href="#" class="html-element" data-element-type="a">example link</a>.
+                            </p>
+                            
+                            <div class="html-element" data-element-type="div">
+                                <h3 class="html-element" data-element-type="h1">Features List</h3>
+                                <ul class="html-element" data-element-type="ul">
+                                    <li>Responsive Design</li>
+                                    <li>Modern Layout</li>
+                                    <li>Semantic HTML</li>
+                                </ul>
+                            </div>
+                        </section>
+                        
+                        <article class="html-element" data-element-type="article">
+                            <h2 class="html-element" data-element-type="h1">Article Title</h2>
+                            <p class="html-element" data-element-type="p">This article demonstrates semantic HTML structure.</p>
+                        </article>
+                        
+                        <aside class="html-element" data-element-type="aside">
+                            <h3 class="html-element" data-element-type="h1">Sidebar</h3>
+                            <p class="html-element" data-element-type="p">Related links and information.</p>
+                        </aside>
+                        
+                        <section class="html-element" data-element-type="section">
+                            <h2 class="html-element" data-element-type="h1">Contact Form</h2>
+                            <form class="html-element" data-element-type="form">
+                                <input type="text" placeholder="Your name" class="html-element" data-element-type="input">
+                                <textarea placeholder="Your message" class="html-element" data-element-type="textarea"></textarea>
+                                <button type="submit" class="html-element" data-element-type="button">Send Message</button>
+                            </form>
+                        </section>
+                    </main>
+                    
+                    <footer class="html-element" data-element-type="footer">
+                        <p class="html-element" data-element-type="p">&copy; 2025 My Website. All rights reserved.</p>
+                    </footer>
+                </div>
+            </div>
+        </div>
+
+        <div class="feedback-panel" id="feedback-panel">
+            <h4 id="feedback-title">Element Feedback</h4>
+            <p id="feedback-description"></p>
+            <p id="feedback-count" class="element-count"></p>
+            <p id="feedback-purpose"></p>
+        </div>
+
+        <section class="selector-example">
+            <h2>HTML Element Reference</h2>
+            <div class="activity-grid">
+                <div class="resource-card">
+                    <h3>Document Structure</h3>
+                    <div class="syntax-box">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;title&gt;Page Title&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    Content here
+  &lt;/body&gt;
+&lt;/html&gt;</div>
+                </div>
+                
+                <div class="resource-card">
+                    <h3>Semantic Elements</h3>
+                    <ul>
+                        <li><code>&lt;header&gt;</code> - Page or section header</li>
+                        <li><code>&lt;nav&gt;</code> - Navigation links</li>
+                        <li><code>&lt;main&gt;</code> - Main content area</li>
+                        <li><code>&lt;section&gt;</code> - Thematic content section</li>
+                        <li><code>&lt;article&gt;</code> - Independent content</li>
+                        <li><code>&lt;aside&gt;</code> - Sidebar content</li>
+                        <li><code>&lt;footer&gt;</code> - Page or section footer</li>
+                    </ul>
+                </div>
+                
+                <div class="resource-card">
+                    <h3>Common Elements</h3>
+                    <ul>
+                        <li><code>&lt;h1&gt; to &lt;h6&gt;</code> - Headings (importance order)</li>
+                        <li><code>&lt;p&gt;</code> - Paragraph text</li>
+                        <li><code>&lt;a href=""&gt;</code> - Links</li>
+                        <li><code>&lt;img src="" alt=""&gt;</code> - Images</li>
+                        <li><code>&lt;ul&gt;</code>/<code>&lt;ol&gt;</code> - Lists</li>
+                        <li><code>&lt;div&gt;</code> - Generic container</li>
+                        <li><code>&lt;span&gt;</code> - Inline container</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="activity-card">
+            <h2>Practice Exercise</h2>
+            <p>Try to identify the purpose of each element before clicking. Understanding semantic HTML helps with accessibility and SEO!</p>
+            
+            <div class="structure-explanation">
+                <h4>💡 Why Semantic HTML Matters:</h4>
+                <ul>
+                    <li><strong>Accessibility:</strong> Screen readers understand your content structure</li>
+                    <li><strong>SEO:</strong> Search engines better understand your page content</li>
+                    <li><strong>Maintainability:</strong> Code is easier to read and modify</li>
+                    <li><strong>Styling:</strong> CSS can target semantic elements more effectively</li>
+                </ul>
+            </div>
+            
+            <div class="activity-checklist">
+                <label><input type="checkbox"> Explored document structure elements</label>
+                <label><input type="checkbox"> Tested semantic layout elements</label>
+                <label><input type="checkbox"> Examined content elements</label>
+                <label><input type="checkbox"> Tried interactive form elements</label>
+                <label><input type="checkbox"> Understand the difference between block and inline elements</label>
+                <label><input type="checkbox"> Can identify appropriate semantic elements for content</label>
+                <label><input type="checkbox"> Know when to use div vs semantic elements</label>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>🏗️ HTML Fundamentals</h3>
+                <p>Interactive practice with HTML element structure</p>
+                <p>Learn semantic markup and best practices</p>
+                <div class="footer-tools">
+                    <span class="tool-tag">HTML Elements</span>
+                    <span class="tool-tag">Semantic Markup</span>
+                    <span class="tool-tag">Web Structure</span>
+                    <span class="tool-tag">Interactive Demo</span>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>🗓️ Quick Navigation</h3>
+                <ul>
+                    <li><a href="../../index.html">Course Home</a></li>
+                    <li><a href="../pages/week1.html">Week 1: HTML Basics</a></li>
+                    <li><a href="../pages/assignments.html">Assignments</a></li>
+                    <li><a href="../pages/schedule.html">Schedule</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>📖 Related Resources</h3>
+                <ul>
+                    <li><a href="semantic-html-guide.html">Semantic HTML Guide</a></li>
+                    <li><a href="css-selectors-demo.html">CSS Selectors Demo</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element" target="_blank">MDN HTML Elements</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-social">
+                <a href="#" class="social-link" title="Course GitHub">⚡</a>
+                <a href="#" class="social-link" title="Course Discord">💬</a>
+                <a href="#" class="social-link" title="Course Support">📧</a>
+            </div>
+            <p>&copy; 2025 MALA60970 Web Authoring Course. Building the future of web development education.</p>
+        </div>
+    </footer>
+    
+    <script>
+        const elementExamples = {
+            html: {
+                code: `&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;!-- All page content goes inside here --&gt;
+&lt;/html&gt;`,
+                description: 'Root element that wraps all content on the page',
+                purpose: 'Defines the document as HTML and contains all other elements'
+            },
+            head: {
+                code: `&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Page Title&lt;/title&gt;
+  &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;`,
+                description: 'Contains metadata about the document',
+                purpose: 'Holds information about the page (not visible content)'
+            },
+            body: {
+                code: `&lt;body&gt;
+  &lt;!-- All visible content goes here --&gt;
+  &lt;h1&gt;Welcome!&lt;/h1&gt;
+  &lt;p&gt;This is visible content.&lt;/p&gt;
+&lt;/body&gt;`,
+                description: 'Contains all the visible content of the webpage',
+                purpose: 'Wraps everything users see and interact with'
+            },
+            title: {
+                code: `&lt;title&gt;My Awesome Website&lt;/title&gt;`,
+                description: 'Sets the page title shown in browser tab',
+                purpose: 'Defines what appears in browser tabs and search results'
+            },
+            header: {
+                code: `&lt;header&gt;
+  &lt;h1&gt;Site Title&lt;/h1&gt;
+  &lt;nav&gt;Navigation menu&lt;/nav&gt;
+&lt;/header&gt;`,
+                description: 'Represents introductory content or navigation',
+                purpose: 'Contains page/section header information like logos, titles, nav'
+            },
+            nav: {
+                code: `&lt;nav&gt;
+  &lt;a href="#home"&gt;Home&lt;/a&gt;
+  &lt;a href="#about"&gt;About&lt;/a&gt;
+  &lt;a href="#contact"&gt;Contact&lt;/a&gt;
+&lt;/nav&gt;`,
+                description: 'Contains navigation links',
+                purpose: 'Groups navigation links together for accessibility and SEO'
+            },
+            main: {
+                code: `&lt;main&gt;
+  &lt;h1&gt;Main Content&lt;/h1&gt;
+  &lt;p&gt;Primary content of the page&lt;/p&gt;
+&lt;/main&gt;`,
+                description: 'Contains the main content of the page',
+                purpose: 'Identifies the primary content area (only one per page)'
+            },
+            section: {
+                code: `&lt;section&gt;
+  &lt;h2&gt;About Us&lt;/h2&gt;
+  &lt;p&gt;Information about our company...&lt;/p&gt;
+&lt;/section&gt;`,
+                description: 'Represents a thematic section of content',
+                purpose: 'Groups related content with its own heading'
+            },
+            article: {
+                code: `&lt;article&gt;
+  &lt;h2&gt;Blog Post Title&lt;/h2&gt;
+  &lt;p&gt;This is a complete, standalone piece of content...&lt;/p&gt;
+&lt;/article&gt;`,
+                description: 'Contains independent, standalone content',
+                purpose: 'Wraps content that makes sense on its own (blog posts, news articles)'
+            },
+            aside: {
+                code: `&lt;aside&gt;
+  &lt;h3&gt;Related Links&lt;/h3&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Link 1&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/aside&gt;`,
+                description: 'Contains content aside from main content',
+                purpose: 'Sidebars, related info, or tangentially related content'
+            },
+            footer: {
+                code: `&lt;footer&gt;
+  &lt;p&gt;&copy; 2025 My Website. All rights reserved.&lt;/p&gt;
+&lt;/footer&gt;`,
+                description: 'Contains footer information',
+                purpose: 'Copyright, contact info, links, typically at bottom of page/section'
+            },
+            h1: {
+                code: `&lt;h1&gt;Main Page Title&lt;/h1&gt;
+&lt;h2&gt;Section Title&lt;/h2&gt;
+&lt;h3&gt;Subsection Title&lt;/h3&gt;
+&lt;!-- h4, h5, h6 for deeper levels --&gt;`,
+                description: 'Heading elements (h1 most important, h6 least)',
+                purpose: 'Create hierarchy and structure, help with accessibility and SEO'
+            },
+            p: {
+                code: `&lt;p&gt;This is a paragraph of text. It can contain 
+&lt;strong&gt;bold text&lt;/strong&gt; and &lt;em&gt;italic text&lt;/em&gt;.&lt;/p&gt;`,
+                description: 'Paragraph element for blocks of text',
+                purpose: 'Groups sentences together into logical paragraphs'
+            },
+            a: {
+                code: `&lt;!-- External link --&gt;
+&lt;a href="https://example.com"&gt;Visit Example&lt;/a&gt;
+
+&lt;!-- Internal link --&gt;
+&lt;a href="#section1"&gt;Go to Section 1&lt;/a&gt;`,
+                description: 'Anchor element for creating links',
+                purpose: 'Links to other pages, sections, or external resources'
+            },
+            img: {
+                code: `&lt;img src="image.jpg" 
+     alt="Description of the image" 
+     width="300" 
+     height="200"&gt;`,
+                description: 'Embeds images in the webpage',
+                purpose: 'Displays images with alternative text for accessibility'
+            },
+            ul: {
+                code: `&lt;!-- Unordered list --&gt;
+&lt;ul&gt;
+  &lt;li&gt;First item&lt;/li&gt;
+  &lt;li&gt;Second item&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!-- Ordered list --&gt;
+&lt;ol&gt;
+  &lt;li&gt;Step 1&lt;/li&gt;
+  &lt;li&gt;Step 2&lt;/li&gt;
+&lt;/ol&gt;`,
+                description: 'Creates bulleted (ul) or numbered (ol) lists',
+                purpose: 'Organizes related items in list format'
+            },
+            div: {
+                code: `&lt;div class="container"&gt;
+  &lt;h2&gt;Content Section&lt;/h2&gt;
+  &lt;p&gt;This div groups related content together.&lt;/p&gt;
+&lt;/div&gt;`,
+                description: 'Generic container element (block-level)',
+                purpose: 'Groups elements for styling and layout when semantic elements don\'t fit'
+            },
+            span: {
+                code: `&lt;p&gt;This paragraph has a &lt;span class="highlight"&gt;highlighted word&lt;/span&gt; 
+in the middle of the sentence.&lt;/p&gt;`,
+                description: 'Generic inline container element',
+                purpose: 'Applies styling to specific parts of text within other elements'
+            },
+            form: {
+                code: `&lt;form action="/submit" method="POST"&gt;
+  &lt;input type="text" name="username"&gt;
+  &lt;input type="password" name="password"&gt;
+  &lt;button type="submit"&gt;Login&lt;/button&gt;
+&lt;/form&gt;`,
+                description: 'Creates interactive forms for user input',
+                purpose: 'Collects and submits user data to a server'
+            },
+            input: {
+                code: `&lt;input type="text" placeholder="Enter your name"&gt;
+&lt;input type="email" placeholder="your@email.com"&gt;
+&lt;input type="password" placeholder="Password"&gt;
+&lt;input type="checkbox" id="agree"&gt;
+&lt;input type="radio" name="choice" value="yes"&gt;`,
+                description: 'Creates various input fields for user data',
+                purpose: 'Allows users to enter different types of information'
+            },
+            button: {
+                code: `&lt;button type="submit"&gt;Submit Form&lt;/button&gt;
+&lt;button type="button" onclick="doSomething()"&gt;Click Me&lt;/button&gt;`,
+                description: 'Creates clickable buttons',
+                purpose: 'Triggers actions like form submission or JavaScript functions'
+            },
+            textarea: {
+                code: `&lt;textarea name="message" 
+          rows="4" 
+          cols="50" 
+          placeholder="Enter your message here..."&gt;
+&lt;/textarea&gt;`,
+                description: 'Creates multi-line text input areas',
+                purpose: 'Allows users to enter longer text content like messages or comments'
+            }
+        };
+
+        let exploredElements = new Set();
+
+        function updateProgress() {
+            const count = exploredElements.size;
+            const percentage = (count / 18) * 100;
+            document.getElementById('progress-fill').style.width = percentage + '%';
+            document.getElementById('tested-count').textContent = count;
+        }
+
+        function clearHighlights() {
+            document.querySelectorAll('.highlighted-element').forEach(el => {
+                el.classList.remove('highlighted-element');
+            });
+            document.querySelectorAll('.html-tag-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelectorAll('.code-highlight').forEach(el => {
+                el.classList.remove('code-highlight');
+            });
+            document.getElementById('html-display').innerHTML = 
+                `<div class="code-comment">&lt;!-- Click an element button to see its HTML structure --&gt;</div>
+<div class="code-example">&lt;element attribute="value"&gt;
+    Content goes here
+&lt;/element&gt;</div>`;
+            
+            // Hide feedback panel
+            document.getElementById('feedback-panel').classList.remove('show');
+        }
+
+        function showFeedback(elementType, description, purpose, count) {
+            const feedbackPanel = document.getElementById('feedback-panel');
+            document.getElementById('feedback-title').textContent = `Element: <${elementType}>`;
+            document.getElementById('feedback-description').textContent = description;
+            document.getElementById('feedback-count').textContent = `Found ${count} <${elementType}> element${count !== 1 ? 's' : ''} in the demo`;
+            document.getElementById('feedback-purpose').textContent = `Purpose: ${purpose}`;
+            
+            feedbackPanel.classList.add('show');
+        }
+
+        function highlightElement(elementType) {
+            clearHighlights();
+            
+            // Track that this element type has been explored
+            exploredElements.add(elementType);
+            updateProgress();
+            
+            // Update code display
+            const example = elementExamples[elementType];
+            document.getElementById('html-display').innerHTML = 
+                `<div class="code-comment">&lt;!-- ${example.description} --&gt;</div>
+<div class="code-comment">&lt;!-- ${example.purpose} --&gt;</div>
+
+<div class="code-example">${example.code}</div>`;
+            
+            // Highlight matching elements in preview
+            const elements = document.querySelectorAll(`[data-element-type="${elementType}"]`);
+            elements.forEach(el => {
+                el.classList.add('highlighted-element');
+            });
+            
+            // Add code highlighting effect
+            setTimeout(() => {
+                document.getElementById('html-display').classList.add('code-highlight');
+                setTimeout(() => {
+                    document.getElementById('html-display').classList.remove('code-highlight');
+                }, 1000);
+            }, 100);
+            
+            // Show count and description
+            const count = elements.length;
+            showFeedback(elementType, example.description, example.purpose, count);
+            
+            // Mark button as active
+            document.querySelector(`[data-element="${elementType}"]`).classList.add('active');
+        }
+
+        // Add event listeners when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.html-tag-button[data-element]').forEach(button => {
+                button.addEventListener('click', () => {
+                    const elementType = button.dataset.element;
+                    highlightElement(elementType);
+                });
+            });
+            
+            // Initialize progress
+            updateProgress();
+        });
+    </script>
+    <script src="../js/main.js"></script>
+    <script src="../js/course-navigation.js"></script>
+</body>
+</html>

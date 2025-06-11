@@ -872,7 +872,7 @@ nav a:focus-visible {
 }
 
 .schedule-table th {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: linear-gradient(135deg, #5b4465, rgba(91, 68, 101, 0.9));
     color: white;
     font-weight: 600;
     font-size: 1.1rem;
@@ -889,9 +889,9 @@ nav a:focus-visible {
     width: 12%;
     font-weight: 600;
     background-color: #fafafa;
-    color: var(--primary-color);
+    color: #5b4465;
     font-size: 1rem;
-    border-left: 3px solid var(--secondary-color);
+    border-left: 3px solid #5b4465;
 }
 
 .mode-cell {
