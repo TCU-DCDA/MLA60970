@@ -24,9 +24,35 @@
                     <li><a href="assignments.html">Assignments</a></li>
                     <li><a href="schedule.html">Schedule</a></li>
                 </ul>
+                
+                <!-- Hamburger Menu Button -->
+                <div class="hamburger" id="hamburger-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </nav>
         </div>
     </header>
+    
+    <!-- Mobile Navigation Overlay -->
+    <div class="nav-overlay" id="nav-overlay"></div>
+    
+    <!-- Mobile Navigation Menu -->
+    <div class="mobile-nav" id="mobile-nav">
+        <div class="mobile-nav-header">
+            <h3>Course Navigation</h3>
+        </div>
+        <ul>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="week1.html">Week 1</a></li>
+            <li><a href="week2.html" class="active">Week 2</a></li>
+            <li><a href="week3.html">Week 3</a></li>
+            <li><a href="week4.html">Week 4</a></li>
+            <li><a href="assignments.html">Assignments</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+        </ul>
+    </div>
     <main>
         <!-- Learning Objectives -->
         <section>
@@ -220,7 +246,6 @@
                     <h3>Responsive Portfolio Redesign</h3>
                     <div class="assignment-meta">
                         <span class="due-date">📅 Due: July 21st, 11:59 PM</span>
-                        <span class="points">📊 30 points</span>
                     </div>
                 </div>
                 
@@ -267,7 +292,81 @@
         </section>
     </main>
     <footer>
-        <p>&copy; 2025 MALA60970 Web Authoring Course. All rights reserved.</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>📚 MALA60970: Web Authoring</h3>
+                <p>4-Week Intensive Course</p>
+                <p>July 7th - August 3rd, 2025</p>
+                <p>Modern Web Development Curriculum</p>
+                <div class="course-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">4</span>
+                        <p class="stat-label">Weeks</p>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">12+</span>
+                        <p class="stat-label">Videos</p>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">20+</span>
+                        <p class="stat-label">Labs</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>🗓️ Quick Navigation</h3>
+                <ul>
+                    <li><a href="../../index.html">Course Home</a></li>
+                    <li><a href="schedule.html">Weekly Schedule</a></li>
+                    <li><a href="assignments.html">Assignments</a></li>
+                    <li><a href="week1.html">Week 1: HTML & Design</a></li>
+                    <li><a href="week2.html">Week 2: CSS & Layout</a></li>
+                    <li><a href="week3.html">Week 3: JavaScript</a></li>
+                    <li><a href="week4.html">Week 4: Portfolio</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>🎨 Week 2 CSS Tools</h3>
+                <ul>
+                    <li><a href="../examples/css-demos">CSS Demos Collection</a></li>
+                    <li><a href="../examples/flexbox-playground.html">Flexbox Playground</a></li>
+                    <li><a href="../examples/color-palette-generator.html">Color Palette Generator</a></li>
+                    <li><a href="https://jigsaw.w3.org/css-validator/" target="_blank">W3C CSS Validator</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">MDN CSS Docs</a></li>
+                    <li><a href="../examples/responsive-testing-guide.html">Responsive Testing Guide</a></li>
+                </ul>
+                <div class="footer-tools">
+                    <span class="tool-tag">CSS3</span>
+                    <span class="tool-tag">Flexbox</span>
+                    <span class="tool-tag">Responsive Design</span>
+                    <span class="tool-tag">Media Queries</span>
+                    <span class="tool-tag">CSS Grid</span>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>🎯 Week 2 Goals</h3>
+                <ul>
+                    <li><a href="#css-fundamentals">Master CSS Fundamentals</a></li>
+                    <li><a href="#flexbox-layout">Build Flexbox Layouts</a></li>
+                    <li><a href="#responsive-design">Create Responsive Design</a></li>
+                    <li><a href="#color-typography">Apply Color & Typography</a></li>
+                    <li><a href="#css-animations">Add CSS Transitions</a></li>
+                    <li><a href="#mobile-first">Implement Mobile-First</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-social">
+                <a href="#" class="social-link" title="Course GitHub">⚡</a>
+                <a href="#" class="social-link" title="Course Discord">💬</a>
+                <a href="#" class="social-link" title="Course Support">📧</a>
+            </div>
+            <p>&copy; 2025 MALA60970 Web Authoring Course. Building the future of web development education.</p>
+        </div>
     </footer>
     <script src="../js/main.js"></script>
     <script src="../js/course-navigation.js"></script>

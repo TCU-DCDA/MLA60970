@@ -24,39 +24,545 @@
                     <li><a href="assignments.html" class="active">Assignments</a></li>
                     <li><a href="schedule.html">Schedule</a></li>
                 </ul>
+                
+                <!-- Hamburger Menu Button -->
+                <div class="hamburger" id="hamburger-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </nav>
         </div>
     </header>
+    
+    <!-- Mobile Navigation Overlay -->
+    <div class="nav-overlay" id="nav-overlay"></div>
+    
+    <!-- Mobile Navigation Menu -->
+    <div class="mobile-nav" id="mobile-nav">
+        <div class="mobile-nav-header">
+            <h3>Course Navigation</h3>
+        </div>
+        <ul>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="week1.html">Week 1</a></li>
+            <li><a href="week2.html">Week 2</a></li>
+            <li><a href="week3.html">Week 3</a></li>
+            <li><a href="week4.html">Week 4</a></li>
+            <li><a href="assignments.html" class="active">Assignments</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+        </ul>
+    </div>
     <main>
         <section>
             <h2>Course Assignments</h2>
-            <ul>
-                <li>
-                    <h3>Assignment 1: Introduction to HTML</h3>
-                    <p>Due Date: July 14, 2023</p>
-                    <p>Details: Create a simple webpage using HTML. Include headings, paragraphs, and links.</p>
-                </li>
-                <li>
-                    <h3>Assignment 2: Styling with CSS</h3>
-                    <p>Due Date: July 21, 2023</p>
-                    <p>Details: Enhance your webpage from Assignment 1 by adding CSS styles.</p>
-                </li>
-                <li>
-                    <h3>Assignment 3: JavaScript Basics</h3>
-                    <p>Due Date: July 28, 2023</p>
-                    <p>Details: Add interactivity to your webpage using JavaScript.</p>
-                </li>
-                <li>
-                    <h3>Final Project</h3>
-                    <p>Due Date: August 1, 2023</p>
-                    <p>Details: Create a complete website that incorporates HTML, CSS, and JavaScript learned throughout the course.</p>
-                </li>
-            </ul>
+            <p class="assignments-intro">This course features four major assignments, each building upon the previous week's learning objectives. All assignments emphasize practical application, creative problem-solving, and professional development in web authoring.</p>
+            
+            <div class="assignments-grid">
+                <!-- Self Reflection 1 -->
+                <div class="assignment-card reflection">
+                    <div class="assignment-header">
+                        <h3>Self Reflection 1: Learning Foundations</h3>
+                        <div class="assignment-meta">
+                            <span class="due-date">📅 Due: Saturday, July 12, 2025 by 11:59 PM</span>
+                            <span class="reflection-type">🤔 Reflective Assessment</span>
+                        </div>
+                    </div>
+                    
+                    <div class="assignment-description">
+                        <h4>Objective:</h4>
+                        <p>Reflect on your initial learning experiences with web development, articulate your progress in design principles and HTML fundamentals, and document your learning journey.</p>
+                        
+                        <h4>Requirements:</h4>
+                        <ul>
+                            <li>500-750 word reflective essay</li>
+                            <li>Analyze your experience with visual design principles</li>
+                            <li>Reflect on your HTML learning progress and challenges</li>
+                            <li>Document your development environment setup experience</li>
+                            <li>Articulate specific skills gained and areas for growth</li>
+                            <li>Connect new learning to your prior knowledge or interests</li>
+                        </ul>
+                        
+                        <h4>Skills Developed:</h4>
+                        <div class="skills-tags">
+                            <span class="skill-tag">Self-Assessment</span>
+                            <span class="skill-tag">Reflective Writing</span>
+                            <span class="skill-tag">Learning Documentation</span>
+                            <span class="skill-tag">Progress Articulation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 1 Assignment -->
+                <div class="assignment-card major">
+                    <div class="assignment-header">
+                        <h3>Assignment 1: Visual Design Analysis & HTML Foundation</h3>
+                        <div class="assignment-meta">
+                            <span class="due-date">📅 Due: Friday, July 11, 2025 by 11:59 PM</span>
+                        </div>
+                    </div>
+                    
+                    <div class="assignment-description">
+                        <h4>Objective:</h4>
+                        <p>Create a semantic HTML webpage that demonstrates your understanding of visual design principles and digital rhetoric while establishing your development workflow.</p>
+                        
+                        <h4>Requirements:</h4>
+                        <ul>
+                            <li>Design analysis of 3 different websites (minimum 500 words total)</li>
+                            <li>Semantic HTML page with your analysis and reflection</li>
+                            <li>Identify CRAP design principles (Contrast, Repetition, Alignment, Proximity)</li>
+                            <li>Analyze visual hierarchy and information architecture</li>
+                            <li>Proper document structure using HTML5 semantic elements</li>
+                            <li>Accessible markup with appropriate alt text and headings</li>
+                            <li>Valid HTML (pass W3C validation)</li>
+                            <li>Published on GitHub Pages with repository showing commit history</li>
+                            <li>Professional presentation and clear writing</li>
+                        </ul>
+                        
+                        <h4>Evaluation Approach:</h4>
+                        <ul>
+                            <li>Demonstrate depth and accuracy of design analysis</li>
+                            <li>Show proficiency in HTML semantic structure and validation</li>
+                            <li>Present clear, well-organized writing</li>
+                            <li>Evidence proper Git workflow and GitHub Pages deployment</li>
+                        </ul>
+                        
+                        <h4>Skills Developed:</h4>
+                        <div class="skills-tags">
+                            <span class="skill-tag">Visual Design Analysis</span>
+                            <span class="skill-tag">HTML5 Semantic Markup</span>
+                            <span class="skill-tag">Git Version Control</span>
+                            <span class="skill-tag">GitHub Pages Deployment</span>
+                            <span class="skill-tag">Digital Rhetoric</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 2 Assignment -->
+                <div class="assignment-card major">
+                    <div class="assignment-header">
+                        <h3>Assignment 2: Responsive Portfolio Redesign</h3>
+                        <div class="assignment-meta">
+                            <span class="due-date">📅 Due: Monday, July 21, 2025 by 11:59 PM</span>
+                        </div>
+                    </div>
+                    
+                    <div class="assignment-description">
+                        <h4>Objective:</h4>
+                        <p>Transform your Week 1 portfolio page into a beautiful, responsive website using modern CSS techniques. Focus on clean design, typography, and mobile-first responsive layout.</p>
+                        
+                        <h4>Requirements:</h4>
+                        <ul>
+                            <li>External CSS stylesheet with organized, commented code</li>
+                            <li>Custom color scheme and typography choices</li>
+                            <li>Flexbox or CSS Grid layout for main sections</li>
+                            <li>Responsive design that works on mobile, tablet, and desktop</li>
+                            <li>Navigation bar with hover effects</li>
+                            <li>Image optimization and responsive images</li>
+                            <li>CSS transitions and subtle animations</li>
+                            <li>Valid CSS (use W3C CSS validator)</li>
+                            <li>Cross-browser compatibility testing</li>
+                        </ul>
+                        
+                        <h4>Design Guidelines:</h4>
+                        <ul>
+                            <li>Choose a cohesive color palette (3-5 colors max)</li>
+                            <li>Use consistent spacing and typography scale</li>
+                            <li>Ensure sufficient color contrast for accessibility</li>
+                            <li>Keep design clean and professional</li>
+                            <li>Test on actual devices or browser dev tools</li>
+                        </ul>
+                        
+                        <h4>Skills Developed:</h4>
+                        <div class="skills-tags">
+                            <span class="skill-tag">CSS3 Fundamentals</span>
+                            <span class="skill-tag">Flexbox Layout</span>
+                            <span class="skill-tag">Responsive Design</span>
+                            <span class="skill-tag">Media Queries</span>
+                            <span class="skill-tag">Typography</span>
+                            <span class="skill-tag">Color Theory</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Self Reflection 2 -->
+                <div class="assignment-card reflection">
+                    <div class="assignment-header">
+                        <h3>Self Reflection 2: Midterm Progress & Grade Argument</h3>
+                        <div class="assignment-meta">
+                            <span class="due-date">📅 Due: Tuesday, July 22, 2025 by 11:59 PM</span>
+                            <span class="reflection-type">📊 Midterm Assessment</span>
+                        </div>
+                    </div>
+                    
+                    <div class="assignment-description">
+                        <h4>Objective:</h4>
+                        <p>Conduct a comprehensive midterm self-assessment, argue for your current progress level, and set goals for the remainder of the course.</p>
+                        
+                        <h4>Requirements:</h4>
+                        <ul>
+                            <li>750-1000 word reflective essay</li>
+                            <li>Document evidence of learning across HTML and CSS skills</li>
+                            <li>Argue for your midterm progress level with specific examples</li>
+                            <li>Analyze challenges overcome and strategies used</li>
+                            <li>Set specific learning goals for Weeks 3-4</li>
+                            <li>Reflect on peer interactions and community engagement</li>
+                            <li>Connect current progress to your personal/professional goals</li>
+                        </ul>
+                        
+                        <h4>Assessment Focus:</h4>
+                        <ul>
+                            <li>Quality of self-evaluation and evidence provided</li>
+                            <li>Thoughtfulness of learning analysis</li>
+                            <li>Realistic goal-setting for remaining weeks</li>
+                            <li>Connection between reflection and coursework</li>
+                        </ul>
+                        
+                        <h4>Skills Developed:</h4>
+                        <div class="skills-tags">
+                            <span class="skill-tag">Critical Self-Assessment</span>
+                            <span class="skill-tag">Evidence-Based Argument</span>
+                            <span class="skill-tag">Goal Setting</span>
+                            <span class="skill-tag">Progress Documentation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 3 Assignment -->
+                <div class="assignment-card major">
+                    <div class="assignment-header">
+                        <h3>Assignment 3: Interactive Web Application</h3>
+                        <div class="assignment-meta">
+                            <span class="due-date">📅 Due: Sunday, July 27, 2025 by 11:59 PM</span>
+                            <span class="major-project">🔥 Major Project</span>
+                        </div>
+                    </div>
+                    
+                    <div class="assignment-description">
+                        <h4>Objective:</h4>
+                        <p>Create a fully interactive web application that demonstrates mastery of JavaScript fundamentals, DOM manipulation, and event handling.</p>
+                        
+                        <h4>Requirements:</h4>
+                        <ul>
+                            <li>Implement at least 5 different interactive features</li>
+                            <li>Use proper JavaScript variable declarations (let, const)</li>
+                            <li>Include form validation with user feedback</li>
+                            <li>Demonstrate event handling for multiple event types</li>
+                            <li>Use DOM manipulation to dynamically update content</li>
+                            <li>Include error handling and user input validation</li>
+                            <li>Implement local storage for data persistence</li>
+                            <li>Write clean, commented JavaScript code</li>
+                        </ul>
+                        
+                        <h4>Interactive Feature Ideas:</h4>
+                        <ul>
+                            <li>JavaScript Calculator with operation history</li>
+                            <li>Interactive To-Do List with task management</li>
+                            <li>Image Gallery with filtering and search</li>
+                            <li>Form Builder with dynamic field creation</li>
+                            <li>DOM Inspector Tool for web development</li>
+                        </ul>
+                        
+                        <h4>Deliverables:</h4>
+                        <ul>
+                            <li>Complete HTML, CSS, and JavaScript files</li>
+                            <li>README file explaining features and functionality</li>
+                            <li>Screenshots or screen recording of app in action</li>
+                            <li>Reflection document on challenges and solutions</li>
+                        </ul>
+                        
+                        <h4>Skills Developed:</h4>
+                        <div class="skills-tags">
+                            <span class="skill-tag">JavaScript ES6+</span>
+                            <span class="skill-tag">DOM Manipulation</span>
+                            <span class="skill-tag">Event Handling</span>
+                            <span class="skill-tag">Form Validation</span>
+                            <span class="skill-tag">Local Storage</span>
+                            <span class="skill-tag">Debugging</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Self Reflection 3 -->
+                <div class="assignment-card reflection">
+                    <div class="assignment-header">
+                        <h3>Self Reflection 3: Final Assessment & Grade Argument</h3>
+                        <div class="assignment-meta">
+                            <span class="due-date">📅 Due: Sunday, August 3, 2025 by 11:59 PM</span>
+                            <span class="reflection-type">🏆 Final Assessment</span>
+                        </div>
+                    </div>
+                    
+                    <div class="assignment-description">
+                        <h4>Objective:</h4>
+                        <p>Complete a comprehensive final self-assessment documenting your learning journey, argue for your final course progress, and articulate the value of your learning experience.</p>
+                        
+                        <h4>Requirements:</h4>
+                        <ul>
+                            <li>1200-1500 word comprehensive reflective essay</li>
+                            <li>Document complete learning journey from Week 1 to Week 4</li>
+                            <li>Argue for your final course grade with substantial evidence</li>
+                            <li>Analyze growth in technical skills (HTML, CSS, JavaScript)</li>
+                            <li>Reflect on problem-solving abilities and creative development</li>
+                            <li>Evaluate community contributions and peer engagement</li>
+                            <li>Connect learning to future personal/professional applications</li>
+                            <li>Include portfolio of best work as supporting evidence</li>
+                        </ul>
+                        
+                        <h4>Assessment Components:</h4>
+                        <ul>
+                            <li>Depth and honesty of self-reflection</li>
+                            <li>Quality of evidence and examples provided</li>
+                            <li>Growth mindset demonstration</li>
+                            <li>Professional presentation and writing quality</li>
+                            <li>Realistic and thoughtful self-assessment</li>
+                        </ul>
+                        
+                        <h4>Skills Developed:</h4>
+                        <div class="skills-tags">
+                            <span class="skill-tag">Comprehensive Self-Evaluation</span>
+                            <span class="skill-tag">Professional Reflection</span>
+                            <span class="skill-tag">Portfolio Curation</span>
+                            <span class="skill-tag">Learning Documentation</span>
+                            <span class="skill-tag">Academic Argumentation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Week 4 Final Project -->
+                <div class="assignment-card capstone">
+                    <div class="assignment-header">
+                        <h3>Final Project: Complete Portfolio Website & Self Reflection 3</h3>
+                        <div class="assignment-meta">
+                            <span class="due-date">📅 Due: Sunday, August 3, 2025 by 11:59 PM</span>
+                            <span class="capstone-project">🏆 Capstone Project</span>
+                        </div>
+                    </div>
+                    
+                    <div class="assignment-description">
+                        <h4>Objective:</h4>
+                        <p>Create a comprehensive, professional portfolio website that demonstrates mastery of all course concepts including HTML, CSS, JavaScript, responsive design, and deployment. Additionally, write a reflective essay documenting your learning journey.</p>
+                        
+                        <h4>Portfolio Requirements:</h4>
+                        <ul>
+                            <li>Minimum 5 pages (Home, About, Projects, Contact, Resume/CV)</li>
+                            <li>Fully responsive design working on all device sizes</li>
+                            <li>Modern CSS with Flexbox/Grid layout systems</li>
+                            <li>Interactive JavaScript features and animations</li>
+                            <li>Contact form with validation</li>
+                            <li>Project showcase with detailed descriptions</li>
+                            <li>Professional typography and color scheme</li>
+                            <li>Optimized performance and accessibility</li>
+                            <li>SEO best practices implementation</li>
+                            <li>Deployed live on GitHub Pages</li>
+                        </ul>
+                        
+                        <h4>Technical Specifications:</h4>
+                        <ul>
+                            <li>Valid HTML5 semantic markup</li>
+                            <li>Modern CSS3 with custom properties</li>
+                            <li>Vanilla JavaScript (no frameworks required)</li>
+                            <li>Mobile-first responsive design</li>
+                            <li>Cross-browser compatibility</li>
+                            <li>Fast loading times (< 3 seconds)</li>
+                            <li>WCAG 2.1 accessibility standards</li>
+                            <li>Clean, well-documented code</li>
+                        </ul>
+                        
+                        <h4>Deliverables:</h4>
+                        <ul>
+                            <li>Complete website source code</li>
+                            <li>Live website URL (GitHub Pages)</li>
+                            <li>Project documentation and README</li>
+                            <li>Design rationale and process documentation</li>
+                            <li>Performance and accessibility audit report</li>
+                        </ul>
+                        
+                        <h4>Skills Developed:</h4>
+                        <div class="skills-tags">
+                            <span class="skill-tag">Portfolio Design</span>
+                            <span class="skill-tag">Professional Presentation</span>
+                            <span class="skill-tag">Project Curation</span>
+                            <span class="skill-tag">Reflective Writing</span>
+                            <span class="skill-tag">Web Performance</span>
+                            <span class="skill-tag">Accessibility</span>
+                            <span class="skill-tag">SEO</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Assignment Resources -->
+            <div class="assignment-resources-section">
+                <h2>📚 Assignment Resources & Support</h2>
+                <div class="resources-grid">
+                    <div class="resource-card">
+                        <h3>🛠️ Development Tools</h3>
+                        <ul>
+                            <li><a href="../examples/vscode-setup-guide.html">VS Code Setup Guide</a></li>
+                            <li><a href="https://validator.w3.org/" target="_blank">W3C HTML Validator</a></li>
+                            <li><a href="https://jigsaw.w3.org/css-validator/" target="_blank">W3C CSS Validator</a></li>
+                            <li><a href="../examples/github-workflow-guide.html">GitHub Workflow Guide</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <h3>📖 Templates & Examples</h3>
+                        <ul>
+                            <li><a href="../examples/design-analysis-template.html">Design Analysis Template</a></li>
+                            <li><a href="../examples/html-semantic-template.html">Semantic HTML Template</a></li>
+                            <li><a href="../examples/portfolio-css-examples.html">Portfolio CSS Examples</a></li>
+                            <li><a href="../examples/javascript-examples.html">JavaScript Code Examples</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <h3>🎯 Assessment Guidelines</h3>
+                        <ul>
+                            <li><a href="../examples/rubrics.html">Assignment Rubrics</a></li>
+                            <li><a href="../examples/peer-review-guide.html">Peer Review Guidelines</a></li>
+                            <li><a href="../examples/reflection-templates.html">Reflection Writing Templates</a></li>
+                            <li><a href="../examples/portfolio-checklist.html">Portfolio Quality Checklist</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <h3>🚀 Getting Help</h3>
+                        <ul>
+                            <li><a href="#" class="resource-link">💬 Discussion Forum</a></li>
+                            <li><a href="#" class="resource-link">📧 Instructor Office Hours</a></li>
+                            <li><a href="#" class="resource-link">👥 Study Groups</a></li>
+                            <li><a href="#" class="resource-link">📺 Video Tutorials</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Submission Guidelines -->
+            <div class="submission-guidelines">
+                <h2>📋 Submission Guidelines</h2>
+                <div class="guidelines-content">
+                    <div class="guideline-section">
+                        <h3>📤 How to Submit</h3>
+                        <ol>
+                            <li>Complete all assignment requirements</li>
+                            <li>Test your work thoroughly across different browsers and devices</li>
+                            <li>Validate your HTML and CSS code</li>
+                            <li>Commit and push all changes to your GitHub repository</li>
+                            <li>Deploy your project to GitHub Pages (if applicable)</li>
+                            <li>Submit both repository URL and live site URL through the course management system</li>
+                            <li>Include any required reflection or documentation files</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="guideline-section">
+                        <h3>⏰ Late Submission Policy</h3>
+                        <ul>
+                            <li>Late submissions will impact your learning progression and feedback timeline</li>
+                            <li>Priority support goes to submissions completed on time</li>
+                            <li>Extensions available for documented emergencies or challenges</li>
+                            <li>No submissions accepted after 1 week without prior arrangement</li>
+                            <li>Contact instructor immediately if you anticipate difficulties meeting deadlines</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="guideline-section">
+                        <h3>✅ Quality Standards</h3>
+                        <ul>
+                            <li>All code must be properly formatted and indented</li>
+                            <li>Include meaningful comments in your code</li>
+                            <li>Use semantic HTML elements appropriately</li>
+                            <li>Follow CSS and JavaScript best practices</li>
+                            <li>Ensure cross-browser compatibility</li>
+                            <li>Test responsive design on multiple device sizes</li>
+                            <li>Optimize images and other media files</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
-    <footer>
-        <p>&copy; 2025 MALA60970 Web Authoring Course. All rights reserved.</p>
+    
+    <footer class="course-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>📚 Course Information</h3>
+                <div class="course-stats">
+                    <div class="stat-card">
+                        <span class="stat-number">4</span>
+                        <span class="stat-label">Weeks</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">12+</span>
+                        <span class="stat-label">Videos</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">20+</span>
+                        <span class="stat-label">Labs</span>
+                    </div>
+                </div>
+                <p class="course-description">Master modern web development with HTML5, CSS3, and JavaScript</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>🧭 Navigation</h3>
+                <ul class="footer-links">
+                    <li><a href="../../index.html">🏠 Home</a></li>
+                    <li><a href="schedule.html">📅 Schedule</a></li>
+                    <li><a href="assignments.html">📝 Assignments</a></li>
+                    <li><a href="week1.html">Week 1: HTML Foundations</a></li>
+                    <li><a href="week2.html">Week 2: CSS Styling</a></li>
+                    <li><a href="week3.html">Week 3: JavaScript Basics</a></li>
+                    <li><a href="week4.html">Week 4: Advanced Topics</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>🛠️ Tools & Resources</h3>
+                <div class="tools-grid">
+                    <span class="tool-tag">HTML5</span>
+                    <span class="tool-tag">CSS3</span>
+                    <span class="tool-tag">JavaScript</span>
+                    <span class="tool-tag">VS Code</span>
+                    <span class="tool-tag">Git</span>
+                    <span class="tool-tag">GitHub</span>
+                    <span class="tool-tag">Chrome DevTools</span>
+                    <span class="tool-tag">Responsive Design</span>
+                </div>
+                <div class="resource-links">
+                    <a href="#" class="resource-link">📖 Documentation</a>
+                    <a href="#" class="resource-link">💡 Help Center</a>
+                    <a href="#" class="resource-link">👥 Discussion Forum</a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>🎯 Learning Outcomes</h3>
+                <ul class="outcomes-list">
+                    <li>✅ Create semantic HTML structures</li>
+                    <li>✅ Design responsive layouts with CSS</li>
+                    <li>✅ Add interactivity with JavaScript</li>
+                    <li>✅ Use developer tools effectively</li>
+                    <li>✅ Apply web accessibility principles</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <div class="social-links">
+                    <a href="#" class="social-link">📧 Email</a>
+                    <a href="#" class="social-link">💬 Slack</a>
+                    <a href="#" class="social-link">🐙 GitHub</a>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2025 MALA60970 Web Authoring Course. All rights reserved.</p>
+                    <p class="course-term">Summer 2025 • 4-Week Intensive</p>
+                </div>
+            </div>
+        </div>
     </footer>
+    
     <script src="../js/main.js"></script>
     <script src="../js/course-navigation.js"></script>
     <script src="../js/video-manager.js"></script>

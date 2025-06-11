@@ -28,19 +28,45 @@
                     <li><a href="assignments.html">Assignments</a></li>
                     <li><a href="schedule.html" class="active">Schedule</a></li>
                 </ul>
+                
+                <!-- Hamburger Menu Button -->
+                <div class="hamburger" id="hamburger-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </nav>
         </div>
     </header>
+    
+    <!-- Mobile Navigation Overlay -->
+    <div class="nav-overlay" id="nav-overlay"></div>
+    
+    <!-- Mobile Navigation Menu -->
+    <div class="mobile-nav" id="mobile-nav">
+        <div class="mobile-nav-header">
+            <h3>Course Navigation</h3>
+        </div>
+        <ul>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="week1.html">Week 1</a></li>
+            <li><a href="week2.html">Week 2</a></li>
+            <li><a href="week3.html">Week 3</a></li>
+            <li><a href="week4.html">Week 4</a></li>
+            <li><a href="assignments.html">Assignments</a></li>
+            <li><a href="schedule.html" class="active">Schedule</a></li>
+        </ul>
+    </div>
 
     <main>
         <div class="schedule-container">
             <div class="schedule-intro">
-                <p>The following schedule is subject to further revision, to suit the needs and interests of the class. Updates to this schedule will be shared exclusively through the table below.</p>
+                <p>This schedule reflects the modern web development curriculum structure with hands-on learning, interactive projects, and progressive skill building. Each week builds upon the previous week's concepts while introducing new technologies and best practices.</p>
             </div>
 
             <section class="project-section">
-                <h2>Project 1: Visual Design & Rhetoric</h2>
-                <table class="schedule-table" role="table" aria-label="Project 1 Schedule">
+                <h2>Week 1: Visual Design & HTML Foundations</h2>
+                <table class="schedule-table" role="table" aria-label="Week 1 Schedule">
                     <thead>
                         <tr>
                             <th scope="col" class="project-header">Date</th>
@@ -54,87 +80,73 @@
                             <td class="date-cell" data-label="Date">M 7/7</td>
                             <td class="mode-cell" data-label="Mode">Lecture / Discussion</td>
                             <td class="topic-cell" data-label="Topic">
-                                <div class="topic-title">Writing in the 21st Century, the Rhetorical Appeals, and the Materiality of Language</div>
-                                <div class="topic-title">Appealing to Your Audience with CRAP: Aristotle and Visual Design</div>
+                                <div class="topic-title">Design Principles & Visual Rhetoric</div>
                                 <ul class="activity-list">
-                                    <li>Discuss sample NGO posters</li>
+                                    <li>CRAP design principles (Contrast, Repetition, Alignment, Proximity)</li>
+                                    <li>Visual hierarchy and information architecture</li>
+                                    <li>Color theory basics and psychological impact</li>
+                                    <li>Typography fundamentals for web design</li>
                                 </ul>
                             </td>
-                            <td class="due-cell" data-label="Due Dates">
-                                <div class="due-item">
-                                    <strong>Self-Reflection 1</strong> due by 11:30 pm in D2L
-                                </div>
-                            </td>
+                            <td class="due-cell" data-label="Due Dates"></td>
                         </tr>
                         <tr>
                             <td class="date-cell" data-label="Date">T 7/8</td>
                             <td class="mode-cell" data-label="Mode">Tutorial</td>
                             <td class="topic-cell" data-label="Topic">
+                                <div class="topic-title">HTML Semantic Structure</div>
                                 <ul class="activity-list">
-                                    <li>Photopea Tutorial</li>
-                                    <li>Project Workshop</li>
+                                    <li>HTML5 semantic elements (header, main, section, article, aside, footer)</li>
+                                    <li>Document structure and content hierarchy</li>
+                                    <li>Accessibility considerations in HTML markup</li>
+                                    <li>Forms, lists, and media elements</li>
                                 </ul>
                             </td>
-                            <td class="due-cell" data-label="Due Dates">
-                                <div class="due-item due-major">
-                                    <strong>Project 1 Proposal</strong> due by 5:00 pm in D2L
-                                </div>
-                            </td>
+                            <td class="due-cell" data-label="Due Dates"></td>
                         </tr>
                         <tr>
                             <td class="date-cell" data-label="Date">W 7/9</td>
                             <td class="mode-cell" data-label="Mode">Workshop</td>
                             <td class="topic-cell" data-label="Topic">
+                                <div class="topic-title">Development Environment & Git</div>
                                 <ul class="activity-list">
-                                    <li>Photopea Tutorial</li>
-                                    <li>Project Workshop</li>
+                                    <li>Setting up VS Code for web development</li>
+                                    <li>Git version control fundamentals</li>
+                                    <li>Creating and managing GitHub repositories</li>
+                                    <li>Deploying websites with GitHub Pages</li>
                                 </ul>
                             </td>
-                            <td class="due-cell" data-label="Due Dates">
-                                <div class="due-item">
-                                    Flex 1.1 due by 5:00 pm in D2L
-                                </div>
-                            </td>
+                            <td class="due-cell" data-label="Due Dates"></td>
                         </tr>
                         <tr>
                             <td class="date-cell" data-label="Date">R 7/10</td>
-                            <td class="mode-cell" data-label="Mode">Workshop</td>
+                            <td class="mode-cell" data-label="Mode">Hands-on Lab</td>
                             <td class="topic-cell" data-label="Topic">
                                 <ul class="activity-list">
-                                    <li>Photopea Workshop</li>
-                                    <li>Project Workshop</li>
+                                    <li>Design Analysis Lab</li>
+                                    <li>Semantic HTML Page Creation</li>
+                                    <li>Git & GitHub Setup</li>
                                 </ul>
                             </td>
-                            <td class="due-cell" data-label="Due Dates">
-                                <div class="due-item">
-                                    Flex 1.2 due by 5:00 pm in D2L
-                                </div>
-                            </td>
+                            <td class="due-cell" data-label="Due Dates"></td>
                         </tr>
                         <tr>
                             <td class="date-cell" data-label="Date">F 7/11</td>
-                            <td class="mode-cell" data-label="Mode">Peer Review</td>
+                            <td class="mode-cell" data-label="Mode">Assignment Due</td>
                             <td class="topic-cell" data-label="Topic">
+                                <div class="topic-title">Week 1 Assignment: Visual Design Analysis & HTML Foundation</div>
                                 <ul class="activity-list">
-                                    <li>Peer Review Workshop</li>
+                                    <li>Design analysis of 3 different websites (minimum 500 words total)</li>
+                                    <li>Semantic HTML page with analysis and reflection</li>
+                                    <li>Published on GitHub Pages</li>
                                 </ul>
                             </td>
                             <td class="due-cell" data-label="Due Dates">
                                 <div class="due-item due-major">
-                                    <strong>Project 1 Rough Draft Due</strong> (w/ Draft Reflection) due by class time in D2L
+                                    <strong>Visual Design Analysis & HTML Foundation</strong> due by 11:59 PM
                                 </div>
-                                <div class="due-item due-major">
-                                    <strong>Project 1: Letters of Reply</strong> due by 11:30 pm in D2L
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="date-cell" data-label="Date">Sun 7/13</td>
-                            <td class="mode-cell" data-label="Mode">Project 1 Due</td>
-                            <td class="topic-cell" data-label="Topic">Project 1 Due</td>
-                            <td class="due-cell" data-label="Due Dates">
-                                <div class="due-item due-major">
-                                    <strong>Project 1 Due</strong> (PDF w/ Cover Memo) due by 11:30 pm in D2L
+                                <div class="due-item reflection">
+                                    <strong>Self Reflection 1: Learning Foundations</strong> due Saturday 7/12 by 11:59 PM
                                 </div>
                             </td>
                         </tr>
@@ -143,8 +155,8 @@
             </section>
 
             <section class="project-section">
-                <h2>Project 2: Digital Environments & Web Writing</h2>
-                <table class="schedule-table" role="table" aria-label="Project 2 Schedule">
+                <h2>Week 2: CSS Styling & Layout</h2>
+                <table class="schedule-table" role="table" aria-label="Week 2 Schedule">
                     <thead>
                         <tr>
                             <th scope="col" class="project-header">Date</th>
@@ -156,96 +168,89 @@
                     <tbody>
                         <tr>
                             <td class="date-cell" data-label="Date">M 7/14</td>
-                            <td class="mode-cell" data-label="Mode">Lecture / Discussion</td>
+                            <td class="mode-cell" data-label="Mode">Lecture / Tutorial</td>
                             <td class="topic-cell" data-label="Topic">
-                                <div class="topic-title">Writing in Digital Environments</div>
+                                <div class="topic-title">CSS Fundamentals & Selectors</div>
                                 <ul class="activity-list">
-                                    <li>Website Critique Exercise</li>
-                                    <li>Define and narrow topic, determine audience, and identify purpose for Project 2</li>
-                                    <li>Assign Project 2</li>
+                                    <li>CSS syntax and how it connects to HTML</li>
+                                    <li>Types of selectors (element, class, ID, descendant)</li>
+                                    <li>The CSS box model (margin, border, padding, content)</li>
+                                    <li>Color systems and typography basics</li>
                                 </ul>
                             </td>
                             <td class="due-cell" data-label="Due Dates"></td>
                         </tr>
                         <tr>
                             <td class="date-cell" data-label="Date">T 7/15</td>
-                            <td class="mode-cell" data-label="Mode">Tutorial / Exercise</td>
+                            <td class="mode-cell" data-label="Mode">Workshop</td>
                             <td class="topic-cell" data-label="Topic">
-                                <div class="topic-title">Intro to HTML, CSS, and JavaScript</div>
+                                <div class="topic-title">Flexbox Layout Mastery</div>
                                 <ul class="activity-list">
-                                    <li>File Management</li>
-                                    <li>Coding v Frankencoding</li>
-                                    <li>Begin research topic for Project #2</li>
-                                    <li>Continue researching and refining topic</li>
-                                    <li>HTML, CSS, and JS workshop</li>
+                                    <li>Flexbox concepts: flex container vs flex items</li>
+                                    <li>Main axis and cross axis understanding</li>
+                                    <li>Essential flexbox properties</li>
+                                    <li>Building common layout patterns (navbar, card grids, centering)</li>
                                 </ul>
                             </td>
-                            <td class="due-cell" data-label="Due Dates">
-                                <div class="due-item due-major">
-                                    <strong>Project 2 Proposal</strong> due by 11:30 pm in D2L
-                                </div>
-                            </td>
+                            <td class="due-cell" data-label="Due Dates"></td>
                         </tr>
                         <tr>
                             <td class="date-cell" data-label="Date">W 7/16</td>
-                            <td class="mode-cell" data-label="Mode">Lecture / Exercise</td>
+                            <td class="mode-cell" data-label="Mode">Lecture / Workshop</td>
                             <td class="topic-cell" data-label="Topic">
-                                <div class="topic-title">Writing for the Web</div>
-                                <div class="topic-title">Meeting Your Audience Where & How They Read</div>
+                                <div class="topic-title">Responsive Design & Media Queries</div>
                                 <ul class="activity-list">
-                                    <li>Discuss Conventions of Writing for the Web</li>
-                                    <li><a href="http://www.webstyleguide.com/wsg3/9-editorial-style/index.html" class="external-link">Web Style Guide</a></li>
-                                    <li><a href="https://cdex.tcu.edu/resources/tech/web/writing-for-the-web/" class="external-link">TCU Writing for the Web</a></li>
+                                    <li>Mobile-first design philosophy and why it matters</li>
+                                    <li>CSS media queries syntax and breakpoints</li>
+                                    <li>Responsive units (%, em, rem, vh, vw)</li>
+                                    <li>Making images and media responsive</li>
                                 </ul>
                             </td>
-                            <td class="due-cell" data-label="Due Dates">
-                                <div class="due-item">
-                                    Daily Flex 2.1 due by 11:30 pm in D2L
-                                </div>
-                                <div class="due-item">
-                                    <strong>Self-Reflection 2</strong> due by 11:30 pm in D2L
-                                </div>
-                            </td>
+                            <td class="due-cell" data-label="Due Dates"></td>
                         </tr>
                         <tr>
                             <td class="date-cell" data-label="Date">R 7/17</td>
-                            <td class="mode-cell" data-label="Mode">Drafting Workshop</td>
+                            <td class="mode-cell" data-label="Mode">Hands-on Lab</td>
                             <td class="topic-cell" data-label="Topic">
                                 <ul class="activity-list">
-                                    <li>Continue drafting content for Project #2</li>
-                                    <li>Workshop</li>
+                                    <li>Style Your HTML Page Lab</li>
+                                    <li>Flexbox Navigation Lab</li>
+                                    <li>Responsive Card Layout Lab</li>
                                 </ul>
                             </td>
-                            <td class="due-cell" data-label="Due Dates">
-                                <div class="due-item">
-                                    Daily Flex 2.2 due by 11:30 pm in D2L
-                                </div>
-                            </td>
+                            <td class="due-cell" data-label="Due Dates"></td>
                         </tr>
                         <tr>
                             <td class="date-cell" data-label="Date">F 7/18</td>
-                            <td class="mode-cell" data-label="Mode">Peer Review</td>
+                            <td class="mode-cell" data-label="Mode">Project Work</td>
                             <td class="topic-cell" data-label="Topic">
+                                <div class="topic-title">Portfolio Enhancement & Testing</div>
                                 <ul class="activity-list">
-                                    <li>Peer Review Workshop of Whole Site</li>
+                                    <li>Transform Week 1 portfolio with CSS</li>
+                                    <li>Cross-browser compatibility testing</li>
+                                    <li>Responsive design testing</li>
+                                </ul>
+                            </td>
+                            <td class="due-cell" data-label="Due Dates"></td>
+                        </tr>
+                        <tr>
+                            <td class="date-cell" data-label="Date">M 7/21</td>
+                            <td class="mode-cell" data-label="Mode">Assignment Due</td>
+                            <td class="topic-cell" data-label="Topic">
+                                <div class="topic-title">Week 2 Assignment: Responsive Portfolio Redesign</div>
+                                <ul class="activity-list">
+                                    <li>External CSS stylesheet with organized, commented code</li>
+                                    <li>Custom color scheme and typography choices</li>
+                                    <li>Flexbox or CSS Grid layout for main sections</li>
+                                    <li>Responsive design that works on mobile, tablet, and desktop</li>
                                 </ul>
                             </td>
                             <td class="due-cell" data-label="Due Dates">
                                 <div class="due-item due-major">
-                                    <strong>Project 2 Rough Draft of Whole Site</strong> (w/ Draft Reflection) due by class time
+                                    <strong>Responsive Portfolio Redesign</strong> due by 11:59 PM
                                 </div>
-                                <div class="due-item due-major">
-                                    <strong>Project 2: Letters of Reply</strong> due by 11:30 pm in D2L
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="date-cell" data-label="Date">Sun 7/20</td>
-                            <td class="mode-cell" data-label="Mode">Project 2 Due</td>
-                            <td class="topic-cell" data-label="Topic">Project 2 Due</td>
-                            <td class="due-cell" data-label="Due Dates">
-                                <div class="due-item due-major">
-                                    <strong>Project 2</strong> (w/ Cover Memo) due by 11:30 pm in D2L
+                                <div class="due-item reflection">
+                                    <strong>Self Reflection 2: Midterm Progress & Grade Argument</strong> due Tuesday 7/22 by 11:59 PM
                                 </div>
                             </td>
                         </tr>
@@ -254,8 +259,8 @@
             </section>
 
             <section class="project-section">
-                <h2>Project 3: Juxtaposition & Visual Rhetoric</h2>
-                <table class="schedule-table" role="table" aria-label="Project 3 Schedule">
+                <h2>Week 3: JavaScript Fundamentals</h2>
+                <table class="schedule-table" role="table" aria-label="Week 3 Schedule">
                     <thead>
                         <tr>
                             <th scope="col" class="project-header">Date</th>
@@ -266,85 +271,75 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="date-cell" data-label="Date">M 7/21</td>
-                            <td class="mode-cell" data-label="Mode">Lecture / Exercise</td>
-                            <td class="topic-cell" data-label="Topic">
-                                <div class="topic-title">Basic Juxtaposition Technique as Conditions for Rebuttal</div>
-                                <ul class="activity-list">
-                                    <li>Photopea Review and Basic Web Image Galleries</li>
-                                </ul>
-                            </td>
-                            <td class="due-cell" data-label="Due Dates">
-                                <div class="due-item due-major">
-                                    <strong>Project 3 Proposal</strong> due by 11:30 pm in D2L
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
                             <td class="date-cell" data-label="Date">T 7/22</td>
-                            <td class="mode-cell" data-label="Mode">Workshop</td>
+                            <td class="mode-cell" data-label="Mode">Lecture / Tutorial</td>
                             <td class="topic-cell" data-label="Topic">
+                                <div class="topic-title">JavaScript Basics & Syntax</div>
                                 <ul class="activity-list">
-                                    <li>Project Workshop</li>
+                                    <li>JavaScript fundamentals including variables, data types, operators</li>
+                                    <li>Control structures and functions</li>
+                                    <li>Working with the browser console</li>
+                                    <li>Debugging basics</li>
                                 </ul>
                             </td>
-                            <td class="due-cell" data-label="Due Dates">
-                                <div class="due-item">
-                                    Daily Flex 3.1 due by 11:30 pm in D2L
-                                </div>
-                            </td>
+                            <td class="due-cell" data-label="Due Dates"></td>
                         </tr>
                         <tr>
                             <td class="date-cell" data-label="Date">W 7/23</td>
                             <td class="mode-cell" data-label="Mode">Workshop</td>
                             <td class="topic-cell" data-label="Topic">
+                                <div class="topic-title">DOM Manipulation & Events</div>
                                 <ul class="activity-list">
-                                    <li>Project Workshop</li>
+                                    <li>Understanding the Document Object Model (DOM)</li>
+                                    <li>Selecting elements and modifying content</li>
+                                    <li>Event handling for user interactions</li>
+                                    <li>Creating dynamic web features</li>
                                 </ul>
                             </td>
-                            <td class="due-cell" data-label="Due Dates">
-                                <div class="due-item">
-                                    Daily Flex 3.2 due by 11:30 pm in D2L
-                                </div>
-                            </td>
+                            <td class="due-cell" data-label="Due Dates"></td>
                         </tr>
                         <tr>
                             <td class="date-cell" data-label="Date">R 7/24</td>
                             <td class="mode-cell" data-label="Mode">Workshop</td>
                             <td class="topic-cell" data-label="Topic">
+                                <div class="topic-title">Debugging with Developer Tools</div>
                                 <ul class="activity-list">
-                                    <li>Peer Review Workshop</li>
+                                    <li>Using browser developer tools effectively</li>
+                                    <li>JavaScript console for debugging</li>
+                                    <li>Breakpoints and step-through debugging</li>
+                                    <li>Performance monitoring basics</li>
                                 </ul>
                             </td>
-                            <td class="due-cell" data-label="Due Dates">
-                                <div class="due-item due-major">
-                                    <strong>Project 3 Rough Draft Due</strong> (w/ Draft Reflection) due by classtime in D2L
-                                </div>
-                                <div class="due-item due-major">
-                                    <strong>Project 3: Letters of Reply</strong> due by 11:30 pm in D2L
-                                </div>
-                            </td>
+                            <td class="due-cell" data-label="Due Dates"></td>
                         </tr>
                         <tr>
                             <td class="date-cell" data-label="Date">F 7/25</td>
-                            <td class="mode-cell" data-label="Mode">Workshop</td>
+                            <td class="mode-cell" data-label="Mode">Hands-on Lab</td>
                             <td class="topic-cell" data-label="Topic">
                                 <ul class="activity-list">
-                                    <li>Final Project 3 Workshop</li>
+                                    <li>Interactive Form Builder Lab</li>
+                                    <li>Image Gallery Lab</li>
+                                    <li>DOM Inspector Tool Lab</li>
                                 </ul>
                             </td>
                             <td class="due-cell" data-label="Due Dates"></td>
                         </tr>
                         <tr>
                             <td class="date-cell" data-label="Date">Sun 7/27</td>
-                            <td class="mode-cell" data-label="Mode">Project 3 Due</td>
-                            <td class="topic-cell" data-label="Topic">Project 3 Due</td>
+                            <td class="mode-cell" data-label="Mode">Assignment Due</td>
+                            <td class="topic-cell" data-label="Topic">
+                                <div class="topic-title">Week 3 Assignment: Interactive Web Application</div>
+                                <ul class="activity-list">
+                                    <li>Implement at least 5 different interactive features</li>
+                                    <li>Use proper JavaScript variable declarations (let, const)</li>
+                                    <li>Include form validation with user feedback</li>
+                                    <li>Demonstrate event handling for multiple event types</li>
+                                    <li>Use DOM manipulation to dynamically update content</li>
+                                </ul>
+                            </td>
                             <td class="due-cell" data-label="Due Dates">
                                 <div class="due-item due-major">
-                                    <strong>Project 3</strong> (w/ Cover Memo) due by 11:30 pm in D2L
-                                </div>
-                                <div class="due-item due-major">
-                                    <strong>Self-Reflection 3</strong> due by 11:30 pm in D2L
+                                    <strong>Interactive Web Application</strong> due by 11:59 PM
                                 </div>
                             </td>
                         </tr>
@@ -353,8 +348,8 @@
             </section>
 
             <section class="project-section">
-                <h2>Project 4: Portfolio & Reflection</h2>
-                <table class="schedule-table" role="table" aria-label="Project 4 Schedule">
+                <h2>Week 4: Portfolio & Professional Development</h2>
+                <table class="schedule-table" role="table" aria-label="Week 4 Schedule">
                     <thead>
                         <tr>
                             <th scope="col" class="project-header">Date</th>
@@ -368,68 +363,55 @@
                             <td class="date-cell" data-label="Date">M 7/28</td>
                             <td class="mode-cell" data-label="Mode">Lecture / Workshop</td>
                             <td class="topic-cell" data-label="Topic">
-                                <div class="topic-title">Portfolio Theory & Digital Portfolios</div>
+                                <div class="topic-title">Digital Portfolio Theory & Best Practices</div>
                                 <ul class="activity-list">
-                                    <li>Introduction to Portfolio as Genre</li>
-                                    <li>Digital Portfolio Best Practices</li>
-                                    <li>Portfolio Design Workshop</li>
+                                    <li>Portfolio theory and rhetorical tools for professional presentation</li>
+                                    <li>Curation strategies and narrative coherence</li>
+                                    <li>Effective portfolio design principles</li>
+                                    <li>Professional online presence development</li>
                                 </ul>
                             </td>
-                            <td class="due-cell" data-label="Due Dates">
-                                <div class="due-item due-major">
-                                    <strong>Project 4 Proposal</strong> due by 11:30 pm in D2L
-                                </div>
-                            </td>
+                            <td class="due-cell" data-label="Due Dates"></td>
                         </tr>
                         <tr>
                             <td class="date-cell" data-label="Date">T 7/29</td>
                             <td class="mode-cell" data-label="Mode">Workshop</td>
                             <td class="topic-cell" data-label="Topic">
+                                <div class="topic-title">Reflective Writing for Learning</div>
                                 <ul class="activity-list">
-                                    <li>Portfolio Construction Workshop</li>
-                                    <li>Revision and Curation of Previous Projects</li>
-                                    <li>Reflective Writing Strategies</li>
+                                    <li>Reflective writing techniques that demonstrate learning</li>
+                                    <li>Analyzing your own work and articulating learning outcomes</li>
+                                    <li>Connecting experiences to broader concepts</li>
+                                    <li>Portfolio content curation strategies</li>
                                 </ul>
                             </td>
-                            <td class="due-cell" data-label="Due Dates">
-                                <div class="due-item">
-                                    Daily Flex 4.1 due by 11:30 pm in D2L
-                                </div>
-                            </td>
+                            <td class="due-cell" data-label="Due Dates"></td>
                         </tr>
                         <tr>
                             <td class="date-cell" data-label="Date">W 7/30</td>
                             <td class="mode-cell" data-label="Mode">Workshop</td>
                             <td class="topic-cell" data-label="Topic">
+                                <div class="topic-title">Portfolio Design & Professional Presentation</div>
                                 <ul class="activity-list">
-                                    <li>Portfolio Development Workshop</li>
-                                    <li>Individual Consultations</li>
-                                    <li>Technical Support</li>
+                                    <li>Creating cohesive, professional portfolio designs</li>
+                                    <li>Navigation design and visual consistency</li>
+                                    <li>Accessibility considerations for portfolios</li>
+                                    <li>Deployment strategies for digital portfolios</li>
                                 </ul>
                             </td>
-                            <td class="due-cell" data-label="Due Dates">
-                                <div class="due-item">
-                                    Daily Flex 4.2 due by 11:30 pm in D2L
-                                </div>
-                            </td>
+                            <td class="due-cell" data-label="Due Dates"></td>
                         </tr>
                         <tr>
                             <td class="date-cell" data-label="Date">R 7/31</td>
-                            <td class="mode-cell" data-label="Mode">Peer Review</td>
+                            <td class="mode-cell" data-label="Mode">Hands-on Lab</td>
                             <td class="topic-cell" data-label="Topic">
                                 <ul class="activity-list">
-                                    <li>Portfolio Peer Review Workshop</li>
-                                    <li>Final Revisions</li>
+                                    <li>Portfolio Content Curation Lab</li>
+                                    <li>Reflective Writing Workshop</li>
+                                    <li>Portfolio Design & Deployment Lab</li>
                                 </ul>
                             </td>
-                            <td class="due-cell" data-label="Due Dates">
-                                <div class="due-item due-major">
-                                    <strong>Portfolio Rough Draft</strong> (w/ Draft Reflection) due by class time in D2L
-                                </div>
-                                <div class="due-item due-major">
-                                    <strong>Project 4: Letters of Reply</strong> due by 11:30 pm in D2L
-                                </div>
-                            </td>
+                            <td class="due-cell" data-label="Due Dates"></td>
                         </tr>
                         <tr>
                             <td class="date-cell" data-label="Date">F 8/1</td>
@@ -437,7 +419,8 @@
                             <td class="topic-cell" data-label="Topic">
                                 <ul class="activity-list">
                                     <li>Final Portfolio Revisions</li>
-                                    <li>Course Wrap-up</li>
+                                    <li>Peer Review of Portfolio Websites</li>
+                                    <li>Course Wrap-up and Reflection</li>
                                 </ul>
                             </td>
                             <td class="due-cell" data-label="Due Dates"></td>
@@ -445,13 +428,22 @@
                         <tr>
                             <td class="date-cell" data-label="Date">Sun 8/3</td>
                             <td class="mode-cell" data-label="Mode">Final Portfolio Due</td>
-                            <td class="topic-cell" data-label="Topic">Final Portfolio & Course Reflection Due</td>
+                            <td class="topic-cell" data-label="Topic">
+                                <div class="topic-title">Week 4 Final Assignment: Complete Portfolio Website</div>
+                                <ul class="activity-list">
+                                    <li>Minimum 5 pages (Home, About, Projects, Contact, Resume/CV)</li>
+                                    <li>Fully responsive design working on all device sizes</li>
+                                    <li>Modern CSS with Flexbox/Grid layout systems</li>
+                                    <li>Interactive JavaScript features and animations</li>
+                                    <li>Professional presentation and deployment</li>
+                                </ul>
+                            </td>
                             <td class="due-cell" data-label="Due Dates">
                                 <div class="due-item due-major">
-                                    <strong>Final Portfolio</strong> (w/ Cover Memo & Course Reflection) due by 11:30 pm in D2L
+                                    <strong>Final Portfolio Website</strong> due by 11:59 PM
                                 </div>
-                                <div class="due-item due-major">
-                                    <strong>Final Self-Reflection</strong> due by 11:30 pm in D2L
+                                <div class="due-item reflection">
+                                    <strong>Self Reflection 3: Final Assessment & Grade Argument</strong> due by 11:59 PM
                                 </div>
                             </td>
                         </tr>
@@ -464,26 +456,79 @@
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h3>MALA60970: Web Authoring</h3>
+                <h3>📚 MALA60970: Web Authoring</h3>
                 <p>4-Week Intensive Course</p>
                 <p>July 7th - August 3rd, 2025</p>
+                <p>Modern Web Development Curriculum</p>
+                <div class="course-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">4</span>
+                        <p class="stat-label">Weeks</p>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">12+</span>
+                        <p class="stat-label">Videos</p>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">20+</span>
+                        <p class="stat-label">Labs</p>
+                    </div>
+                </div>
             </div>
+            
             <div class="footer-section">
-                <h3>Quick Links</h3>
+                <h3>🗓️ Quick Navigation</h3>
                 <ul>
                     <li><a href="../../index.html">Course Home</a></li>
+                    <li><a href="schedule.html">Weekly Schedule</a></li>
                     <li><a href="assignments.html">Assignments</a></li>
-                    <li><a href="schedule.html">Schedule</a></li>
+                    <li><a href="week1.html">Week 1: HTML & Design</a></li>
+                    <li><a href="week2.html">Week 2: CSS & Layout</a></li>
+                    <li><a href="week3.html">Week 3: JavaScript</a></li>
+                    <li><a href="week4.html">Week 4: Portfolio</a></li>
                 </ul>
             </div>
+            
             <div class="footer-section">
-                <h3>Resources</h3>
+                <h3>🛠️ Tools & Resources</h3>
                 <ul>
-                    <li><a href="../examples/html-basics">HTML Basics</a></li>
+                    <li><a href="../examples/vscode-setup-guide.html">VS Code Setup Guide</a></li>
+                    <li><a href="../examples/html-basics">HTML Basics Examples</a></li>
                     <li><a href="../examples/css-demos">CSS Demos</a></li>
-                    <li><a href="../examples/js-exercises">JS Exercises</a></li>
+                    <li><a href="../examples/js-exercises">JavaScript Exercises</a></li>
+                    <li><a href="https://github.com" target="_blank">GitHub</a></li>
+                    <li><a href="https://developer.mozilla.org" target="_blank">MDN Web Docs</a></li>
+                </ul>
+                <div class="footer-tools">
+                    <span class="tool-tag">HTML5</span>
+                    <span class="tool-tag">CSS3</span>
+                    <span class="tool-tag">JavaScript</span>
+                    <span class="tool-tag">Git</span>
+                    <span class="tool-tag">VS Code</span>
+                    <span class="tool-tag">GitHub Pages</span>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>🎯 Learning Outcomes</h3>
+                <ul>
+                    <li><a href="#html-semantic">Semantic HTML Structure</a></li>
+                    <li><a href="#css-responsive">Responsive CSS Design</a></li>
+                    <li><a href="#js-interactive">Interactive JavaScript</a></li>
+                    <li><a href="#portfolio-professional">Professional Portfolio</a></li>
+                    <li><a href="#git-version-control">Version Control</a></li>
+                    <li><a href="#web-deployment">Web Deployment</a></li>
                 </ul>
             </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-social">
+                <a href="#" class="social-link" title="Course GitHub">⚡</a>
+                <a href="#" class="social-link" title="Course Discord">💬</a>
+                <a href="#" class="social-link" title="Course Support">📧</a>
+            </div>
+            <p>&copy; 2025 MALA60970 Web Authoring Course. Building the future of web development education.</p>
         </div>
     </footer>
 </body>

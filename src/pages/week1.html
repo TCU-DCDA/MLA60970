@@ -24,9 +24,35 @@
                     <li><a href="assignments.html">Assignments</a></li>
                     <li><a href="schedule.html">Schedule</a></li>
                 </ul>
+                
+                <!-- Hamburger Menu Button -->
+                <div class="hamburger" id="hamburger-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </nav>
         </div>
     </header>
+    
+    <!-- Mobile Navigation Overlay -->
+    <div class="nav-overlay" id="nav-overlay"></div>
+    
+    <!-- Mobile Navigation Menu -->
+    <div class="mobile-nav" id="mobile-nav">
+        <div class="mobile-nav-header">
+            <h3>Course Navigation</h3>
+        </div>
+        <ul>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="week1.html" class="active">Week 1</a></li>
+            <li><a href="week2.html">Week 2</a></li>
+            <li><a href="week3.html">Week 3</a></li>
+            <li><a href="week4.html">Week 4</a></li>
+            <li><a href="assignments.html">Assignments</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+        </ul>
+    </div>
     <main>
         <!-- Learning Objectives -->
         <section>
@@ -221,7 +247,6 @@
                     <h3>Project 1: Visual Design & Rhetoric Analysis</h3>
                     <div class="assignment-meta">
                         <span class="due-date">📅 Due: Friday, July 11, 2025</span>
-                        <span class="points">💯 100 points</span>
                     </div>
                 </div>
                 
@@ -240,12 +265,12 @@
                         <li>Professional presentation and clear writing</li>
                     </ul>
                     
-                    <h4>Evaluation Criteria:</h4>
+                    <h4>Evaluation Approach:</h4>
                     <ul>
-                        <li>Depth and accuracy of design analysis (40 points)</li>
-                        <li>HTML semantic structure and validation (30 points)</li>
-                        <li>Writing quality and organization (20 points)</li>
-                        <li>Git workflow and GitHub Pages deployment (10 points)</li>
+                        <li>Demonstrate depth and accuracy of design analysis</li>
+                        <li>Show proficiency in HTML semantic structure and validation</li>
+                        <li>Present clear, well-organized writing</li>
+                        <li>Evidence proper Git workflow and GitHub Pages deployment</li>
                     </ul>
                     
                     <h4>Submission:</h4>
@@ -265,7 +290,81 @@
         </section>
     </main>
     <footer>
-        <p>&copy; 2025 MALA60970 Web Authoring Course. All rights reserved.</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>📚 MALA60970: Web Authoring</h3>
+                <p>4-Week Intensive Course</p>
+                <p>July 7th - August 3rd, 2025</p>
+                <p>Modern Web Development Curriculum</p>
+                <div class="course-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">4</span>
+                        <p class="stat-label">Weeks</p>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">12+</span>
+                        <p class="stat-label">Videos</p>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">20+</span>
+                        <p class="stat-label">Labs</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>🗓️ Quick Navigation</h3>
+                <ul>
+                    <li><a href="../../index.html">Course Home</a></li>
+                    <li><a href="schedule.html">Weekly Schedule</a></li>
+                    <li><a href="assignments.html">Assignments</a></li>
+                    <li><a href="week1.html">Week 1: HTML & Design</a></li>
+                    <li><a href="week2.html">Week 2: CSS & Layout</a></li>
+                    <li><a href="week3.html">Week 3: JavaScript</a></li>
+                    <li><a href="week4.html">Week 4: Portfolio</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>🛠️ Week 1 Tools</h3>
+                <ul>
+                    <li><a href="../examples/vscode-setup-guide.html">VS Code Setup Guide</a></li>
+                    <li><a href="../examples/html-basics">HTML Basics Examples</a></li>
+                    <li><a href="../examples/semantic-html-guide.html">Semantic HTML Guide</a></li>
+                    <li><a href="https://github.com" target="_blank">GitHub</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">MDN HTML Docs</a></li>
+                    <li><a href="https://validator.w3.org/" target="_blank">HTML Validator</a></li>
+                </ul>
+                <div class="footer-tools">
+                    <span class="tool-tag">HTML5</span>
+                    <span class="tool-tag">Git</span>
+                    <span class="tool-tag">VS Code</span>
+                    <span class="tool-tag">GitHub Pages</span>
+                    <span class="tool-tag">Design Principles</span>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>🎯 Week 1 Goals</h3>
+                <ul>
+                    <li><a href="#design-principles">Master CRAP Design Principles</a></li>
+                    <li><a href="#html-semantic">Build Semantic HTML Structure</a></li>
+                    <li><a href="#git-setup">Set Up Git & GitHub</a></li>
+                    <li><a href="#visual-analysis">Analyze Visual Design</a></li>
+                    <li><a href="#accessibility">HTML Accessibility</a></li>
+                    <li><a href="#deployment">Deploy to GitHub Pages</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-social">
+                <a href="#" class="social-link" title="Course GitHub">⚡</a>
+                <a href="#" class="social-link" title="Course Discord">💬</a>
+                <a href="#" class="social-link" title="Course Support">📧</a>
+            </div>
+            <p>&copy; 2025 MALA60970 Web Authoring Course. Building the future of web development education.</p>
+        </div>
     </footer>
     <script src="../js/main.js"></script>
     <script src="../js/course-navigation.js"></script>

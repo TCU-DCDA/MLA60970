@@ -436,6 +436,14 @@
     margin: 2rem 0;
 }
 
+.assignment-card.reflection {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.02), rgba(139, 92, 246, 0.02));
+    border: 2px solid var(--success-color);
+    border-radius: 12px;
+    padding: 2.5rem;
+    margin: 2rem 0;
+}
+
 .assignment-header {
     display: flex;
     justify-content: space-between;
@@ -475,7 +483,9 @@
     border-color: #f39c12 !important;
 }
 
-.points {
+.points,
+.major-project,
+.capstone-project {
     background: rgba(52, 152, 219, 0.1) !important;
     color: #3498db !important;
     border-color: #3498db !important;
@@ -997,6 +1007,12 @@ nav a:focus-visible {
     line-height: 1.4;
 }
 
+.due-item.reflection {
+    background: rgba(16, 185, 129, 0.1) !important;
+    border-color: var(--success-color) !important;
+    color: var(--success-color) !important;
+}
+
 .due-major {
     background-color: #d4edda;
     border-left-color: var(--success-color);
@@ -1110,5 +1126,313 @@ nav a:focus-visible {
     .due-item {
         background: #f9f9f9 !important;
         border: 1px solid #ccc !important;
+    }
+}
+
+/* Assignments Page Specific Styles */
+.assignments-intro {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.assignments-grid {
+    display: grid;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.assignment-card {
+    background: white;
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.assignment-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--accent-color) 100%);
+}
+
+.assignment-card.major::before {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+}
+
+.assignment-card.capstone::before {
+    background: linear-gradient(135deg, var(--accent-color) 0%, var(--success-color) 100%);
+}
+
+.assignment-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    border-color: var(--secondary-color);
+}
+
+.assignment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.assignment-header h3 {
+    color: var(--primary-color);
+    margin-bottom: 0;
+    font-size: 1.4rem;
+    font-weight: 600;
+    flex: 1;
+    min-width: 300px;
+}
+
+.assignment-meta {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.assignment-meta span {
+    background: rgba(77, 25, 121, 0.1);
+    color: var(--primary-color);
+    padding: 0.4rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    border: 1px solid rgba(77, 25, 121, 0.2);
+}
+
+.due-date {
+    background: rgba(255, 193, 7, 0.1) !important;
+    color: #e67e22 !important;
+    border-color: #f39c12 !important;
+}
+
+.points,
+.major-project,
+.capstone-project {
+    background: rgba(46, 204, 113, 0.1) !important;
+    color: var(--success-color) !important;
+    border-color: var(--success-color) !important;
+}
+
+.assignment-description h4 {
+    color: var(--primary-color);
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.assignment-description ul {
+    margin-bottom: 1rem;
+    padding-left: 1.2rem;
+}
+
+.assignment-description li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.skills-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.skill-tag {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--accent-color) 100%);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: transform 0.2s ease;
+}
+
+.skill-tag:hover {
+    transform: translateY(-1px);
+}
+
+/* Assignment Resources Section */
+.assignment-resources-section {
+    background: var(--light-gray);
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 3rem 0;
+}
+
+.assignment-resources-section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+}
+
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.resource-card {
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.resource-card:hover {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+}
+
+.resource-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.resource-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.resource-card li {
+    margin-bottom: 0.5rem;
+}
+
+.resource-card a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.resource-card a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+/* Submission Guidelines */
+.submission-guidelines {
+    background: white;
+    border: 2px solid var(--secondary-color);
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 3rem 0;
+}
+
+.submission-guidelines h2 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.guidelines-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.guideline-section h3 {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.guideline-section ol,
+.guideline-section ul {
+    padding-left: 1.2rem;
+}
+
+.guideline-section li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+/* Responsive Design for Assignments */
+@media (max-width: 768px) {
+    .assignment-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .assignment-header h3 {
+        min-width: auto;
+        margin-bottom: 0.5rem;
+    }
+    
+    .assignment-meta {
+        align-self: stretch;
+        justify-content: flex-start;
+    }
+    
+    .assignments-grid {
+        gap: 1.5rem;
+    }
+    
+    .assignment-card {
+        padding: 1.5rem;
+    }
+    
+    .resources-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .guidelines-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .skills-tags {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .assignment-card {
+        padding: 1rem;
+    }
+    
+    .assignment-header h3 {
+        font-size: 1.2rem;
+    }
+    
+    .assignment-meta span {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.6rem;
+    }
+    
+    .skill-tag {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.6rem;
     }
 }

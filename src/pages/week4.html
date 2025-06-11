@@ -12,7 +12,7 @@
         <div class="header-content">
             <div class="header-top">
                 <h1>Week 4: Portfolio & Reflection</h1>
-                <p class="course-subtitle">Digital Portfolio Creation & Course Reflection</p>
+                <p class="course-subtitle">Digital Portfolio Creation & Self Reflection</p>
             </div>
             <nav>
                 <ul>
@@ -24,9 +24,35 @@
                     <li><a href="assignments.html">Assignments</a></li>
                     <li><a href="schedule.html">Schedule</a></li>
                 </ul>
+                
+                <!-- Hamburger Menu Button -->
+                <div class="hamburger" id="hamburger-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </nav>
         </div>
     </header>
+    
+    <!-- Mobile Navigation Overlay -->
+    <div class="nav-overlay" id="nav-overlay"></div>
+    
+    <!-- Mobile Navigation Menu -->
+    <div class="mobile-nav" id="mobile-nav">
+        <div class="mobile-nav-header">
+            <h3>Course Navigation</h3>
+        </div>
+        <ul>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="week1.html">Week 1</a></li>
+            <li><a href="week2.html">Week 2</a></li>
+            <li><a href="week3.html">Week 3</a></li>
+            <li><a href="week4.html" class="active">Week 4</a></li>
+            <li><a href="assignments.html">Assignments</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+        </ul>
+    </div>
     <main>
         <section class="learning-objectives">
             <h2>Learning Objectives</h2>
@@ -36,7 +62,7 @@
                 <li>✓ Create reflective writing that demonstrates learning and growth</li>
                 <li>✓ Design a cohesive digital portfolio with effective navigation</li>
                 <li>✓ Deploy a professional portfolio website</li>
-                <li>✓ Write comprehensive course reflection and self-assessment</li>
+                <li>✓ Write comprehensive Self Reflection 3 and self-assessment</li>
             </ul>
         </section>
 
@@ -320,9 +346,87 @@
             </div>
         </section>
     </main>
-    <footer>
-        <p>&copy; 2025 MALA60970 Web Authoring Course. All rights reserved.</p>
+    
+    <footer class="course-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>📚 Course Information</h3>
+                <div class="course-stats">
+                    <div class="stat-card">
+                        <span class="stat-number">4</span>
+                        <span class="stat-label">Weeks</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">12+</span>
+                        <span class="stat-label">Videos</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">20+</span>
+                        <span class="stat-label">Labs</span>
+                    </div>
+                </div>
+                <p class="course-description">Master modern web development with HTML5, CSS3, and JavaScript</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>🧭 Navigation</h3>
+                <ul class="footer-links">
+                    <li><a href="../../index.html">🏠 Home</a></li>
+                    <li><a href="schedule.html">📅 Schedule</a></li>
+                    <li><a href="assignments.html">📝 Assignments</a></li>
+                    <li><a href="week1.html">Week 1: HTML Foundations</a></li>
+                    <li><a href="week2.html">Week 2: CSS Styling</a></li>
+                    <li><a href="week3.html">Week 3: JavaScript Basics</a></li>
+                    <li><a href="week4.html">Week 4: Advanced Topics</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>🛠️ Tools & Resources</h3>
+                <div class="tools-grid">
+                    <span class="tool-tag">HTML5</span>
+                    <span class="tool-tag">CSS3</span>
+                    <span class="tool-tag">JavaScript</span>
+                    <span class="tool-tag">VS Code</span>
+                    <span class="tool-tag">Git</span>
+                    <span class="tool-tag">GitHub</span>
+                    <span class="tool-tag">Chrome DevTools</span>
+                    <span class="tool-tag">Responsive Design</span>
+                </div>
+                <div class="resource-links">
+                    <a href="#" class="resource-link">📖 Documentation</a>
+                    <a href="#" class="resource-link">💡 Help Center</a>
+                    <a href="#" class="resource-link">👥 Discussion Forum</a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>🎯 Learning Outcomes</h3>
+                <ul class="outcomes-list">
+                    <li>✅ Create semantic HTML structures</li>
+                    <li>✅ Design responsive layouts with CSS</li>
+                    <li>✅ Add interactivity with JavaScript</li>
+                    <li>✅ Use developer tools effectively</li>
+                    <li>✅ Apply web accessibility principles</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <div class="social-links">
+                    <a href="#" class="social-link">📧 Email</a>
+                    <a href="#" class="social-link">💬 Slack</a>
+                    <a href="#" class="social-link">🐙 GitHub</a>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2025 MALA60970 Web Authoring Course. All rights reserved.</p>
+                    <p class="course-term">Summer 2025 • 4-Week Intensive</p>
+                </div>
+            </div>
+        </div>
     </footer>
+    
     <script src="../js/main.js"></script>
     <script src="../js/course-navigation.js"></script>
     <script src="../js/video-manager.js"></script>

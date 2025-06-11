@@ -3,6 +3,9 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize course navigation
     initCourseNavigation();
+    
+    // Initialize mobile hamburger menu
+    initHamburgerMenu();
 
     // Add event listeners for interactive elements
     const interactiveElements = document.querySelectorAll('.interactive');
@@ -12,6 +15,63 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+function initHamburgerMenu() {
+    const hamburger = document.getElementById('hamburger-menu');
+    const mobileNav = document.getElementById('mobile-nav');
+    const navOverlay = document.getElementById('nav-overlay');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
+
+    if (!hamburger || !mobileNav || !navOverlay) return;
+
+    // Toggle mobile menu
+    hamburger.addEventListener('click', function() {
+        toggleMobileMenu();
+    });
+
+    // Close menu when overlay is clicked
+    navOverlay.addEventListener('click', function() {
+        closeMobileMenu();
+    });
+
+    // Close menu when a link is clicked
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            closeMobileMenu();
+        });
+    });
+
+    // Close menu on escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeMobileMenu();
+        }
+    });
+
+    function toggleMobileMenu() {
+        const isActive = hamburger.classList.contains('active');
+        
+        if (isActive) {
+            closeMobileMenu();
+        } else {
+            openMobileMenu();
+        }
+    }
+
+    function openMobileMenu() {
+        hamburger.classList.add('active');
+        mobileNav.classList.add('active');
+        navOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+    }
+
+    function closeMobileMenu() {
+        hamburger.classList.remove('active');
+        mobileNav.classList.remove('active');
+        navOverlay.classList.remove('active');
+        document.body.style.overflow = ''; // Restore scrolling
+    }
+}
 
 function initCourseNavigation() {
     const navLinks = document.querySelectorAll('.nav-link');
