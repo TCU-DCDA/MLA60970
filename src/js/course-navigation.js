@@ -10,6 +10,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize dropdown functionality
     initDropdownMenus();
+    
+    // Enhanced responsive navigation with schedule improvements
+    initEnhancedResponsiveNavigation();
 });
 
 function initDropdownMenus() {
@@ -83,6 +86,98 @@ function initResponsiveNavigation() {
             });
         }
     }
+}
+
+// Add layout switching functionality for schedule tables
+function initScheduleLayoutToggle() {
+    // Only add controls on mobile screens
+    if (window.innerWidth <= 768) {
+        const scheduleContainer = document.querySelector('.schedule-container');
+        if (scheduleContainer && !document.querySelector('.layout-controls')) {
+            
+            // Create layout toggle controls
+            const layoutControls = document.createElement('div');
+            layoutControls.className = 'layout-controls';
+            layoutControls.innerHTML = `
+                <div class="layout-toggle">
+                    <button id="table-layout" class="active" data-layout="table">
+                        📋 Table View
+                    </button>
+                    <button id="card-layout" data-layout="cards">
+                        🎴 Card View
+                    </button>
+                </div>
+            `;
+            
+            // Insert before the first project section
+            const firstSection = scheduleContainer.querySelector('.project-section');
+            if (firstSection) {
+                scheduleContainer.insertBefore(layoutControls, firstSection);
+                
+                // Add event listeners
+                const tableBtn = document.getElementById('table-layout');
+                const cardBtn = document.getElementById('card-layout');
+                
+                if (tableBtn && cardBtn) {
+                    tableBtn.addEventListener('click', () => switchLayout('table'));
+                    cardBtn.addEventListener('click', () => switchLayout('cards'));
+                }
+            }
+        }
+    }
+}
+
+function switchLayout(layoutType) {
+    const container = document.querySelector('.schedule-container');
+    const tableBtn = document.getElementById('table-layout');
+    const cardBtn = document.getElementById('card-layout');
+    
+    if (!container || !tableBtn || !cardBtn) return;
+    
+    // Update button states
+    tableBtn.classList.toggle('active', layoutType === 'table');
+    cardBtn.classList.toggle('active', layoutType === 'cards');
+    
+    // Update container class
+    if (layoutType === 'cards') {
+        container.classList.add('schedule-grid-layout');
+        // Store preference
+        localStorage.setItem('schedule-layout-preference', 'cards');
+    } else {
+        container.classList.remove('schedule-grid-layout');
+        localStorage.setItem('schedule-layout-preference', 'table');
+    }
+}
+
+// Load saved layout preference
+function loadLayoutPreference() {
+    const savedLayout = localStorage.getItem('schedule-layout-preference');
+    if (savedLayout && window.innerWidth <= 768) {
+        switchLayout(savedLayout);
+    }
+}
+
+// Enhanced responsive navigation with schedule improvements
+function initEnhancedResponsiveNavigation() {
+    initResponsiveNavigation(); // Call existing function
+    initScheduleLayoutToggle();
+    loadLayoutPreference();
+    
+    // Re-initialize on window resize
+    let resizeTimer;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() {
+            // Re-check if we need mobile controls
+            const controls = document.querySelector('.layout-controls');
+            if (window.innerWidth > 768 && controls) {
+                controls.remove();
+            } else if (window.innerWidth <= 768 && !controls) {
+                initScheduleLayoutToggle();
+                loadLayoutPreference();
+            }
+        }, 250);
+    });
 }
 
 // Handle window resize

@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Fundamentals Guide - MALA60970</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/course.css">
+    <style>
+        .css-example {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 1.5rem 0;
+            border-left: 4px solid #3498db;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+        }
+        .code-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .code-example-box {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+        }
+        .good-example {
+            border-left: 4px solid var(--success-color);
+        }
+        .bad-example {
+            border-left: 4px solid #e74c3c;
+        }
+        .css-syntax {
+            background: #2d3748;
+            color: #e2e8f0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            font-family: 'Courier New', monospace;
+            line-height: 1.6;
+        }
+        .css-property {
+            color: #81c784;
+            font-weight: bold;
+        }
+        .css-value {
+            color: #ffb74d;
+        }
+        .css-selector {
+            color: #64b5f6;
+            font-weight: bold;
+        }
+        .visual-example {
+            background: #f0f4f8;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border: 2px dashed #3498db;
+        }
+        .demo-box {
+            background: #3498db;
+            color: white;
+            padding: 1rem;
+            margin: 0.5rem;
+            border-radius: 4px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .box-model-visual {
+            background: linear-gradient(45deg, #ecf0f1, #bdc3c7);
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            margin: 1rem 0;
+        }
+        .content-area {
+            background: #3498db;
+            color: white;
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem;
+        }
+        .padding-area {
+            background: #27ae60;
+            padding: 1rem;
+            border-radius: 4px;
+        }
+        .border-area {
+            border: 4px solid #e74c3c;
+            padding: 1rem;
+        }
+        .margin-area {
+            background: #f39c12;
+            padding: 1rem;
+            border-radius: 4px;
+        }
+        .grid-demo {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        .grid-item {
+            background: #9b59b6;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            border-radius: 4px;
+        }
+        .flex-demo {
+            display: flex;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        .flex-item {
+            background: #e74c3c;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            border-radius: 4px;
+            flex: 1;
+        }
+        @media (max-width: 768px) {
+            .code-comparison {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            .grid-demo {
+                grid-template-columns: 1fr;
+            }
+            .flex-demo {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="hero-section subpage">
+        <nav class="hero-nav">
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../pages/week1.html">Week 1</a></li>
+                <li><a href="../pages/week2.html" class="active">Week 2</a></li>
+                <li><a href="../pages/week3.html">Week 3</a></li>
+                <li><a href="../pages/week4.html">Week 4</a></li>
+                <li><a href="../pages/demos.html">Demos</a></li>
+                <li><a href="../pages/assignments.html">Assignments</a></li>
+                <li><a href="../pages/schedule.html">Schedule</a></li>
+            </ul>
+            
+            <!-- Hamburger Menu Button -->
+            <div class="hamburger" id="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+        
+        <div class="hero-content">
+            <h1>CSS Fundamentals Guide</h1>
+           
+        </div>
+    </header>
+    
+    <!-- Mobile Navigation Overlay -->
+    <div class="nav-overlay" id="nav-overlay"></div>
+    
+    <!-- Mobile Navigation Menu -->
+    <div class="mobile-nav" id="mobile-nav">
+        <div class="mobile-nav-header">
+            <h3>Course Navigation</h3>
+        </div>
+        <ul>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="../pages/week1.html">Week 1</a></li>
+            <li><a href="../pages/week2.html" class="active">Week 2</a></li>
+            <li><a href="../pages/week3.html">Week 3</a></li>
+            <li><a href="../pages/week4.html">Week 4</a></li>
+            <li class="dropdown">
+                <a href="#">Demos</a>
+                <div class="dropdown-content">
+                    <a href="html-fundamentals-demo.html">🏗️ HTML Fundamentals</a>
+                    <a href="css-demo2.html">🎨 CSS Tutorial (Beta)</a>
+                    <a href="js-demos.html">⚡ JavaScript Interactive</a>
+                    <a href="../pages/demos.html">📚 All Demos</a>
+                </div>
+            </li>
+            <li><a href="../pages/assignments.html">Assignments</a></li>
+            <li><a href="../pages/schedule.html">Schedule</a></li>
+        </ul>
+    </div>
+
+    <main class="container">
+        <nav class="breadcrumb">
+            <a href="../../index.html">Home</a>
+            <span>→</span>
+            <a href="../pages/week2.html">Week 2</a>
+            <span>→</span>
+            <span class="current">CSS Fundamentals Guide</span>
+        </nav>
+
+        <section>
+            <h2>What is CSS?</h2>
+            <p>CSS (Cascading Style Sheets) controls the presentation of HTML elements. It separates content from design, allowing you to style multiple pages consistently and create responsive, beautiful web experiences.</p>
+        </section>
+
+        <section class="css-example">
+            <h2>CSS Syntax & Structure</h2>
+            <p>Every CSS rule follows the same basic pattern:</p>
+            
+            <div class="css-syntax">
+<span class="css-selector">selector</span> {
+    <span class="css-property">property</span>: <span class="css-value">value</span>;
+    <span class="css-property">property</span>: <span class="css-value">value</span>;
+}
+
+<span class="css-selector">h1</span> {
+    <span class="css-property">color</span>: <span class="css-value">#2c3e50</span>;
+    <span class="css-property">font-size</span>: <span class="css-value">2rem</span>;
+    <span class="css-property">margin-bottom</span>: <span class="css-value">1rem</span>;
+}
+            </div>
+
+            <ul>
+                <li><strong>Selector:</strong> Targets which HTML elements to style</li>
+                <li><strong>Property:</strong> What aspect of the element to change</li>
+                <li><strong>Value:</strong> How to change that property</li>
+                <li><strong>Declaration:</strong> Property + value pair</li>
+                <li><strong>Rule:</strong> Selector + all declarations in braces</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>CSS Selectors</h2>
+            <div class="code-comparison">
+                <div class="code-example-box good-example">
+                    <h3>✅ Common Selectors</h3>
+                    <pre><code>/* Element selector */
+h1 { color: blue; }
+
+/* Class selector */
+.highlight { background: yellow; }
+
+/* ID selector */
+#header { font-size: 2rem; }
+
+/* Descendant selector */
+nav a { text-decoration: none; }
+
+/* Child selector */
+ul > li { margin-bottom: 0.5rem; }
+
+/* Pseudo-class */
+a:hover { color: red; }</code></pre>
+                </div>
+                
+                <div class="code-example-box">
+                    <h3>📝 Selector Types</h3>
+                    <ul>
+                        <li><code>element</code> - All elements of that type</li>
+                        <li><code>.class</code> - Elements with that class</li>
+                        <li><code>#id</code> - Element with that ID</li>
+                        <li><code>parent child</code> - Descendants</li>
+                        <li><code>parent > child</code> - Direct children</li>
+                        <li><code>:hover</code> - Interactive states</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="css-example">
+            <h2>The Box Model</h2>
+            <p>Every element is a rectangular box with four areas:</p>
+            
+            <div class="box-model-visual">
+                <div class="margin-area">
+                    Margin (orange)
+                    <div class="border-area">
+                        Border (red)
+                        <div class="padding-area">
+                            Padding (green)
+                            <div class="content-area">
+                                Content (blue)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="css-syntax">
+<span class="css-selector">.box</span> {
+    <span class="css-property">width</span>: <span class="css-value">200px</span>;          /* Content width */
+    <span class="css-property">padding</span>: <span class="css-value">20px</span>;        /* Space inside */
+    <span class="css-property">border</span>: <span class="css-value">2px solid #333</span>; /* Border around */
+    <span class="css-property">margin</span>: <span class="css-value">10px</span>;         /* Space outside */
+    
+    /* Control how size is calculated */
+    <span class="css-property">box-sizing</span>: <span class="css-value">border-box</span>; /* Include padding/border in width */
+}
+            </div>
+        </section>
+
+        <section>
+            <h2>Typography & Text Styling</h2>
+            <div class="activity-grid">
+                <div class="resource-card">
+                    <h3>Font Properties</h3>
+                    <ul>
+                        <li><code>font-family</code> - Font choice</li>
+                        <li><code>font-size</code> - Text size</li>
+                        <li><code>font-weight</code> - Bold/normal</li>
+                        <li><code>font-style</code> - Italic/normal</li>
+                        <li><code>line-height</code> - Space between lines</li>
+                    </ul>
+                </div>
+                
+                <div class="resource-card">
+                    <h3>Text Properties</h3>
+                    <ul>
+                        <li><code>color</code> - Text color</li>
+                        <li><code>text-align</code> - Alignment</li>
+                        <li><code>text-decoration</code> - Underlines</li>
+                        <li><code>text-transform</code> - Case changes</li>
+                        <li><code>letter-spacing</code> - Character spacing</li>
+                    </ul>
+                </div>
+                
+                <div class="resource-card">
+                    <h3>Best Practices</h3>
+                    <ul>
+                        <li>Use web-safe font stacks</li>
+                        <li>Set readable line-height (1.4-1.6)</li>
+                        <li>Ensure good color contrast</li>
+                        <li>Use relative units (rem, em)</li>
+                        <li>Test on different screen sizes</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="css-example">
+            <h2>Colors & Backgrounds</h2>
+            <div class="css-syntax">
+/* Color formats */
+<span class="css-selector">.element</span> {
+    <span class="css-property">color</span>: <span class="css-value">red</span>;                    /* Named color */
+    <span class="css-property">color</span>: <span class="css-value">#ff0000</span>;               /* Hex code */
+    <span class="css-property">color</span>: <span class="css-value">rgb(255, 0, 0)</span>;        /* RGB */
+    <span class="css-property">color</span>: <span class="css-value">rgba(255, 0, 0, 0.5)</span>;  /* RGB with transparency */
+    <span class="css-property">color</span>: <span class="css-value">hsl(0, 100%, 50%)</span>;     /* HSL */
+}
+
+/* Background properties */
+<span class="css-selector">.background</span> {
+    <span class="css-property">background-color</span>: <span class="css-value">#f0f0f0</span>;
+    <span class="css-property">background-image</span>: <span class="css-value">url('image.jpg')</span>;
+    <span class="css-property">background-size</span>: <span class="css-value">cover</span>;
+    <span class="css-property">background-position</span>: <span class="css-value">center</span>;
+    <span class="css-property">background-repeat</span>: <span class="css-value">no-repeat</span>;
+    
+    /* Shorthand */
+    <span class="css-property">background</span>: <span class="css-value">#f0f0f0 url('image.jpg') center/cover no-repeat</span>;
+}
+            </div>
+        </section>
+
+        <section>
+            <h2>Layout Methods</h2>
+            
+            <h3>Flexbox - One-Dimensional Layout</h3>
+            <div class="visual-example">
+                <div class="flex-demo">
+                    <div class="flex-item">Flex Item 1</div>
+                    <div class="flex-item">Flex Item 2</div>
+                    <div class="flex-item">Flex Item 3</div>
+                </div>
+            </div>
+            
+            <div class="css-syntax">
+<span class="css-selector">.flex-container</span> {
+    <span class="css-property">display</span>: <span class="css-value">flex</span>;
+    <span class="css-property">justify-content</span>: <span class="css-value">space-between</span>; /* Horizontal alignment */
+    <span class="css-property">align-items</span>: <span class="css-value">center</span>;     /* Vertical alignment */
+    <span class="css-property">flex-direction</span>: <span class="css-value">row</span>;      /* Layout direction */
+    <span class="css-property">gap</span>: <span class="css-value">1rem</span>;              /* Space between items */
+}
+
+<span class="css-selector">.flex-item</span> {
+    <span class="css-property">flex</span>: <span class="css-value">1</span>;    /* Grow to fill space */
+    <span class="css-property">flex-shrink</span>: <span class="css-value">0</span>; /* Don't shrink */
+}
+            </div>
+
+            <h3>CSS Grid - Two-Dimensional Layout</h3>
+            <div class="visual-example">
+                <div class="grid-demo">
+                    <div class="grid-item">Grid Item 1</div>
+                    <div class="grid-item">Grid Item 2</div>
+                    <div class="grid-item">Grid Item 3</div>
+                    <div class="grid-item">Grid Item 4</div>
+                    <div class="grid-item">Grid Item 5</div>
+                    <div class="grid-item">Grid Item 6</div>
+                </div>
+            </div>
+            
+            <div class="css-syntax">
+<span class="css-selector">.grid-container</span> {
+    <span class="css-property">display</span>: <span class="css-value">grid</span>;
+    <span class="css-property">grid-template-columns</span>: <span class="css-value">repeat(3, 1fr)</span>; /* 3 equal columns */
+    <span class="css-property">grid-template-rows</span>: <span class="css-value">auto</span>;           /* Automatic rows */
+    <span class="css-property">gap</span>: <span class="css-value">1rem</span>;                     /* Space between items */
+}
+
+<span class="css-selector">.grid-item</span> {
+    <span class="css-property">grid-column</span>: <span class="css-value">span 2</span>; /* Span across 2 columns */
+    <span class="css-property">grid-row</span>: <span class="css-value">span 1</span>;    /* Span across 1 row */
+}
+            </div>
+        </section>
+
+        <section class="css-example">
+            <h2>Responsive Design</h2>
+            <p>Create layouts that work on all devices using media queries:</p>
+            
+            <div class="css-syntax">
+/* Mobile-first approach */
+<span class="css-selector">.container</span> {
+    <span class="css-property">width</span>: <span class="css-value">100%</span>;
+    <span class="css-property">padding</span>: <span class="css-value">1rem</span>;
+}
+
+/* Tablet styles */
+<span class="css-selector">@media (min-width: 768px)</span> {
+    <span class="css-selector">.container</span> {
+        <span class="css-property">max-width</span>: <span class="css-value">750px</span>;
+        <span class="css-property">margin</span>: <span class="css-value">0 auto</span>;
+    }
+}
+
+/* Desktop styles */
+<span class="css-selector">@media (min-width: 1024px)</span> {
+    <span class="css-selector">.container</span> {
+        <span class="css-property">max-width</span>: <span class="css-value">1200px</span>;
+        <span class="css-property">padding</span>: <span class="css-value">2rem</span>;
+    }
+}
+
+/* Responsive units */
+<span class="css-selector">.responsive-text</span> {
+    <span class="css-property">font-size</span>: <span class="css-value">clamp(1rem, 4vw, 2rem)</span>; /* Scales with viewport */
+}
+            </div>
+        </section>
+
+        <section>
+            <h2>CSS Best Practices</h2>
+            <div class="code-comparison">
+                <div class="code-example-box good-example">
+                    <h3>✅ Good CSS</h3>
+                    <pre><code>/* Use meaningful class names */
+.navigation-menu { }
+.hero-section { }
+.call-to-action-button { }
+
+/* Group related properties */
+.card {
+    /* Layout */
+    display: flex;
+    flex-direction: column;
+    
+    /* Box model */
+    padding: 1rem;
+    margin-bottom: 1rem;
+    
+    /* Visual */
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}</code></pre>
+                </div>
+                
+                <div class="code-example-box bad-example">
+                    <h3>❌ Avoid These</h3>
+                    <pre><code>/* Vague class names */
+.red-text { }
+.big-box { }
+.thing { }
+
+/* Scattered properties */
+.card {
+    background: white;
+    display: flex;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    flex-direction: column;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section class="css-example">
+            <h2>CSS Custom Properties (Variables)</h2>
+            <div class="css-syntax">
+/* Define variables in :root */
+<span class="css-selector">:root</span> {
+    <span class="css-property">--primary-color</span>: <span class="css-value">#3498db</span>;
+    <span class="css-property">--secondary-color</span>: <span class="css-value">#2ecc71</span>;
+    <span class="css-property">--font-size-base</span>: <span class="css-value">1rem</span>;
+    <span class="css-property">--spacing-unit</span>: <span class="css-value">1rem</span>;
+    <span class="css-property">--border-radius</span>: <span class="css-value">8px</span>;
+}
+
+/* Use variables throughout your CSS */
+<span class="css-selector">.button</span> {
+    <span class="css-property">background-color</span>: <span class="css-value">var(--primary-color)</span>;
+    <span class="css-property">padding</span>: <span class="css-value">var(--spacing-unit)</span>;
+    <span class="css-property">border-radius</span>: <span class="css-value">var(--border-radius)</span>;
+    <span class="css-property">font-size</span>: <span class="css-value">var(--font-size-base)</span>;
+}
+
+<span class="css-selector">.button:hover</span> {
+    <span class="css-property">background-color</span>: <span class="css-value">var(--secondary-color)</span>;
+}
+            </div>
+            <p><strong>Benefits:</strong> Easy theme changes, consistent values, maintainable code</p>
+        </section>
+
+        <section>
+            <h2>Modern CSS Features</h2>
+            <div class="activity-grid">
+                <div class="activity-card">
+                    <h3>🎨 Advanced Selectors</h3>
+                    <ul>
+                        <li><code>:nth-child()</code> - Select specific children</li>
+                        <li><code>:not()</code> - Exclude elements</li>
+                        <li><code>::before</code> - Add content before element</li>
+                        <li><code>::after</code> - Add content after element</li>
+                    </ul>
+                </div>
+                
+                <div class="activity-card">
+                    <h3>🔧 Layout Tools</h3>
+                    <ul>
+                        <li><code>container queries</code> - Responsive to container size</li>
+                        <li><code>subgrid</code> - Inherit parent grid</li>
+                        <li><code>aspect-ratio</code> - Maintain proportions</li>
+                        <li><code>object-fit</code> - Control image scaling</li>
+                    </ul>
+                </div>
+                
+                <div class="activity-card">
+                    <h3>✨ Visual Effects</h3>
+                    <ul>
+                        <li><code>transform</code> - Rotate, scale, translate</li>
+                        <li><code>transition</code> - Smooth animations</li>
+                        <li><code>filter</code> - Image effects</li>
+                        <li><code>backdrop-filter</code> - Background effects</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="css-example">
+            <h2>Quick Reference Checklist</h2>
+            <div class="activity-checklist">
+                <label><input type="checkbox"> Use external stylesheets for organization</label>
+                <label><input type="checkbox"> Follow mobile-first responsive design</label>
+                <label><input type="checkbox"> Use semantic class names</label>
+                <label><input type="checkbox"> Implement consistent spacing system</label>
+                <label><input type="checkbox"> Optimize for accessibility (contrast, focus states)</label>
+                <label><input type="checkbox"> Use CSS custom properties for repeated values</label>
+                <label><input type="checkbox"> Test across different browsers and devices</label>
+                <label><input type="checkbox"> Validate CSS code for errors</label>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>🎨 CSS Fundamentals Guide</h3>
+                <p>Master styling and layout with modern CSS</p>
+                <p>From basics to advanced responsive design</p>
+                <div class="footer-tools">
+                    <span class="tool-tag">CSS3</span>
+                    <span class="tool-tag">Flexbox</span>
+                    <span class="tool-tag">Grid</span>
+                    <span class="tool-tag">Responsive Design</span>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>🗓️ Quick Navigation</h3>
+                <ul>
+                    <li><a href="../../index.html">Course Home</a></li>
+                    <li><a href="../pages/week2.html">Week 2: CSS & Styling</a></li>
+                    <li><a href="../pages/assignments.html">Assignments</a></li>
+                    <li><a href="../pages/schedule.html">Schedule</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>📖 Related Resources</h3>
+                <ul>
+                    <li><a href="semantic-html-guide.html">Semantic HTML Guide</a></li>
+                    <li><a href="js-fundamentals-guide.html">JavaScript Fundamentals Guide</a></li>
+                    <li><a href="css-demo2.html">CSS Interactive Tutorial</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">MDN CSS Docs</a></li>
+                    <li><a href="https://caniuse.com" target="_blank">CSS Browser Support</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-social">
+                <a href="#" class="social-link" title="Course GitHub">⚡</a>
+                <a href="#" class="social-link" title="Course Discord">💬</a>
+                <a href="#" class="social-link" title="Course Support">📧</a>
+            </div>
+            <p>&copy; 2025 MALA60970 Web Authoring Course. Building the future of web development education.</p>
+        </div>
+    </footer>
+    
+    <script src="../js/main.js"></script>
+    <script src="../js/course-navigation.js"></script>
+</body>
+</html>
