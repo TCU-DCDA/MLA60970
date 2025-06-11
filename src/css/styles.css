@@ -1,10 +1,10 @@
 /* MALA60970 Web Authoring Course - Main Styles */
 
 :root {
-    --primary-color: #4D1979;
+    --primary-color: #4d1979;
     --secondary-color: #8B5CF6;
     --accent-color: #EC4899;
-    --text-color: #4D1979;
+    --text-color: #4d1979;
     --light-gray: #f8f9fa;
     --medium-gray: #e9ecef;
     --border-color: #dee2e6;
@@ -58,17 +58,100 @@ p {
     line-height: 1.7;
 }
 
-/* Header Styles */
-header {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-    color: white;
-    padding: 3rem 0 2rem 0;
-    text-align: center;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+/* Hero Section - Mondrian Background Design */
+.hero-section {
+    width: 100%;
+    height: 70vh;
+    min-height: 500px;
     position: relative;
+    background-image: url('../../images/mondrian.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     overflow: hidden;
 }
 
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.hero-nav {
+    position: relative;
+    z-index: 3;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #5b4465 0%, rgba(91, 68, 101, 0.95) 50%, rgba(91, 68, 101, 0.9) 100%);
+    backdrop-filter: blur(15px);
+    border-bottom: 4px solid #5b4465;
+    box-shadow: 0 4px 20px rgba(91, 68, 101, 0.3);
+}
+
+.hero-nav::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        linear-gradient(90deg, transparent 0%, transparent 20%, rgba(255,255,255,0.05) 20%, rgba(255,255,255,0.05) 21%, transparent 21%),
+        linear-gradient(0deg, transparent 0%, transparent 80%, rgba(255,255,255,0.05) 80%, rgba(255,255,255,0.05) 81%, transparent 81%);
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.6;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-grow: 1;
+    padding: 2rem;
+}
+
+.hero-content h1 {
+    color: white;
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    line-height: 1.1;
+}
+
+.hero-content .course-subtitle {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    background: rgba(0, 0, 0, 0.3);
+    padding: 0.75rem 1.5rem;
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    display: inline-block;
+}
+
+/* Keep animation styles but comment out for this implementation */
+/*
 #banner-animation {
     position: absolute;
     top: 0;
@@ -77,18 +160,27 @@ header {
     height: 100%;
     z-index: 1;
     pointer-events: none;
+    opacity: 0.3;
+}
+*/
+
+.header-top::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        linear-gradient(90deg, transparent 0%, transparent 40%, #2c3e50 40%, #2c3e50 43%, transparent 43%),
+        linear-gradient(0deg, transparent 0%, transparent 60%, #2c3e50 60%, #2c3e50 63%, transparent 63%);
+    pointer-events: none;
 }
 
-.header-content {
-    position: relative;
-    z-index: 2;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
-.header-top {
-    margin-bottom: 2rem;
+@keyframes mondrianGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 header h1 {
@@ -97,33 +189,171 @@ header h1 {
     margin-bottom: 0.5rem;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     position: relative;
-    z-index: 2;
+    z-index: 3;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .course-subtitle {
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 1.2rem;
-    font-weight: 300;
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1.3rem;
+    font-weight: 400;
     margin: 0;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-}
-
-/* Navigation */
-nav {
-    margin-top: 0;
     position: relative;
-    z-index: 2;
+    z-index: 3;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: inline-block;
 }
 
-/* Hamburger Menu Styles */
+/* Navigation - Mondrian Inspired */
+.hero-nav {
+    position: relative;
+    z-index: 3;
+}
+
+.hero-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.hero-nav li {
+    margin: 0;
+    position: relative;
+}
+
+.hero-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 1rem 1.8rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    min-width: 120px;
+    text-align: center;
+}
+
+.hero-nav a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.15) 100%);
+    transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: -1;
+}
+
+.hero-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #FBBF24, #F59E0B, #D97706);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateX(-50%);
+    border-radius: 3px;
+}
+
+.hero-nav a:hover::before {
+    left: 0;
+}
+
+.hero-nav a:hover::after {
+    width: 80%;
+}
+
+.hero-nav a:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.hero-nav a.active {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.8);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.hero-nav a.active::before {
+    left: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.2) 100%);
+}
+
+.hero-nav a.active::after {
+    width: 100%;
+    background: linear-gradient(90deg, #FBBF24, #EF4444, #EC4899);
+}
+
+/* Navigation Animation Enhancements */
+@keyframes navGlow {
+    0%, 100% { 
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+    }
+    50% { 
+        box-shadow: 0 4px 20px rgba(91, 68, 101, 0.3); 
+    }
+}
+
+@keyframes activeNavPulse {
+    0%, 100% { 
+        transform: translateY(-2px) scale(1); 
+    }
+    50% { 
+        transform: translateY(-3px) scale(1.02); 
+    }
+}
+
+.hero-nav a.active {
+    animation: activeNavPulse 3s ease-in-out infinite;
+}
+
+.hero-nav:hover a:not(:hover) {
+    opacity: 0.7;
+    transform: scale(0.95);
+}
+
+.hero-nav:hover a:hover {
+    opacity: 1;
+    transform: translateY(-3px) scale(1.05);
+    animation: navGlow 2s ease-in-out infinite;
+}
+
+/* Hamburger Menu Styles - Primary Color Theme */
 .hamburger {
     display: none;
     flex-direction: column;
     cursor: pointer;
-    padding: 0.5rem;
-    border: 2px solid rgba(255,255,255,0.3);
+    padding: 0.7rem;
+    border: 2px solid rgba(255, 255, 255, 0.5);
     border-radius: 8px;
-    background: rgba(255,255,255,0.1);
+    background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
     position: relative;
@@ -131,19 +361,26 @@ nav {
 }
 
 .hamburger:hover {
-    background: rgba(255,255,255,0.2);
-    border-color: rgba(255,255,255,0.5);
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.8);
     transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .hamburger span {
-    width: 25px;
+    width: 28px;
     height: 3px;
     background: white;
     margin: 3px 0;
     transition: all 0.3s ease;
     border-radius: 2px;
     transform-origin: center;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.hamburger:hover span {
+    background: white;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
 /* Hamburger Animation */
@@ -1348,7 +1585,7 @@ section:hover {
 
 /* Footer Styles */
 footer {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    background: linear-gradient(135deg, #5b4465 0%, rgba(91, 68, 101, 0.9) 100%);
     color: white;
     margin-top: 4rem;
     padding: 3rem 0 1.5rem 0;
@@ -1551,6 +1788,26 @@ footer::before {
 }
 
 @media (max-width: 768px) {
+    /* Hero Section Responsive */
+    .hero-section {
+        height: 60vh;
+        min-height: 400px;
+    }
+    
+    .hero-nav {
+        padding: 1rem 1.5rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.8rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .hero-content .course-subtitle {
+        font-size: 1.2rem;
+        padding: 0.6rem 1.2rem;
+    }
+    
     header {
         padding: 2rem 0 1.5rem 0;
     }
@@ -1568,13 +1825,13 @@ footer::before {
     }
     
     /* Show hamburger menu on mobile - increased specificity */
-    nav .hamburger {
+    .hero-nav .hamburger {
         display: flex !important;
         margin-left: auto;
     }
     
     /* Hide regular navigation on mobile - increased specificity */
-    nav ul {
+    .hero-nav ul {
         display: none !important;
     }
     
@@ -1710,6 +1967,27 @@ footer::before {
 }
 
 @media (max-width: 480px) {
+    /* Hero Section Small Screens */
+    .hero-section {
+        height: 50vh;
+        min-height: 350px;
+    }
+    
+    .hero-nav {
+        padding: 0.8rem 1rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.2rem;
+        margin-bottom: 0.6rem;
+        letter-spacing: 1px;
+    }
+    
+    .hero-content .course-subtitle {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+    }
+    
     header {
         padding: 1.5rem 0;
     }
@@ -1734,11 +2012,11 @@ footer::before {
     
     /* Adjust hamburger menu for small screens */
     .hamburger {
-        padding: 0.4rem;
+        padding: 0.5rem;
     }
     
     .hamburger span {
-        width: 20px;
+        width: 22px;
         height: 2px;
         margin: 2px 0;
     }
@@ -1761,5 +2039,181 @@ footer::before {
     
     .footer-section a:hover {
         transform: none;
+    }
+}
+
+/* Responsive Design for Hero Section */
+@media (max-width: 968px) {
+    .hero-section {
+        height: 60vh;
+        min-height: 400px;
+    }
+    
+    .hero-nav {
+        padding: 1rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+    
+    .hero-content .course-subtitle {
+        font-size: 1.3rem;
+    }
+    
+    .hero-nav ul {
+        display: none;
+    }
+    
+    .hamburger {
+        display: flex !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        height: 50vh;
+        min-height: 350px;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.5rem;
+        letter-spacing: 2px;
+    }
+    
+    .hero-content .course-subtitle {
+        font-size: 1.1rem;
+        padding: 0.5rem 1rem;
+    }
+     .hero-nav {
+        padding: 0.75rem 1rem;
+    }
+    
+    .hamburger {
+        padding: 0.4rem;
+    }
+    
+    .hamburger span {
+        width: 20px;
+        height: 2px;
+        margin: 2px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        height: 45vh;
+        min-height: 300px;
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+        letter-spacing: 1px;
+    }
+    
+    .hero-content .course-subtitle {
+        font-size: 1rem;
+        padding: 0.4rem 0.8rem;
+    }
+    
+    .hero-nav {
+        padding: 0.5rem 1rem;
+    }
+    
+    .mobile-nav {
+        width: 100%;
+    }
+}
+
+/* Mondrian Theme Overrides */
+.mobile-nav {
+    background: linear-gradient(135deg, #e74c3c 0%, #f39c12 25%, #3498db 50%, #2ecc71 75%, #9b59b6 100%) !important;
+    border-left: 4px solid #2c3e50 !important;
+}
+
+.mobile-nav-header {
+    border-bottom: 2px solid #2c3e50 !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+}
+
+.mobile-nav-header h3 {
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+}
+
+.mobile-nav li {
+    border-bottom: 2px solid rgba(44, 62, 80, 0.3) !important;
+}
+
+.mobile-nav a {
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    padding: 1.2rem 2rem !important;
+}
+
+.mobile-nav a:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+    border-left: 4px solid #2c3e50 !important;
+}
+
+.mobile-nav a.active {
+    background: rgba(255, 255, 255, 0.25) !important;
+    border-left: 4px solid #2c3e50 !important;
+    font-weight: 700 !important;
+}
+
+/* Desktop Navigation Enhancements */
+@media (min-width: 769px) {
+    .hero-nav {
+        position: relative;
+        overflow: hidden;
+    }
+    
+    /* Add geometric accent elements */
+    .hero-nav::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100px;
+        height: 100%;
+        background: linear-gradient(45deg, 
+            transparent 30%, 
+            rgba(255, 255, 255, 0.1) 30%, 
+            rgba(255, 255, 255, 0.1) 32%, 
+            transparent 32%,
+            transparent 68%,
+            rgba(255, 255, 255, 0.1) 68%,
+            rgba(255, 255, 255, 0.1) 70%,
+            transparent 70%
+        );
+        pointer-events: none;
+        z-index: 1;
+    }
+    
+    .hero-nav ul {
+        position: relative;
+        z-index: 2;
+    }
+    
+    /* Hover effect for the entire navigation bar */
+    .hero-nav:hover {
+        background: linear-gradient(135deg, 
+            rgba(91, 68, 101, 0.95) 0%, 
+            #5b4465 50%, 
+            rgba(91, 68, 101, 0.95) 100%);
+        transition: background 0.3s ease;
+    }
+    
+    /* Enhanced active link styling */
+    .hero-nav a.active {
+        position: relative;
+    }
+    
+    .hero-nav a.active::before {
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.3) 100%);
     }
 }
