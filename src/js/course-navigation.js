@@ -29,19 +29,6 @@ function initDropdownMenus() {
             });
         });
     });
-    
-    // Handle desktop dropdown hover behavior (CSS handles this, but we can add click for mobile)
-    const desktopDropdowns = document.querySelectorAll('.hero-nav .dropdown > a');
-    desktopDropdowns.forEach(dropdown => {
-        dropdown.addEventListener('click', function(e) {
-            // Only prevent default on mobile
-            if (window.innerWidth <= 768) {
-                e.preventDefault();
-                const parentLi = this.parentElement;
-                parentLi.classList.toggle('active');
-            }
-        });
-    });
 }
 
 function setActiveNavigation() {

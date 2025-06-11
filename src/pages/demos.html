@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Demos - MALA60970: Web Authoring</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/course.css">
+    <script src="../js/video-manager.js" defer></script>
+    <script src="../js/main.js" defer></script>
+    <script src="../js/course-navigation.js" defer></script>
+</head>
+<body>
+    <header class="hero-section subpage">
+        <nav class="hero-nav">
+            <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="week1.html">Wk1</a></li>
+                <li><a href="week2.html">Wk2</a></li>
+                <li><a href="week3.html">Wk3</a></li>
+                <li><a href="week4.html">Wk4</a></li>
+                <li><a href="demos.html" class="active">Demos</a></li>
+                <li><a href="assignments.html">Assigns</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+            </ul>
+            
+            <!-- Hamburger Menu Button -->
+            <div class="hamburger" id="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+        
+        <div class="hero-content">
+            <h1>Interactive Demos</h1>
+            <p class="course-subtitle">Hands-on learning tools to practice web development concepts</p>
+        </div>
+    </header>
+    
+    <!-- Mobile Navigation Overlay -->
+    <div class="nav-overlay" id="nav-overlay"></div>
+    
+    <!-- Mobile Navigation Menu -->
+    <div class="mobile-nav" id="mobile-nav">
+        <div class="mobile-nav-header">
+            <h3>Course Navigation</h3>
+        </div>
+        <ul>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="week1.html">Week 1</a></li>
+            <li><a href="week2.html">Week 2</a></li>
+            <li><a href="week3.html">Week 3</a></li>
+            <li><a href="week4.html">Week 4</a></li>
+            <li class="dropdown">
+                <a href="demos.html" class="active">Demos</a>
+                <div class="dropdown-content">
+                    <a href="../examples/html-fundamentals-demo.html">🏗️ HTML Fundamentals</a>
+                    <a href="../examples/css-selectors-demo.html">🎯 CSS Selectors</a>
+                    <a href="../examples/semantic-html-guide.html">📖 Semantic HTML Guide</a>
+                    <a href="../examples/vscode-setup-guide.html">🛠️ VS Code Setup</a>
+                </div>
+            </li>
+            <li><a href="assignments.html">Assignments</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+        </ul>
+    </div>
+
+    <main>
+        <nav class="breadcrumb">
+            <a href="../../index.html">Home</a>
+            <span>→</span>
+            <span class="current">Interactive Demos</span>
+        </nav>
+
+        <section class="learning-objectives">
+            <h2>Interactive Learning Experiences</h2>
+            <p>These hands-on demos provide interactive ways to explore and practice web development concepts. Each demo includes guided exercises, real-time feedback, and practical examples.</p>
+        </section>
+
+        <!-- Current Demos Section -->
+        <section class="demos-grid">
+            <h2>🎯 Available Demos</h2>
+            <div class="activity-grid">
+                
+                <!-- HTML Fundamentals Demo -->
+                <div class="resource-card demo-card">
+                    <div class="demo-header">
+                        <span class="demo-status available">✅ Available</span>
+                        <span class="demo-week">Week 1</span>
+                    </div>
+                    <h3>🏗️ HTML Fundamentals</h3>
+                    <p>Interactive exploration of HTML elements and document structure. Click elements to see their code structure and learn semantic markup principles.</p>
+                    
+                    <div class="demo-features">
+                        <span class="feature-tag">Document Structure</span>
+                        <span class="feature-tag">Semantic Elements</span>
+                        <span class="feature-tag">Interactive Learning</span>
+                    </div>
+                    
+                    <div class="demo-actions">
+                        <a href="../examples/html-fundamentals-demo.html" class="demo-button primary">
+                            Launch Demo
+                        </a>
+                        <div class="demo-progress">
+                            <span class="progress-label">18 Elements to Explore</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CSS Selectors Demo -->
+                <div class="resource-card demo-card">
+                    <div class="demo-header">
+                        <span class="demo-status available">✅ Available</span>
+                        <span class="demo-week">Week 2</span>
+                    </div>
+                    <h3>🎯 CSS Selectors</h3>
+                    <p>Practice targeting HTML elements with different CSS selector types. Interactive exercises with real-time highlighting and feedback.</p>
+                    
+                    <div class="demo-features">
+                        <span class="feature-tag">Element Targeting</span>
+                        <span class="feature-tag">CSS Practice</span>
+                        <span class="feature-tag">Visual Feedback</span>
+                    </div>
+                    
+                    <div class="demo-actions">
+                        <a href="../examples/css-selectors-demo.html" class="demo-button primary">
+                            Launch Demo
+                        </a>
+                        <div class="demo-progress">
+                            <span class="progress-label">12 Selector Types</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- JavaScript Basics Demo - Coming Soon -->
+                <div class="resource-card demo-card coming-soon">
+                    <div class="demo-header">
+                        <span class="demo-status pending">🚧 Coming Soon</span>
+                        <span class="demo-week">Week 3</span>
+                    </div>
+                    <h3>⚡ JavaScript Basics</h3>
+                    <p>Interactive JavaScript fundamentals including variables, functions, DOM manipulation, and event handling. Practice coding with instant feedback.</p>
+                    
+                    <div class="demo-features">
+                        <span class="feature-tag">Variables & Functions</span>
+                        <span class="feature-tag">DOM Manipulation</span>
+                        <span class="feature-tag">Event Handling</span>
+                    </div>
+                    
+                    <div class="demo-actions">
+                        <button class="demo-button disabled" disabled>
+                            Available Week 3
+                        </button>
+                        <div class="demo-progress">
+                            <span class="progress-label">15+ Interactive Exercises</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Additional Resources Section -->
+        <section class="additional-resources">
+            <h2>📚 Additional Resources</h2>
+            <div class="activity-grid">
+                
+                <div class="resource-card">
+                    <h3>📖 Semantic HTML Guide</h3>
+                    <p>Comprehensive guide to writing meaningful, accessible HTML that communicates structure and purpose.</p>
+                    <a href="../examples/semantic-html-guide.html" class="resource-link">
+                        View Guide →
+                    </a>
+                </div>
+
+                <div class="resource-card">
+                    <h3>🛠️ VS Code Setup</h3>
+                    <p>Complete development environment setup guide with recommended extensions and configuration.</p>
+                    <a href="../examples/vscode-setup-guide.html" class="resource-link">
+                        Setup Guide →
+                    </a>
+                </div>
+
+                <div class="resource-card">
+                    <h3>💡 Practice Exercises</h3>
+                    <p>Additional coding challenges and exercises to reinforce your learning between demo sessions.</p>
+                    <a href="assignments.html" class="resource-link">
+                        View Assignments →
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Demo Features Overview -->
+        <section class="demo-overview">
+            <h2>🌟 What Makes Our Demos Special</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Interactive Learning</h3>
+                    <p>Click, hover, and explore elements to see immediate visual feedback and code examples.</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">📊</div>
+                    <h3>Progress Tracking</h3>
+                    <p>Visual progress indicators show your learning journey and completed exercises.</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Real-time Feedback</h3>
+                    <p>Instant responses to your actions help reinforce learning concepts effectively.</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">📱</div>
+                    <h3>Mobile Friendly</h3>
+                    <p>All demos work seamlessly across desktop, tablet, and mobile devices.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>🎯 Interactive Demos</h3>
+                <p>Hands-on learning experiences for web development</p>
+                <p>Practice HTML, CSS, and JavaScript fundamentals</p>
+                <div class="footer-tools">
+                    <span class="tool-tag">HTML Elements</span>
+                    <span class="tool-tag">CSS Selectors</span>
+                    <span class="tool-tag">JavaScript Basics</span>
+                    <span class="tool-tag">Interactive Practice</span>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>🗓️ Quick Navigation</h3>
+                <ul>
+                    <li><a href="../../index.html">Course Home</a></li>
+                    <li><a href="week1.html">Week 1: HTML Foundations</a></li>
+                    <li><a href="week2.html">Week 2: CSS Styling</a></li>
+                    <li><a href="week3.html">Week 3: JavaScript Basics</a></li>
+                    <li><a href="assignments.html">Assignments</a></li>
+                    <li><a href="schedule.html">Schedule</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>📖 Learning Resources</h3>
+                <ul>
+                    <li><a href="../examples/semantic-html-guide.html">Semantic HTML Guide</a></li>
+                    <li><a href="../examples/vscode-setup-guide.html">VS Code Setup</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">MDN HTML Docs</a></li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">MDN CSS Docs</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-social">
+                <a href="#" class="social-link" title="Course GitHub">⚡</a>
+                <a href="#" class="social-link" title="Course Discord">💬</a>
+                <a href="#" class="social-link" title="Course Support">📧</a>
+            </div>
+            <p>&copy; 2025 MALA60970 Web Authoring Course. Interactive learning for the future of web development.</p>
+        </div>
+    </footer>
+    <script src="../js/main.js"></script>
+</body>
+</html>
