@@ -19,10 +19,21 @@ yarn-error.log*
 *.swp
 *.swo
 
+# Backup files
+*.backup
+*.bak
+*~
+.#*
+
 # Temporary files
 *.tmp
 *.temp
-.cache/
+temp/
+tmp/
+
+# Logs
+logs/
+*.log
 
 # Environment variables
 .env
