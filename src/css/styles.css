@@ -347,6 +347,40 @@ header h1 {
     animation: navGlow 2s ease-in-out infinite;
 }
 
+/* Disabled Navigation Styles */
+.nav-disabled {
+    display: inline-block;
+    padding: 12px 24px;
+    color: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: not-allowed;
+    opacity: 0.6;
+    position: relative;
+    transition: none;
+}
+
+.mobile-nav .nav-disabled {
+    color: rgba(77, 25, 121, 0.4);
+    background: rgba(77, 25, 121, 0.05);
+    border-color: rgba(77, 25, 121, 0.1);
+}
+
+.dropdown-content .nav-disabled {
+    color: rgba(77, 25, 121, 0.4);
+    background: rgba(77, 25, 121, 0.05);
+    border: none;
+    padding: 10px 16px;
+    border-radius: 5px;
+    display: block;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
 /* Hamburger Menu Styles - Primary Color Theme */
 .hamburger {
     display: none;
