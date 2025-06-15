@@ -10,13 +10,14 @@
 <body>
     <header class="hero-section subpage">
         <nav class="hero-nav">
+            <div class="course-brand">
+                <a href="../../index.html" class="course-title">MALA60970: Web Authoring</a>
+            </div>
             <ul>
-                <li><a href="../../index.html">Home</a></li>
                 <li><a href="week1.html" class="active">Wk1</a></li>
                 <li><a href="week2.html">Wk2</a></li>
                 <li><a href="week3.html">Wk3</a></li>
                 <li><a href="week4.html">Wk4</a></li>
-                <li><span class="nav-disabled">Demos</span></li>
                 <li><a href="assignments.html">Assigns</a></li>
                 <li><a href="schedule.html">Schedule</a></li>
             </ul>
@@ -40,27 +41,13 @@
     <!-- Mobile Navigation Menu -->
     <div class="mobile-nav" id="mobile-nav">
         <div class="mobile-nav-header">
-            <h3>Course Navigation</h3>
+            <a href="../../index.html" class="mobile-course-title">MALA60970: Web Authoring</a>
         </div>
         <ul>
-            <li><a href="../../index.html">Home</a></li>
             <li><a href="week1.html" class="active">Week 1</a></li>
             <li><a href="week2.html">Week 2</a></li>
             <li><a href="week3.html">Week 3</a></li>
             <li><a href="week4.html">Week 4</a></li>
-            <li class="dropdown">
-                <span class="nav-disabled">Demos</span>
-                <div class="dropdown-content">
-                    <a href="../examples/html-fundamentals-demo.html">🏗️ HTML Fundamentals</a>
-                    <a href="../examples/css-demo2.html">🎨 CSS Tutorial (Beta)</a>
-                    <a href="../examples/js-demos.html">⚡ JavaScript Interactive</a>
-                    <a href="../examples/semantic-html-guide.html">📖 HTML Guide</a>
-                    <a href="../examples/css-fundamentals-guide.html">📖 CSS Guide</a>
-                    <a href="../examples/js-fundamentals-guide.html">📖 JavaScript Guide</a>
-                    <a href="../examples/github-setup-guide.html">🐙 GitHub Setup</a>
-                    <a href="demos.html">📚 All Demos</a>
-                </div>
-            </li>
             <li><a href="assignments.html">Assignments</a></li>
             <li><a href="schedule.html">Schedule</a></li>
         </ul>
@@ -79,6 +66,49 @@
                     <li>Deploy websites using GitHub Pages</li>
                     <li>Analyze the rhetorical effectiveness of web design choices</li>
                 </ul>
+            </div>
+        </section>
+
+        <!-- Guides and Demos -->
+        <section>
+            <h2>📚 Essential Guides</h2>
+            <div class="flow-card">
+                <div class="flow-description">
+                    <p><strong>Quick Access:</strong> Essential guides to support your Week 1 learning. These resources complement the instructional videos and provide comprehensive reference materials.</p>
+                </div>
+                
+                <div class="assignment-section">
+                    <h3>📖 Week 1 Guides</h3>
+                    <div class="assignment-grid">
+                        <div class="week-link-card">
+                            <a href="../examples/semantic-html-guide.html" class="resource-link-btn">
+                                <div class="link-icon">
+                                    <img src="../../images/html5-icon.svg" alt="HTML5" class="icon-image">
+                                </div>
+                                <h5>Semantic HTML Guide</h5>
+                                <p>Complete HTML5 semantic elements reference</p>
+                            </a>
+                        </div>
+                        <div class="week-link-card">
+                            <a href="../examples/vscode-setup-guide.html" class="resource-link-btn">
+                                <div class="link-icon">
+                                    <img src="../../images/vscode-icon.svg" alt="VS Code" class="icon-image">
+                                </div>
+                                <h5>VS Code Setup Guide</h5>
+                                <p>Configure your development environment</p>
+                            </a>
+                        </div>
+                        <div class="week-link-card">
+                            <a href="../examples/github-setup-guide.html" class="resource-link-btn">
+                                <div class="link-icon">
+                                    <img src="../../images/github-icon.svg" alt="GitHub" class="icon-image">
+                                </div>
+                                <h5>GitHub Setup Guide</h5>
+                                <p>Version control and repository management</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
