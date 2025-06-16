@@ -1113,6 +1113,11 @@ section h2::before {
     font-size: 1.2em;
 }
 
+/* Add spacing between sections */
+section + section {
+    margin-top: 4rem;
+}
+
 /* Enhanced Text Hierarchy */
 .flow-description p strong,
 .course-info p strong,
@@ -1299,4 +1304,20 @@ section h2::before {
         max-width: 38px;
         max-height: 38px;
     }
+}
+
+/* Resource card icon styling */
+.resource-card .link-icon {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 1.1rem;
+    height: 60px;
+}
+
+.resource-card .link-icon .icon-image {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
 }
