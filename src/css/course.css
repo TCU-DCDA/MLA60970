@@ -1387,6 +1387,13 @@
     margin: 0;
 }
 
+/* External icon styling for resources page */
+.external-icon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
 /* Assignment Image Styles */
 .assignment-description {
     display: flex;
@@ -1499,5 +1506,214 @@
         width: 150px;
         height: 200px;
         min-height: 200px;
+    }
+}
+
+/* Top Cards Section Styles */
+.top-cards-section {
+    margin: 2rem 0;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.objective-card,
+.assignments-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.objective-card:hover,
+.assignments-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.objective-card h2,
+.assignments-card h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.assignments-card {
+    background: linear-gradient(135deg, #f8f9fa, #ffffff);
+    border: 2px solid var(--secondary-color);
+}
+
+.assignments-card h2 {
+    color: var(--secondary-color);
+}
+
+.assignment-highlights {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 1.5rem 0;
+}
+
+.highlight {
+    background: var(--light-gray);
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--secondary-color);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.assignment-meta {
+    display: flex;
+    justify-content: space-between;
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background: rgba(139, 92, 246, 0.1);
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.due-date {
+    color: var(--danger-color);
+}
+
+.time-estimate {
+    color: var(--info-color);
+}
+
+.assignments-card .btn {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+/* Resource Categories Styles */
+.resource-categories {
+    margin-bottom: 3rem;
+}
+
+.resource-category {
+    margin-bottom: 2.5rem;
+}
+
+.resource-category h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+.resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.resource-card.internal {
+    border-left: 4px solid var(--secondary-color);
+    background: linear-gradient(135deg, #f8f9fa, #ffffff);
+}
+
+.resource-card.external {
+    border-left: 4px solid var(--accent-color);
+    background: linear-gradient(135deg, #fff8f0, #ffffff);
+}
+
+.resource-card h4 {
+    color: var(--text-color);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.resource-card p {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.resource-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--secondary-color);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.resource-link:hover {
+    background: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.resource-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.resource-list li {
+    margin-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.resource-list li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+.resource-list a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.resource-list a:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+.resource-list a[target="_blank"]::after {
+    content: " ↗";
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+.icon-image {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive adjustments for resource categories */
+@media (max-width: 768px) {
+    .resource-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .resource-category h3 {
+        font-size: 1.2rem;
     }
 }
