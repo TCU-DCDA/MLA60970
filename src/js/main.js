@@ -22,10 +22,16 @@ function initHamburgerMenu() {
     const navOverlay = document.getElementById('nav-overlay');
     const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
 
-    if (!hamburger || !mobileNav || !navOverlay) return;
+    if (!hamburger || !mobileNav || !navOverlay) {
+        console.error('Hamburger menu or related elements are missing.');
+        return;
+    }
+
+    console.log('Hamburger menu initialized.');
 
     // Toggle mobile menu
     hamburger.addEventListener('click', function() {
+        console.log('Hamburger menu clicked.');
         toggleMobileMenu();
     });
 

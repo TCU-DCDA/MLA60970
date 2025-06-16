@@ -92,8 +92,7 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(135deg, #5b4465 0%, rgba(91, 68, 101, 0.95) 50%, rgba(91, 68, 101, 0.9) 100%);
-    backdrop-filter: blur(15px);
+    background: var(--primary-color);
     border-bottom: 4px solid #5b4465;
     box-shadow: 0 4px 20px rgba(91, 68, 101, 0.3);
 }
@@ -490,12 +489,12 @@ header h1 {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 280px;
+    width: 100%; /* Ensure full width for better visibility */
     height: 100%;
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    background: var(--primary-color);
     z-index: 999;
     transition: right 0.3s ease;
-    padding: 0;
+    padding: 1rem; /* Adjust padding for better spacing */
     box-shadow: -5px 0 15px rgba(0,0,0,0.2);
     overflow-y: auto;
 }

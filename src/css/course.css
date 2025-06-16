@@ -1,5 +1,19 @@
 /* MALA60970 Course-Specific Styles */
 
+/* Color Palette */
+:root {
+    --primary-color: #4d1979;
+    --secondary-color: #8b5cf6;
+    --accent-color: #f39c12;
+    --success-color: #2ecc71;
+    --danger-color: #e74c3c;
+    --warning-color: #f1c40f;
+    --info-color: #3498db;
+    --light-gray: #f8f9fa;
+    --border-color: #e0e0e0;
+    --text-color: #333;
+}
+
 /* Week Banner Styles - Inside Flow Card */
 .week-banner {
     position: relative;
