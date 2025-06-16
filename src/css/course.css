@@ -315,7 +315,7 @@
 }
 
 .video-placeholder .video-icon {
-    font-size: 2.5rem;
+    font-size: 2.5rem; /* Match size to Week 1 page */
     color: var(--secondary-color);
     margin-bottom: 0.5rem;
     opacity: 0.8;
