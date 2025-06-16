@@ -14,6 +14,44 @@ document.addEventListener('DOMContentLoaded', function() {
             alert('You clicked on an interactive element!');
         });
     });
+
+    // Randomize week-banner backgrounds on home page
+    if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname === '/index.html' || window.location.pathname.endsWith('experimental-home.html')) {
+        const mondrianImages = [
+            'images/mondrian_v2.png',
+            'images/mondrian_v3.png',
+            'images/mondrian_v4.png'
+        ];
+        document.querySelectorAll('.week-banner').forEach(banner => {
+            const randomImg = mondrianImages[Math.floor(Math.random() * mondrianImages.length)];
+            banner.style.backgroundImage = `url('${randomImg}')`;
+            banner.style.backgroundSize = 'cover';
+            banner.style.backgroundPosition = 'center';
+        });
+        // Randomize schedule subcard backgrounds with gradients aligned to primary color
+        const gradients = [
+            'linear-gradient(135deg, #4d1979 0%, #8B5CF6 100%)',
+            'linear-gradient(135deg, #4d1979 0%, #EC4899 100%)',
+            'linear-gradient(135deg, #4d1979 0%, #10B981 100%)',
+            'linear-gradient(135deg, #4d1979 0%, #e9ecef 100%)',
+            'linear-gradient(135deg, #4d1979 0%, #5b4465 100%)'
+        ];
+        document.querySelectorAll('.schedule-subcard').forEach(card => {
+            // Remove any previous background images/overlays
+            card.style.backgroundImage = '';
+            card.style.background = gradients[Math.floor(Math.random() * gradients.length)];
+            card.style.color = '#fff';
+            card.style.position = 'relative';
+            card.style.overflow = 'hidden';
+            card.style.zIndex = '1';
+            // Remove overlays if present
+            Array.from(card.querySelectorAll('div')).forEach(child => {
+                if (child.style && child.style.background && child.style.background.includes('rgba(40,20,60')) {
+                    child.remove();
+                }
+            });
+        });
+    }
 });
 
 function initHamburgerMenu() {

@@ -661,7 +661,7 @@ section:hover {
 
 /* Footer Styles */
 footer {
-    background: linear-gradient(135deg, #5b4465 0%, rgba(91, 68, 101, 0.9) 100%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, rgba(77, 25, 121, 0.9) 100%);
     color: white;
     margin-top: 4rem;
     padding: 3rem 0 1.5rem 0;
@@ -1151,5 +1151,89 @@ section h2::before {
     .two-column-section {
         grid-template-columns: 1fr;
         gap: 2rem;
+    }
+}
+
+/* Schedule Grid Styles */
+.schedule-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.schedule-subcard {
+    background: var(--light-gray);
+    border-radius: 0.8rem;
+    padding: 1.2rem 1rem;
+    box-shadow: 0 1px 6px rgba(77,25,121,0.06);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 200px;
+    position: relative;
+    overflow: hidden;
+    font-size: 1.13rem;
+}
+
+.schedule-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    z-index: 3;
+    padding-left: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.schedule-content h4 {
+    font-size: 1.7rem;
+    margin-bottom: 0.4rem;
+    text-align: left;
+}
+
+.schedule-content p {
+    font-size: 1.25rem;
+    text-align: left;
+}
+
+.schedule-icon {
+    width: 60%;
+    min-width: 150px;
+    max-width: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    background: none;
+    margin: 0;
+}
+.schedule-icon img {
+    width: 100%;
+    height: auto;
+    max-height: 150px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.18));
+}
+
+@media (max-width: 700px) {
+    .schedule-content h4 {
+        font-size: 1.25rem;
+    }
+    .schedule-content p {
+        font-size: 1.05rem;
+    }
+    .schedule-icon {
+        width: 100%;
+        min-width: 0;
+        max-width: 100px;
+        margin-top: 1rem;
+        justify-content: flex-start;
+    }
+    .schedule-icon img {
+        width: 60px;
+        max-height: 60px;
     }
 }
