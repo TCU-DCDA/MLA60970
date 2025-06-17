@@ -1,0 +1,298 @@
+# Course Description
+
+This course provides a **foundational introduction** to web authoring,
+blending **technical skills** with **critical inquiry** into digital
+culture. Students will explore **HTML, CSS, and basic JavaScript** to
+create and structure web content while considering **design
+principles**, **accessibility**, and **user experience**.
+Through **hands-on projects**, students will develop functional and
+aesthetically engaging websites while examining the broader implications
+of **digital authorship** in contemporary society. **No prior coding
+experience is required.** By the end of the course, students will have a
+strong foundation in **web design** and an understanding of how digital
+platforms shape **communication**, **creativity**, and **public
+discourse**.
+
+This is an introductory course, but it is designed for students
+interested in computers and working thoughtfully and creatively in
+digital environments.
+
+Prerequisites & Concurrent Enrollment
+
+There are no prerequisites for this class.
+
+# Required Textbook
+
+There are no required textbooks for this class. All required readings
+and resources will be available for free in D2L and/or the course
+website: https://tcu-dcda.github.io/MLA60970/
+
+# Teaching Methodology
+
+The majority of the course will focus on 1) learning the basics of HTML,
+CSS, and JS and 2) a sequence of "labs" or minor assignments. The rest
+of the class will focus on applying those web development skills to web
+applications relevant to work in the Humanities and Social Sciences. My
+role will be to provide a blend of video lectures and programming
+demonstrations, guided activities, and one-on-one support.
+
+# Learning Outcomes 
+
+Learning outcomes are the driving forces of this course: they are the
+focusing themes that inform everything we do. The learning outcomes
+listed below are the goals we are working toward that you should meet by
+the end of the term.
+
+## Course Learning Outcomes 
+
+These two outcomes, particular to this course, shape the work we'll do
+this semester:
+
+1.  Students will use their skill in web development as an exploratory
+    research tool designed to address, but not always answer, important
+    cultural questions.
+
+2.  Students will reflect on the limitations of multimodal communication
+    common to the Digital Humanities. Course Assignments & Final Grade
+
+## Assignments & Projects 
+
+Throughout the semester, the majority of your evaluated work will
+consist of **four (4) Projects, four (4) peer review exchanges, three
+(3) Self Reflections,** and **three (3) Threaded Discussions**. Some of
+these will engage with the reading done for class, typically not just
+checking to see if you read, but asking you to think further on a given
+topic, concept, or concern. Most of these will be used as "scaffolding":
+building the skills necessary for the final semester project. Some will
+be technological: for example, developing or revising simple computer
+scripts written in HTML, CSS, and/or JavaScript.
+
+## Grading Philosophy and Policy
+
+In this class, **I won't be grading individual assignments or
+calculating points/percentages**. Instead, I'll offer lots of feedback
+without any points or letter associated with it---but along the way we
+will indicate if you are meeting expectations. In addition to our
+written feedback, I will indicate if your work on the assignment
+**Exceeds**, **Meets**, or **Fails to Meet** Expectations. Throughout
+the semester, you will write **three self-reflection essays** (about a
+page each) on your development as a learner. On the second and third of
+these essays, you will indicate the grade you believe you have earned to
+date in the course. For Reflections 2 and 3, you will be asked to assess
+yourself in terms of your growth in the following areas:
+
+> **Coding Competency in HTML, CSS, and JS**
+>
+> **Audience Engagement, Accessibility, and User Experience (UX)**
+>
+> **Project Design and Planning**
+>
+> **Collaboration**
+
+The grades you argue for your midterm and final semester grades should
+be expressed as traditional letter grades (A, A-, B+, B, B- and so on).
+I reserve the right to change your grade, but in general I defer to you
+as the best judge of your learning.
+
+For more information on the rationale behind this system, I recommend
+these short, approachable blog posts by Dr. Jesse Stommel: \"[**[Why I
+Don\'t
+Grade]{.underline}**](https://www.jessestommel.com/why-i-dont-grade/)\"
+and \"[**[How to
+Ungrade]{.underline}**](https://www.jessestommel.com/how-to-ungrade/).\" I
+are more than willing to supply more detailed pedagogical scholarship on
+this rationale at your request. The online self-reflection essay
+documents provide detailed descriptions of how to successfully argue for
+a grade. 
+
+For your reference, the [faculty definition of
+grades](https://undergraduate.catalog.tcu.edu/policies/academic/list#grading),
+and the letter/percentage system designed to indicate quality of work in
+this class, is as follows:
+
++------------------+---------------+-----------------------------------+
+| > **Work         | > **Letter    | > **Semester Grade Points (GPA)** |
+| > Quality**      | > Grade**     |                                   |
++==================+===============+:=================================:+
+| > Excellent      | > A           | > 4.00                            |
++------------------+---------------+-----------------------------------+
+|                  | > A-          | > 3.67                            |
++------------------+---------------+-----------------------------------+
+|                  | > B+          | > 3.33                            |
++------------------+---------------+-----------------------------------+
+| > Good           | > B           | > 3.00                            |
++------------------+---------------+-----------------------------------+
+|                  | > B-          | > 2.67                            |
++------------------+---------------+-----------------------------------+
+|                  | > C+          | > 2.33                            |
++------------------+---------------+-----------------------------------+
+| > Satisfactory   | > C           | > 2.00                            |
++------------------+---------------+-----------------------------------+
+|                  | > C-          | > 1.67                            |
++------------------+---------------+-----------------------------------+
+|                  | > D+          | > 1.33                            |
++------------------+---------------+-----------------------------------+
+| > Poor           | > D           | > 1.00                            |
++------------------+---------------+-----------------------------------+
+|                  | > D-          | > 0.67                            |
++------------------+---------------+-----------------------------------+
+| > Failing        | > F           | > 0.00                            |
++------------------+---------------+-----------------------------------+
+
+Listed below is a breakdown of course components that will shape and
+determine your final semester grade, presented in the sequence of
+appearance in the course:
+
+  -----------------------------------------------------------------------
+  Course components
+  -----------------------------------------------------------------------
+  Peer Reviews (4)
+
+  Threaded Discussions (3)
+
+  Self-Reflection Essays (3)
+
+  Weekly Projects (4)
+  -----------------------------------------------------------------------
+
+  : Final Grade ElementsThis table shows the relative contribution of
+  each assignment or activity in the course toward the final course
+  grade.
+
+## Attendance 
+
+In keeping with the \"un-grading\" policy of the course (see above), I
+will not take official attendance nor deduct points for missed classes
+or late arrivals. The class will move quickly, however, so it\'s your
+responsibility to check in with both of us should you miss any course
+content or instruction. More than most other courses, what I study and
+practice on a Monday will be essential for what I\'ll study on
+Wednesday, etc. (imagine learning multiplication without knowing first
+how to add). Missing class equals missing important steps in the
+learning process. A pattern of absences may also affect the case you
+build for your semester grade.
+
+If for some reason you anticipate being absent, arriving late, or
+leaving early during a class period, **please let us know beforehand**!
+
+> (*Note:* I do not take attendance, but for the record: because it is
+> considered an infringement on student privacy for faculty to have
+> access to student medical records, faculty cannot accept medical
+> documentation to justify absences. If you have a legitimate reason for
+> your absence and want to provide verification, please access the
+> Absence Documentation Form
+> [here](https://cm.maxient.com/reportingform.php?TexasChristianUniv&layout_id=8).)
+
+**Excused Absences or Official University Absences** are absences
+described in the Official University Absence Policy and include the
+following: Title IX related issues, military leave, holy days, and
+university related absences. As faculty I may not penalize students for
+these absences and must allow for the completion of assignments and
+exams within a reasonable amount of time after the absences. Beyond
+these, faculty retain all discretion for consideration of a student's
+absence, including absences verified by the Dean of Students' Office.
+
+## Class Enrichment (i.e Participation and Engagement))
+
+*I cannot emphasize this enough*: learning any new skill requires an
+active engagement on the part of the learner. Therefore, class
+participation is a critical component of the course. While some lecture
+will be necessary to establish necessary contexts and to propose reading
+strategies, most of the learning needs to come from lively discussion
+and a certain degree of daring and play. Get involved early and often.
+The class will surpass expectations if you do; it will be miserable if
+you don't.
+
+## Late Work
+
+I don't like to allow late work because it can pile up quickly, and it
+limits our ability as instructors to provide timely feedback. However, I
+also don't deduct any points for late work. Please contact us before the
+assignment is due if you would like an extension. I\'re typically happy
+to give you one. **Understand, though, that a pattern of late or
+unsubmitted work will compromise the case you build for your semester
+grade.** Students who expect, for example, an A in the course should
+receive "Exceeds Expectations" on the majority of the assignments and
+have no late or missing assignments (unless arrangements are made for an
+extension).
+
+## Safe Zone
+
+Our goal is for each student to feel comfortable and able to connect
+with course content and classroom discussion. Please know that I
+welcome, affirm, and celebrate persons in the LGBTQIA communities of
+Texas Christian University. (LGBTQIA stands for Lesbian, Gay, Bisexual,
+Transgender, Queer, Intersex, Asexual, Ally). I will not allow
+homophobic comments in class and will strive to use inclusive language.
+Please visit <http://www.allies.tcu.edu/training.asp> for more
+information.
+
+## System Requirements
+
+Throughout the semester, you will be doing a lot of coding in HTML, CSS,
+and JavaScript. It is your responsibility to ensure that you have the
+necessary hardware to do this. If you have any technical difficulties,
+contact your professor or IT at least a week before the assignment is
+due.
+
+> **Computer:** You must have access to a reliable computer and internet
+> connection to take this course, a machine that meets the TCU Online
+> minimum requirements.
+>
+> **TCU Online** is required for this class.
+>
+> **Virtual Studio Code** is the free tool I'll use to write and edit
+> our code for class.
+>
+> **Generative Artificial Intelligence (AI)** technology (Google Gemini,
+> ChatGPT, etc.) is permitted---and encouraged---for your use in this
+> class provided that you **document**, in detail, any and all uses of
+> the technology through **descriptive notes (# comments)**.
+>
+> *Note:* The inappropriate or unauthorized use of AI-generated content
+> may be academic misconduct and/or a violation of discipline-specific
+> professional ethics. Such misuse will be handled according to TCU's
+> Academic Conduct Policy or other relevant policies and may result in
+> sanctions, including failing the course, program dismissal,
+> suspension, or expulsion.
+>
+> **Email:** *Only* the official TCU student email address will be used
+> for all course notifications. It is your responsibility to check your
+> TCU email on a regular basis: you should check it daily.
+
+## Class Norms & Recordings
+
+I consider our classroom a safe space for people to learn, and I have an
+obligation to ensure it remains intact. All members of the class are
+expected to follow rules of common courtesy in person and in all email
+messages, discussions, or any exchanges on a digital platform related to
+this class.
+
+Our class sessions are not available for public consumption or
+circulation beyond the intended uses for this class. Audio, video, or
+screen recording (including screen shots, snips, grabs, etc.) is
+prohibited and can result in a failing grade for this course and
+suspension of access to University Computing Resources. TCU students are
+prohibited from sharing any portion of course materials (including
+videos, PowerPoint slides, assignments, or notes) with others, including
+on social media, without written permission by the course instructors.
+Be sure to read [the full TCU
+policy](https://security.tcu.edu/polproc/).
+
+Of course, if you have accommodations that allow you to make audio
+recordings, however, please review [Student Access and
+Accommodation](https://cte.tcu.edu/tcu-syllabus-policies/#access) and
+contact me immediately. You can, of course, take good notes. If you
+cannot attend a class for any reason, you're welcome to contact another
+classmate to find out what you missed, and you can always set up a
+one-on-one conference with me if you have questions about the material.
+
+## Center for Digital Expression (Scharbauer 2003)
+
+The CDEx is available to students working on new media and digital
+humanities assignments. The staff is available to help you with your
+projects. I will refer to the resource sections in the CDEx website
+([**[cdex.tcu.edu]{.underline}**](https://cdex.tcu.edu/)) throughout the
+course, but you can also view the [**[weekly
+schedule]{.underline}**](https://cdex.tcu.edu/services/consultations/) for
+consultations.  

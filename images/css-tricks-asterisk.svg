@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <style>
+      .asterisk {
+        fill: #2c3e50;
+        stroke: none;
+      }
+    </style>
+  </defs>
+  
+  <!-- True asterisk with 6 equal-length rays radiating from center (50,50) -->
+  <!-- Each ray is 30 units long, centered on (50,50), so extends 15 units in each direction from center -->
+  
+  <!-- Ray 1: 0 degrees (vertical - pointing up) -->
+  <rect x="46" y="35" width="8" height="30" rx="4" ry="4" class="asterisk"/>
+  
+  <!-- Ray 2: 60 degrees -->
+  <rect x="46" y="35" width="8" height="30" rx="4" ry="4" class="asterisk" transform="rotate(60 50 50)"/>
+  
+  <!-- Ray 3: 120 degrees -->
+  <rect x="46" y="35" width="8" height="30" rx="4" ry="4" class="asterisk" transform="rotate(120 50 50)"/>
+  
+  <!-- Ray 4: 180 degrees (vertical - pointing down) -->
+  <rect x="46" y="35" width="8" height="30" rx="4" ry="4" class="asterisk" transform="rotate(180 50 50)"/>
+  
+  <!-- Ray 5: 240 degrees -->
+  <rect x="46" y="35" width="8" height="30" rx="4" ry="4" class="asterisk" transform="rotate(240 50 50)"/>
+  
+  <!-- Ray 6: 300 degrees -->
+  <rect x="46" y="35" width="8" height="30" rx="4" ry="4" class="asterisk" transform="rotate(300 50 50)"/>
+</svg>
