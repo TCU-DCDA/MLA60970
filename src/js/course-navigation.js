@@ -152,7 +152,7 @@ function switchLayout(layoutType) {
 // Load saved layout preference
 function loadLayoutPreference() {
     const savedLayout = localStorage.getItem('schedule-layout-preference');
-    if (savedLayout && window.innerWidth <= 768) {
+    if (savedLayout && window.innerWidth <= 600) {
         switchLayout(savedLayout);
     }
 }

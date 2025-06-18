@@ -54,20 +54,29 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Global mobile menu closer - ensures menu closes on any navigation
+// Global mobile menu closer - ensures menu closes on any navigation (enhanced)
 document.addEventListener('click', function(e) {
     const mobileNav = document.getElementById('mobile-nav');
     const hamburger = document.getElementById('hamburger-menu');
     
-    if (mobileNav && hamburger && mobileNav.classList.contains('active')) {
+    if (mobileNav && hamburger) {
         // Check if clicked element is a link inside mobile nav
         if (e.target.closest('#mobile-nav a')) {
-            console.log('Mobile nav link clicked globally - closing menu');
+            console.log('Mobile nav link clicked globally - forcing menu close');
+            // Force close immediately
             hamburger.classList.remove('active');
             mobileNav.classList.remove('active');
             const navOverlay = document.getElementById('nav-overlay');
             if (navOverlay) navOverlay.classList.remove('active');
             document.body.style.overflow = '';
+            
+            // Force close again after a short delay to ensure it sticks
+            setTimeout(() => {
+                hamburger.classList.remove('active');
+                mobileNav.classList.remove('active');
+                if (navOverlay) navOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }, 50);
         }
     }
 });
@@ -98,11 +107,14 @@ function initHamburgerMenu() {
         closeMobileMenu();
     });
 
-    // Close menu when a link is clicked
+    // Close menu when a link is clicked (enhanced with force close)
     mobileNavLinks.forEach((link, index) => {
         link.addEventListener('click', function(e) {
             console.log(`Mobile nav link ${index} clicked: ${this.href}`);
-            closeMobileMenu();
+            // Force immediate close
+            setTimeout(() => {
+                closeMobileMenu();
+            }, 100);
             // Allow the link to proceed normally
         });
     });
@@ -111,7 +123,10 @@ function initHamburgerMenu() {
     mobileNav.addEventListener('click', function(e) {
         if (e.target.tagName === 'A') {
             console.log('Mobile nav link clicked via delegation:', e.target.href);
-            closeMobileMenu();
+            // Force immediate close
+            setTimeout(() => {
+                closeMobileMenu();
+            }, 100);
         }
     });
 
@@ -146,6 +161,19 @@ function initHamburgerMenu() {
         document.body.style.overflow = ''; // Restore scrolling
         console.log('Mobile menu closed');
     }
+
+    // Enhanced mobile menu closing - force close on any link click
+    window.addEventListener('beforeunload', function() {
+        closeMobileMenu();
+    });
+    
+    // Force close mobile menu on page navigation
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            // Immediate close without delay
+            closeMobileMenu();
+        });
+    });
 
     // Additional fallback - force close menu after any click inside mobile nav
     mobileNav.addEventListener('click', function(e) {
