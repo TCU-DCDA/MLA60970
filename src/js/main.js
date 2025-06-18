@@ -54,11 +54,29 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+// Global mobile menu closer - ensures menu closes on any navigation
+document.addEventListener('click', function(e) {
+    const mobileNav = document.getElementById('mobile-nav');
+    const hamburger = document.getElementById('hamburger-menu');
+    
+    if (mobileNav && hamburger && mobileNav.classList.contains('active')) {
+        // Check if clicked element is a link inside mobile nav
+        if (e.target.closest('#mobile-nav a')) {
+            console.log('Mobile nav link clicked globally - closing menu');
+            hamburger.classList.remove('active');
+            mobileNav.classList.remove('active');
+            const navOverlay = document.getElementById('nav-overlay');
+            if (navOverlay) navOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    }
+});
+
 function initHamburgerMenu() {
     const hamburger = document.getElementById('hamburger-menu');
     const mobileNav = document.getElementById('mobile-nav');
     const navOverlay = document.getElementById('nav-overlay');
-    const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
+    const mobileNavLinks = document.querySelectorAll('#mobile-nav a');
 
     if (!hamburger || !mobileNav || !navOverlay) {
         console.error('Hamburger menu or related elements are missing.');
@@ -66,6 +84,7 @@ function initHamburgerMenu() {
     }
 
     console.log('Hamburger menu initialized.');
+    console.log('Found mobile nav links:', mobileNavLinks.length);
 
     // Toggle mobile menu
     hamburger.addEventListener('click', function() {
@@ -75,14 +94,25 @@ function initHamburgerMenu() {
 
     // Close menu when overlay is clicked
     navOverlay.addEventListener('click', function() {
+        console.log('Overlay clicked - closing menu');
         closeMobileMenu();
     });
 
     // Close menu when a link is clicked
-    mobileNavLinks.forEach(link => {
-        link.addEventListener('click', function() {
+    mobileNavLinks.forEach((link, index) => {
+        link.addEventListener('click', function(e) {
+            console.log(`Mobile nav link ${index} clicked: ${this.href}`);
             closeMobileMenu();
+            // Allow the link to proceed normally
         });
+    });
+
+    // Additional event delegation for mobile nav links (backup method)
+    mobileNav.addEventListener('click', function(e) {
+        if (e.target.tagName === 'A') {
+            console.log('Mobile nav link clicked via delegation:', e.target.href);
+            closeMobileMenu();
+        }
     });
 
     // Close menu on escape key
@@ -114,7 +144,18 @@ function initHamburgerMenu() {
         mobileNav.classList.remove('active');
         navOverlay.classList.remove('active');
         document.body.style.overflow = ''; // Restore scrolling
+        console.log('Mobile menu closed');
     }
+
+    // Additional fallback - force close menu after any click inside mobile nav
+    mobileNav.addEventListener('click', function(e) {
+        if (e.target.tagName === 'A') {
+            // Small delay to allow navigation to begin
+            setTimeout(() => {
+                closeMobileMenu();
+            }, 100);
+        }
+    });
 }
 
 function initCourseNavigation() {

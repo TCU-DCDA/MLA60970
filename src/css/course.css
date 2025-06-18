@@ -14,6 +14,55 @@
     --text-color: #333;
 }
 
+/* ==============================================
+   RESPONSIVE BANNER BACKGROUND IMAGES
+   ============================================== */
+
+/* Default banner background (mobile-first) */
+.hero-section {
+    background-image: url('../../images/mondrian_banner_mobile.jpg') !important;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Desktop and larger screens use higher resolution image */
+@media (min-width: 768px) {
+    .hero-section {
+        background-image: url('../../images/mondrian_banner_optimized.jpg') !important;
+    }
+}
+
+/* High-DPI displays */
+@media (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2),
+       (min-width: 768px) and (min-resolution: 192dpi) {
+    .hero-section {
+        background-image: url('../../images/mondrian_banner_optimized.jpg') !important;
+    }
+}
+
+/* Index page specific banner (different path structure) */
+body:has(.hero-section:not(.subpage)) .hero-section {
+    background-image: url('../../images/mondrian_banner_mobile.jpg') !important;
+}
+
+@media (min-width: 768px) {
+    body:has(.hero-section:not(.subpage)) .hero-section {
+        background-image: url('../../images/mondrian_banner_optimized.jpg') !important;
+    }
+}
+
+/* Alternative approach for index page if :has() not supported */
+.hero-section:not(.subpage) {
+    background-image: url('../../images/mondrian_banner_mobile.jpg') !important;
+}
+
+@media (min-width: 768px) {
+    .hero-section:not(.subpage) {
+        background-image: url('../../images/mondrian_banner_optimized.jpg') !important;
+    }
+}
+
 /* Week Banner Styles - Inside Flow Card */
 .week-banner {
     position: relative;

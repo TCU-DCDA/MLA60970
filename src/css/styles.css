@@ -17,12 +17,53 @@
     box-sizing: border-box;
 }
 
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: var(--text-color);
     background-color: #fff;
     overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+/* Force navigation to be absolutely flush at top */
+.hero-section {
+    margin-top: 0 !important;
+    margin-bottom: 0;
+}
+
+.hero-nav {
+    margin-top: 0 !important;
+    border-top: none;
+}
+
+/* Remove any default browser spacing */
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Ensure navigation starts at absolute top of page */
+header {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    top: 0;
+    display: block;
+}
+
+/* Ensure no spacing above hero section */
+body > header:first-child {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
 }
 
 /* Typography */
@@ -72,6 +113,10 @@ p {
     flex-direction: column;
     justify-content: space-between;
     overflow: visible;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
 }
 
 .hero-section::before {
@@ -88,7 +133,7 @@ p {
 .hero-nav {
     position: relative;
     z-index: 1000;
-    padding: 1.5rem 2rem;
+    padding: 1rem 2rem 1.5rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -318,23 +363,49 @@ header h1 {
     align-items: center;
 }
 
-.course-title {
-    color: white;
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    transition: all 0.3s ease;
-    padding: 8px 16px;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+.course-title,
+.hero-nav .course-title,
+.hero-section .course-title,
+.hero-section.subpage .course-title {
+    color: white !important;
+    text-decoration: none !important;
+    font-size: 1.2rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.5px !important;
+    transition: color 0.3s ease !important;
+    padding: 0 !important;
+    background: none !important;
+    backdrop-filter: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    text-transform: none !important;
+    min-width: auto !important;
+    text-align: left !important;
+    display: inline !important;
+    position: static !important;
+    overflow: visible !important;
 }
 
-.course-title:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: translateY(-1px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.course-title:hover,
+.hero-nav .course-title:hover,
+.hero-section .course-title:hover,
+.hero-section.subpage .course-title:hover {
+    color: rgba(255, 255, 255, 0.8) !important;
+    background: none !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.course-title::before,
+.course-title::after,
+.hero-nav .course-title::before,
+.hero-nav .course-title::after,
+.hero-section .course-title::before,
+.hero-section .course-title::after,
+.hero-section.subpage .course-title::before,
+.hero-section.subpage .course-title::after {
+    display: none !important;
 }
 
 .mobile-course-title {
@@ -343,8 +414,7 @@ header h1 {
     font-size: 1.1rem;
     font-weight: 700;
     letter-spacing: 0.5px;
-    transition: all 0.3s ease;
-    padding: 8px 0;
+    transition: color 0.3s ease;
     display: block;
 }
 
@@ -920,7 +990,7 @@ footer::before {
     }
     
     .hero-nav {
-        padding: 1rem 1.5rem;
+        padding: 0.75rem 1.5rem 1rem 1.5rem;
     }
     
     .hero-content h1 {
@@ -961,7 +1031,7 @@ footer::before {
     }
     
     .hero-nav {
-        padding: 0.8rem 1rem;
+        padding: 0.5rem 1rem 0.8rem 1rem;
     }
     
     .hero-content h1 {
@@ -999,22 +1069,90 @@ footer::before {
 
 /* Subpage Hero Section - Reduced Height */
 .hero-section.subpage {
-    height: 30vh;
-    min-height: 300px;
+    height: 35vh;
+    min-height: 350px;
 }
 
-/* Responsive adjustments for subpage heroes */
+/* Ensure hero section can accommodate content on all devices */
+.hero-section.subpage {
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Enhanced hero content positioning for subpages */
+.hero-section.subpage .hero-content {
+    padding: 1rem;
+    margin-top: auto;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* Mobile-specific hero content adjustments */
 @media (max-width: 768px) {
-    .hero-section.subpage {
-        height: 25vh;
-        min-height: 250px;
+    .hero-section.subpage .hero-content {
+        margin-bottom: 1.5rem;
+        padding: 0.75rem;
+    }
+    
+    .hero-section.subpage .hero-content h1 {
+        margin-bottom: 0.5rem;
+    }
+    
+    .hero-section.subpage .week-subtitle {
+        margin-top: 0.25rem;
     }
 }
 
 @media (max-width: 480px) {
+    .hero-section.subpage .hero-content {
+        margin-bottom: 1rem;
+        padding: 0.5rem;
+    }
+    
+    /* Prevent content cutoff on very small screens */
     .hero-section.subpage {
-        height: 20vh;
-        min-height: 200px;
+        height: 50vh;
+        min-height: 320px;
+    }
+    
+    .hero-section.subpage .hero-content {
+        padding: 0.5rem;
+        margin-bottom: 1rem;
+    }
+}
+
+/* Week subtitle styling for subpages */
+.hero-section.subpage .week-subtitle {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin: 0.5rem 0 0 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    background: rgba(0, 0, 0, 0.4);
+    padding: 0.5rem 1.2rem;
+    border-radius: 25px;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: inline-block;
+    text-align: center;
+}
+
+/* Enhanced mobile styling for week subtitle */
+@media (max-width: 768px) {
+    .hero-section.subpage .week-subtitle {
+        font-size: 1.1rem;
+        padding: 0.4rem 1rem;
+        margin-top: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section.subpage .week-subtitle {
+        font-size: 1rem;
+        padding: 0.3rem 0.8rem;
+        margin-top: 0.4rem;
     }
 }
 
