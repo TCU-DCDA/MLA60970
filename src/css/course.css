@@ -829,9 +829,11 @@ body:has(.hero-section:not(.subpage)) .hero-section {
 @media (max-width: 576px) {
     .mobile-nav {
         width: 100%;
+        right: -100%;
+    }
+    .mobile-nav.active {
         right: 0;
     }
-    
     .hamburger {
         margin-right: 0.5rem;
     }

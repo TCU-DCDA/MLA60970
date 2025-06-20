@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Global mobile menu closer - ensures menu closes on any navigation (enhanced)
+// Global mobile menu closer - ensures menu closes on any navigation (enhanced for iOS)
 document.addEventListener('click', function(e) {
     const mobileNav = document.getElementById('mobile-nav');
     const hamburger = document.getElementById('hamburger-menu');
@@ -71,6 +71,33 @@ document.addEventListener('click', function(e) {
             document.body.style.overflow = '';
             
             // Force close again after a short delay to ensure it sticks
+            setTimeout(() => {
+                hamburger.classList.remove('active');
+                mobileNav.classList.remove('active');
+                if (navOverlay) navOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }, 50);
+        }
+    }
+});
+
+// Touch event handler for iOS devices
+document.addEventListener('touchend', function(e) {
+    const mobileNav = document.getElementById('mobile-nav');
+    const hamburger = document.getElementById('hamburger-menu');
+    
+    if (mobileNav && hamburger) {
+        // Check if touched element is a link inside mobile nav
+        if (e.target.closest('#mobile-nav a')) {
+            console.log('Mobile nav link touched globally - forcing menu close');
+            // Force close immediately
+            hamburger.classList.remove('active');
+            mobileNav.classList.remove('active');
+            const navOverlay = document.getElementById('nav-overlay');
+            if (navOverlay) navOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+            
+            // Force close again to ensure it sticks on iOS
             setTimeout(() => {
                 hamburger.classList.remove('active');
                 mobileNav.classList.remove('active');
@@ -111,11 +138,22 @@ function initHamburgerMenu() {
     mobileNavLinks.forEach((link, index) => {
         link.addEventListener('click', function(e) {
             console.log(`Mobile nav link ${index} clicked: ${this.href}`);
-            // Force immediate close
+            // Force immediate close for iOS devices
+            closeMobileMenu();
+            // Additional force close for iOS
             setTimeout(() => {
                 closeMobileMenu();
-            }, 100);
+            }, 50);
             // Allow the link to proceed normally
+        });
+        
+        // Add touch event for iOS devices
+        link.addEventListener('touchend', function(e) {
+            console.log(`Mobile nav link ${index} touched: ${this.href}`);
+            closeMobileMenu();
+            setTimeout(() => {
+                closeMobileMenu();
+            }, 50);
         });
     });
 
@@ -124,9 +162,21 @@ function initHamburgerMenu() {
         if (e.target.tagName === 'A') {
             console.log('Mobile nav link clicked via delegation:', e.target.href);
             // Force immediate close
+            closeMobileMenu();
             setTimeout(() => {
                 closeMobileMenu();
-            }, 100);
+            }, 50);
+        }
+    });
+    
+    // Touch event delegation for iOS
+    mobileNav.addEventListener('touchend', function(e) {
+        if (e.target.tagName === 'A') {
+            console.log('Mobile nav link touched via delegation:', e.target.href);
+            closeMobileMenu();
+            setTimeout(() => {
+                closeMobileMenu();
+            }, 50);
         }
     });
 
