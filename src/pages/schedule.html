@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Schedule - MALA60970</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/course.css">
+    <style>
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .schedule-table th {
+            background: linear-gradient(135deg, #4d1979, #3d1560);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 2px solid #2d0e40;
+        }
+        
+        .schedule-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #e5e5e5;
+            vertical-align: top;
+        }
+        
+        .schedule-table tr:hover {
+            background-color: #f8f9fa;
+        }
+        
+        .week-header {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            font-weight: 600;
+            color: #4d1979;
+            border-left: 4px solid #4d1979;
+        }
+        
+        .date-cell {
+            font-weight: 600;
+            color: #333;
+            white-space: nowrap;
+            min-width: 120px;
+        }
+        
+        .videos-list, .assignments-list {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        .videos-list li, .assignments-list li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .videos-list {
+            color: #4d1979;
+        }
+        
+        .assignments-list {
+            color: #d63384;
+        }
+        
+        .discussion-note {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 4px;
+            padding: 0.75rem;
+            margin-top: 0.5rem;
+            font-size: 0.9em;
+        }
+        
+        .discussion-note strong {
+            color: #856404;
+        }
+        
+        @media (max-width: 768px) {
+            .schedule-table {
+                font-size: 0.9rem;
+            }
+            
+            .schedule-table th,
+            .schedule-table td {
+                padding: 0.75rem 0.5rem;
+            }
+            
+            .date-cell {
+                min-width: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="hero-section subpage" style="background-image: url('../../images/mondrian_v4.png');">
+        <nav class="hero-nav">
+            <div class="course-brand">
+                <a href="../../index.html" class="course-title">MALA60970<br> Web Authoring</a>
+            </div>
+            <ul>
+                <li><a href="policies.html">Policies</a></li>
+                <li><a href="week1.html">Lab 1</a></li>
+                <li><a href="week2.html">Lab 2</a></li>
+                <li><a href="week3.html">Lab 3</a></li>
+                <li><a href="week4.html">Lab 4</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="schedule.html" class="active">Schedule</a></li>
+            </ul>
+            
+            <!-- Hamburger Menu Button -->
+            <div class="hamburger" id="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+        
+        <div class="hero-content">
+            <h1 class="fluid-heading-1">Course Schedule</h1>
+            <p class="week-subtitle fluid-text">Daily Schedule for MLA60970</p>
+        </div>
+    </header>
+    
+    <!-- Mobile Navigation Overlay -->
+    <div class="nav-overlay" id="nav-overlay"></div>
+    
+    <!-- Mobile Navigation Menu -->
+    <div class="mobile-nav" id="mobile-nav">
+        <div class="mobile-nav-header">
+            <a href="../../index.html" class="mobile-course-title">MALA60970: Web Authoring</a>
+        </div>
+        <ul>
+            <li><a href="../../index.html">Home</a></li>
+            <li><a href="policies.html">Policies</a></li>
+            <li><a href="week1.html">Lab 1</a></li>
+            <li><a href="week2.html">Lab 2</a></li>
+            <li><a href="week3.html">Lab 3</a></li>
+            <li><a href="week4.html">Lab 4</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="schedule.html" class="active">Schedule</a></li>
+        </ul>
+    </div>
+    
+    <main class="spacing-responsive">
+        <section class="spacing-responsive">
+            <div class="card-container">
+                <h2 class="fluid-heading-2">Course Duration</h2>
+                <p class="fluid-text"><strong>Monday, July 7, 2025 – Friday, August 1, 2025</strong></p>
+                <p class="fluid-text">This schedule ensures a balanced progression through course materials, assignments, and videos, supporting both technical skill development and effective communication.</p>
+            </div>
+        </section>
+
+        <!-- Week 1: Foundation Building -->
+        <section class="spacing-responsive">
+            <h2 class="fluid-heading-2">Week 1: Foundation Building</h2>
+            <table class="schedule-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Videos to Watch</th>
+                        <th>Assignments Due</th>
+                        <th>Discussion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="date-cell">Monday, July 7</td>
+                        <td>
+                            <ul class="videos-list">
+                                <li>"Artificiality of Academic Writing"</li>
+                                <li>"CRAP Principles"</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul class="assignments-list">
+                                <li>Complete Preparatory Materials checklist</li>
+                            </ul>
+                        </td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">Tuesday, July 8</td>
+                        <td>
+                            <ul class="videos-list">
+                                <li>"Reading Gravity"</li>
+                                <li>"Writing for the Web"</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul class="assignments-list">
+                                <li>CRAP Principles Analysis<br><small>(Lab1_Design_and_Web_Writing/01-CRAP_Principles_Analysis.md)</small></li>
+                            </ul>
+                        </td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">Wednesday, July 9</td>
+                        <td>
+                            <ul class="videos-list">
+                                <li>"HTML Basics for Content"</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul class="assignments-list">
+                                <li>Content Strategy Planning<br><small>(Lab1_Design_and_Web_Writing/02-Content_Strategy_Planning.md)</small></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <div class="discussion-note">
+                                <strong>Discussion Topic:</strong> Academic and/or Creative Work and Digital Transformation<br>
+                                <strong>Initial Post Due:</strong> Wednesday, July 9<br>
+                                <strong>Peer Responses Due:</strong> Friday, July 11
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">Thursday, July 10</td>
+                        <td>—</td>
+                        <td>
+                            <ul class="assignments-list">
+                                <li>Design Principles Application<br><small>(Lab2_HTML_and_Design/01-Design_Principles_Application.md)</small></li>
+                            </ul>
+                        </td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">Friday, July 11</td>
+                        <td>
+                            <ul class="videos-list">
+                                <li>"From Design Principles to HTML and CSS"</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul class="assignments-list">
+                                <li>HTML Fundamentals<br><small>(Lab2_HTML_and_Design/02-HTML_Fundamentals.md)</small></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <div class="discussion-note">
+                                <strong>Peer Responses Due</strong> for Week 1 Discussion
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Week 2: Visual Implementation and Layout -->
+        <section class="spacing-responsive">
+            <h2 class="fluid-heading-2">Week 2: Visual Implementation and Layout</h2>
+            <table class="schedule-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Videos to Watch</th>
+                        <th>Assignments Due</th>
+                        <th>Discussion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="date-cell">Monday, July 14</td>
+                        <td>
+                            <ul class="videos-list">
+                                <li>"CSS Layout and Visual Hierarchy"</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul class="assignments-list">
+                                <li>Begin CSS Implementation<br><small>(Lab3_CSS_Layout)</small></li>
+                            </ul>
+                        </td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">Tuesday, July 15</td>
+                        <td>
+                            <ul class="videos-list">
+                                <li>"Typography and Accessibility in Web Design"</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul class="assignments-list">
+                                <li>CSS Implementation Progress Check<br><small>(Lab3_CSS_Layout)</small></li>
+                            </ul>
+                        </td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">Wednesday, July 16</td>
+                        <td>
+                            <ul class="videos-list">
+                                <li>"Responsive Design and Mobile-First Principles"</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul class="assignments-list">
+                                <li>Responsive Design Planning<br><small>(Lab4_Responsive_Design)</small></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <div class="discussion-note">
+                                <strong>Discussion Topic:</strong> Navigating Design and Content Challenges<br>
+                                <strong>Initial Post Due:</strong> Wednesday, July 16<br>
+                                <strong>Peer Responses Due:</strong> Friday, July 18
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">Thursday, July 17</td>
+                        <td>
+                            <ul class="videos-list">
+                                <li>"CSS Grid and Flexbox for Content Layout"</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul class="assignments-list">
+                                <li>Responsive Design Implementation<br><small>(Lab4_Responsive_Design)</small></li>
+                            </ul>
+                        </td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">Friday, July 18</td>
+                        <td>
+                            <ul class="videos-list">
+                                <li>"Testing and Refining Web Content"</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul class="assignments-list">
+                                <li>Responsive Design Progress Check<br><small>(Lab4_Responsive_Design)</small></li>
+                            </ul>
+                        </td>
+                        <td>—</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Week 3: Professional Web Development and Content Strategy -->
+        <section class="spacing-responsive">
+            <h2 class="fluid-heading-2">Week 3: Professional Web Development and Content Strategy</h2>
+            <table class="schedule-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Videos to Watch</th>
+                        <th>Assignments Due</th>
+                        <th>Discussion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="date-cell">Monday, July 21</td>
+                        <td>
+                            <ul class="videos-list">
+                                <li>"Content Management and Site Organization"</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul class="assignments-list">
+                                <li>Begin Content Adaptation Project<br><small>(Project/Prompt)</small></li>
+                            </ul>
+                        </td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">Tuesday, July 22</td>
+                        <td>
+                            <ul class="videos-list">
+                                <li>"Web Accessibility and Inclusive Design"</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul class="assignments-list">
+                                <li>Submit Rough Draft for Peer Review<br><small>(Project/RoughDraft_PeerReview)</small></li>
+                            </ul>
+                        </td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">Wednesday, July 23</td>
+                        <td>
+                            <ul class="videos-list">
+                                <li>"Web-Focused Peer Review and Feedback"</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul class="assignments-list">
+                                <li>Participate in Peer Review<br><small>(Project/RoughDraft_PeerReview)</small></li>
+                            </ul>
+                        </td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">Thursday, July 24</td>
+                        <td>
+                            <ul class="videos-list">
+                                <li>"SEO and Discoverability for Web Content"</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul class="assignments-list">
+                                <li>Begin Final Refinements<br><small>(Project/Prompt)</small></li>
+                            </ul>
+                        </td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">Friday, July 25</td>
+                        <td>
+                            <ul class="videos-list">
+                                <li>"Performance Optimization and Testing"</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul class="assignments-list">
+                                <li>Final Refinements Progress Check<br><small>(Project/Prompt)</small></li>
+                            </ul>
+                        </td>
+                        <td>—</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Week 4: Project Completion, Launch, and Reflection -->
+        <section class="spacing-responsive">
+            <h2 class="fluid-heading-2">Week 4: Project Completion, Launch, and Reflection</h2>
+            <table class="schedule-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Videos to Watch</th>
+                        <th>Assignments Due</th>
+                        <th>Discussion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="date-cell">Monday, July 28</td>
+                        <td>
+                            <ul class="videos-list">
+                                <li>"Deploying Your Web Project"</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul class="assignments-list">
+                                <li>Final Web Presence<br><small>(Project/Prompt)</small></li>
+                            </ul>
+                        </td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">Tuesday, July 29</td>
+                        <td>
+                            <ul class="videos-list">
+                                <li>"Testing and Launch Checklist"</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul class="assignments-list">
+                                <li>Submit Deployed Project with Launch Documentation<br><small>(Project/Prompt)</small></li>
+                            </ul>
+                        </td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">Wednesday, July 30</td>
+                        <td>
+                            <ul class="videos-list">
+                                <li>"Reflecting on Digital Adaptation"</li>
+                            </ul>
+                        </td>
+                        <td>
+                            <ul class="assignments-list">
+                                <li>Prepare Final Presentation<br><small>(Project/Prompt)</small></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <div class="discussion-note">
+                                <strong>Discussion Topic:</strong> Reflection, Revision, and Future Directions<br>
+                                <strong>Initial Post Due:</strong> Wednesday, July 30<br>
+                                <strong>Peer Responses Due:</strong> Friday, August 1
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">Thursday, July 31</td>
+                        <td>—</td>
+                        <td>
+                            <ul class="assignments-list">
+                                <li>Final Presentation<br><small>(Project/Prompt)</small></li>
+                            </ul>
+                        </td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td class="date-cell">Friday, August 1</td>
+                        <td>—</td>
+                        <td>
+                            <ul class="assignments-list">
+                                <li>Submit Final Reflection<br><small>(Project/Prompt)</small></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <div class="discussion-note">
+                                <strong>Peer Responses Due</strong> for Week 4 Discussion
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>📅 Course Schedule</h3>
+                <div class="course-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">4</span>
+                        <p class="stat-label">Weeks</p>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">20</span>
+                        <p class="stat-label">Days</p>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">25+</span>
+                        <span class="stat-label">Activities</span>
+                    </div>
+                </div>
+                <p class="course-description">Comprehensive daily schedule ensuring balanced progression through digital remediation skills</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>🧭 Navigation</h3>
+                <ul class="footer-links">
+                    <li><a href="../../index.html">🏠 Home</a></li>
+                    <li><a href="policies.html">📋 Policies</a></li>
+                    <li><a href="resources.html">📚 Resources</a></li>
+                    <li><a href="week1.html">Lab 1: Digital Remediation Analysis</a></li>
+                    <li><a href="week2.html">Lab 2: Semantic HTML Structure</a></li>
+                    <li><a href="week3.html">Lab 3: CSS Implementation</a></li>
+                    <li><a href="week4.html">Lab 4: Responsive Design & Launch</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>📚 Schedule Overview</h3>
+                <div class="tools-grid">
+                    <span class="tool-tag">Week 1: Foundation</span>
+                    <span class="tool-tag">Week 2: Implementation</span>
+                    <span class="tool-tag">Week 3: Professional Development</span>
+                    <span class="tool-tag">Week 4: Launch & Reflection</span>
+                </div>
+                <div class="resource-links">
+                    <a href="#week1" class="resource-link">📊 Week-by-Week Breakdown</a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>🎯 Schedule Features</h3>
+                <ul class="outcomes-list">
+                    <li>✅ Daily video lessons and assignments</li>
+                    <li>✅ Structured progression through labs</li>
+                    <li>✅ Discussion forums for peer engagement</li>
+                    <li>✅ Project-based learning with milestones</li>
+                    <li>✅ Balanced workload distribution</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <div class="social-links">
+                    <a href="#" class="social-link">📧 Email</a>
+                    <a href="#" class="social-link">💬 Slack</a>
+                    <a href="#" class="social-link">🐙 GitHub</a>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2025 MALA60970 Web Authoring Course. All rights reserved.</p>
+                    <p class="course-term">Summer 2025 • 4-Week Intensive</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="../js/main.js"></script>
+    <script src="../js/course-navigation.js"></script>
+</body>
+</html>
